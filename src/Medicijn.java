@@ -1,5 +1,15 @@
 
 public class Medicijn {
+	
+	int medicijnID;
+	String merknaam;
+	String stofnaam;
+	int aantal;
+	int gewensteAantal;
+	int minimaAantal;
+	String fabrikant;
+	int prijs;
+	int kastID;
 
 	public static void controleerOpAantal()
 	{

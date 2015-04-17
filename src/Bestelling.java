@@ -1,6 +1,15 @@
 
 public class Bestelling {
 	
+	int bestellingsID;
+	boolean[] isGeleverd = new boolean [];
+	boolean[] isBesteld = new boolean[];
+	int[] medicijnID = new int[];
+	int[] aantal = new int[];
+	int[] prijs  = new int[];
+	Medicijn[] medicijnID = new Medicijn[];
+	
+	
 	public static void maakBestelling()
 	{
 		
