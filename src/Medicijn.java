@@ -46,14 +46,14 @@ public class Medicijn {
 		
 	}
 	
-	public static void wijzigMerknaam(String newMerknaam)
+	public static void wijzigMerknaam(String merknaam)
 	{
-		merknaam = newMerknaam;	
+		this.merknaam = merknaam;	
 	}
 	
-	public static void wijzigStofnaam(String newStofnaam)
+	public static void wijzigStofnaam(String stofnaam)
 	{
-		stofnaam = newStofnaam;	
+		this.stofnaam = stofnaam;	
 	}
 	
 	public static void wijzigPlaatsBepaling(kastID: Kast)
@@ -61,29 +61,29 @@ public class Medicijn {
 		
 	}
 	
-	public static void wijzigAantal(int newAantal)
+	public static void wijzigAantal(int aantal)
 	{
-		aantal = newAantal;
+		this.aantal = aantal;
 	}
 	
-	public static void wijzigGewensteAantal(int newAantal)
+	public static void wijzigGewensteAantal(int aantal)
 	{
-		gewensteAantal = newAantal;
+		gewensteAantal = aantal;
 	}
 	
-	public static void wijzigMinimumAantal(int newAantal)
+	public static void wijzigMinimumAantal(int aantal)
 	{
-		minimumAantal = newAantal;
+		minimumAantal = aantal;
 	}
 	
-	public static void wijzigFabrikant(String newFabrikant)
+	public static void wijzigFabrikant(String fabrikant)
 	{
-		fabrikant = newFabrikant;
+		this.fabrikant = fabrikant;
 	}
 	
-	public static void wijzigPrijs(int newPrijs)
+	public static void wijzigPrijs(int prijs)
 	{
-		prijs = newPrijs
+		this.prijs = prijs
 	}
 	
 	public static void vermeerderMedicijnAantal(int vermeerder)
