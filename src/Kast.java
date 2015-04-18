@@ -3,7 +3,7 @@ public class Kast {
 	
 	int kastID;
 	
-	public static void geefKastInhoud(kastID)
+	public static int geefKastInhoud(kastID)
 	{
 		
 	}

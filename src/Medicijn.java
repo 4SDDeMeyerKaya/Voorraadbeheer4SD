@@ -1,4 +1,6 @@
+//wijzigPlaatsBepaling nog afwerken
 import java.util.Date;
+
 public class Medicijn {
 	
 	int medicijnID;
