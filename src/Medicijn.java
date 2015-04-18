@@ -1,4 +1,4 @@
-
+import java.util.Date;
 public class Medicijn {
 	
 	int medicijnID;
@@ -13,12 +13,12 @@ public class Medicijn {
 
 	public static void controleerOpAantal()
 	{
-		
+		return aantal;
 	}
 	
 	public static void controleerOpHoudbaarheid()
 	{
-		
+		Date huidig = new Date();
 	}
 	
 	public static void wijzigMerknaam(merknaam)
