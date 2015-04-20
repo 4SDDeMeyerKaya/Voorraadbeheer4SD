@@ -13,8 +13,8 @@
 public class Bestelling {
 	
 	// Klassevariabele voor het aantal bestellingen geïnstantieerd [bron: 2]
-    // number of Bicycle objects instantiated
-    private static int numberOfBicycles = 0;
+	// refereren hiernaar gebeurt met de klassenaam als referentie: Bestelling.aantalBestellingen
+    private static int aantalBestellingen = 0;
 	int bestellingsID;
 	int bestellingsStatus=1;
 	int[] medicijnID = new int;
