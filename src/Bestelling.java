@@ -1,31 +1,44 @@
 /* Bestelling
- * 
  */
 
 public class Bestelling {
 	
 	// Klassevariabele voor het aantal bestellingen geïnstantieerd [bron: 2]
 	// refereren hiernaar gebeurt met de klassenaam als referentie: Bestelling.aantalBestellingen
-    private static int aantalBestellingen = 0;
-	int bestellingsID;
-	int bestellingsStatus=1;
-	int[] medicijnID;
-	int[] aantal;
-	int[] prijs;
-	String[] medicijnNaam;
+    private static int aantalBestellingen = 0; //aantal objecten 
+	private int bestellingsStatus=1;
+	private int[] medicijnID;
+	private int[] aantalTeBestellen; //aantal medicijnen van één soort in bestelling
+	private int bestelAantal; //aantal medicijnen van verschillende soort in bestelling
+	private int[] prijs;
+	private String[] medicijnNaam;
+	
 	// add an instance variable for the object ID
 	private int id;
 	Medicijn[] medicijnID = new Medicijn[];
 	
 	public Bestelling(){
-        // increment number of Orders
-        // and assign ID number
         id = ++aantalBestellingen;
+        bestellingsStatus=1;
+        bestelAantal=0;
     }
+	
+	public void voegBestellingsitemToe(int[] nieuwMedicijnID, int[] nieuwAantalTeBestellen, int[] nieuwPrijs, String[] medicijnNaam){
+		bestelAantal=bestelAantal+1;
+		medicijnID[bestelAantal]=nieuwMedicijnID;
+		aantalTeBestellen[bestelAaantal]=nieuwAantalTeBestellen;
+		prijs[bestelAantal]=nieuwPrijs;
+		
+	}
 	
 	public static void maakBestelling()
 	{
-		
+		if(bestellingsStatus==1)
+			bestellingsStatus=2;
+		if(bestellingsStatus==2)
+			System.out.println("Bestelling is reeds gemaakt.");
+		if(bestellingsStatus==3)
+			System.out.println("Bestelling is al bevestigd.")
 	}
 
 	public static void bevestigBestelling()

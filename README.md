@@ -8,4 +8,8 @@
 	2: Besteld
 	3: Ontvangen
 	
+	
+	Uitleg bij variabelen en methods:
+	aantalEenheden is het aantal er van 1 soort medicijn wordt besteld
+	
 -------------------------------------
