@@ -12,11 +12,17 @@
 
 public class Bestelling {
 	
+	// Klassevariabele voor het aantal bestellingen geïnstantieerd [bron: 2]
+    // number of Bicycle objects instantiated
+    private static int numberOfBicycles = 0;
 	int bestellingsID;
 	int bestellingsStatus=1;
 	int[] medicijnID = new int;
 	int[] aantal = new int[];
 	int[] prijs  = new int[];
+	
+	// add an instance variable for the object ID
+	private int id;
 	Medicijn[] medicijnID = new Medicijn[];
 	
 	
@@ -29,9 +35,10 @@ public class Bestelling {
 	{
 		if(bestellingsStatus==2)
 			bestellingsStatus=3;
-		else
+		if(bestellingsStatus==1)
 			System.out.println("Bestelling is nog niet besteld. Gelieve uw bestellingen pas na ontvangst te bevestigen.");
-
+		if(bestellingsStatus==3)
+			System.out.println("Bestelling is al bevestigd.")
 	}
 	
 	public static void vermeerderMedicijnAantal(medicijnID*[]: Medicijn)
