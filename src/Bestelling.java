@@ -1,13 +1,5 @@
-/* Bedenkingen en toevoegingen
+/* Bestelling
  * 
- * bestellingsStatus:
- *  - 1: Nog niet besteld, aanvulbaar
- *  - 2: Besteld
- *  - 3: Ontvangen
- * 
- * Toevoegingen:
- * 	- bestellingsDatum
- *  - 
  */
 
 public class Bestelling {
@@ -17,15 +9,23 @@ public class Bestelling {
     private static int aantalBestellingen = 0;
 	int bestellingsID;
 	int bestellingsStatus=1;
-	int[] medicijnID = new int;
-	int[] aantal = new int[];
-	int[] prijs  = new int[];
-	
+	int[] medicijnID;
+	int[] aantal;
+	int[] prijs;
+	String[] medicijnNaam;
 	// add an instance variable for the object ID
 	private int id;
 	Medicijn[] medicijnID = new Medicijn[];
 	
-	
+	public Bestelling(int bestellingsID, int , int startGear){
+        gear = startGear;
+        cadence = startCadence;
+        speed = startSpeed;
+
+        // increment number of Bicycles
+        // and assign ID number
+        id = ++numberOfBicycles;
+    }
 	public static void maakBestelling()
 	{
 		
