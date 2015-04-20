@@ -17,15 +17,12 @@ public class Bestelling {
 	private int id;
 	Medicijn[] medicijnID = new Medicijn[];
 	
-	public Bestelling(int bestellingsID, int , int startGear){
-        gear = startGear;
-        cadence = startCadence;
-        speed = startSpeed;
-
-        // increment number of Bicycles
+	public Bestelling(){
+        // increment number of Orders
         // and assign ID number
-        id = ++numberOfBicycles;
+        id = ++aantalBestellingen;
     }
+	
 	public static void maakBestelling()
 	{
 		
@@ -55,4 +52,9 @@ public class Bestelling {
 	{
 		
 	}
+	
+	// new method to return the ID instance variable
+    public int getID() {
+        return id;
+    }
 }
