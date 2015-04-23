@@ -14,6 +14,26 @@ public class Medicijn {
 	int kastID;	
 	String houdbaarheid;		//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
 	
+	
+	public Medicijn(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
+	{
+		this.medicijnID = medicijnID;
+		this.merknaam = merknaam;
+		this.stofnaam = stofnaam;
+		this.aantal = aantal;
+		this.gewensteAantal = gewensteAantal;
+		this.minimumAantal = minimumAantal;
+		this.fabrikant = fabrikant;
+		this.prijs = prijs;
+		this.kastID = kastID;
+		this.houdbaarheid = houdbaarheid;
+	}
+	
+	public static void voegMedicijnToe()
+	{
+		Medicijn nieuwMedicijn = new Medicijn();
+	}
+	
 
 	public static int controleerOpAantal()
 	{
