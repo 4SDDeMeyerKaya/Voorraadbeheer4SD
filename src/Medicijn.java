@@ -58,9 +58,9 @@ public class Medicijn {
 		this.stofnaam = stofnaam;	
 	}
 	
-	public static void wijzigPlaatsBepaling(kastID: Kast)
+	public static void wijzigPlaatsBepaling(int kastID)
 	{
-		
+		this.kastID = kastID;
 	}
 	
 	public static void wijzigAantal(int aantal)

@@ -1,4 +1,3 @@
-
 public class Besteloverzicht {
 	
 	public static void updateBesteloverzicht()
@@ -8,7 +7,7 @@ public class Besteloverzicht {
 	
 	public static void openBesteloverzicht()
 	{
-		
+		//GUI
 	}
 
 }
