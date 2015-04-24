@@ -48,20 +48,20 @@ public class Bestelling {
 		if(bestellingsStatus==1)
 			System.out.println("Bestelling is nog niet besteld. Gelieve uw bestellingen pas na ontvangst te bevestigen.");
 		if(bestellingsStatus==3)
-			System.out.println("Bestelling is al bevestigd.")
+			System.out.println("Bestelling is al bevestigd.");
 	}
 	
-	public static void vermeerderMedicijnAantal(medicijnID[]: Medicijn)
+	public static void vermeerderMedicijnAantal(Medicijn medicijnID)
 	{
 		
 	}
 	
-	public static void bestellingLogWrite(logLines: String*[])
+	public static void bestellingLogWrite(String logLines)
 	{
 		
 	}
 	
-	public static void controleerOpAantal(bestellingsID, medicijnID*[]: Medicijn)
+	public static void controleerOpAantal(Medicijn BestellingsID)
 	{
 		
 	}
