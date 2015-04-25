@@ -5,7 +5,6 @@ import java.text.ParseException;
 
 public class Medicijn {
 	
-	int medicijnID;
 	String merknaam;
 	String stofnaam;
 	int aantal;
@@ -18,9 +17,8 @@ public class Medicijn {
 	
 	
 	
-	public Medicijn(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
+	public Medicijn(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
 	{
-		this.medicijnID = medicijnID;
 		this.merknaam = merknaam;
 		this.stofnaam = stofnaam;
 		this.aantal = aantal;
@@ -64,10 +62,6 @@ public class Medicijn {
 		
 	}
 	
-	public int geefMedicijnID()
-	{
-		return medicijnID;
-	}
 	
 	public int geefKastID()
 	{
