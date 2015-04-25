@@ -9,7 +9,7 @@ public class Bestelling {
 	// refereren hiernaar gebeurt met de klassenaam als referentie: Bestelling.aantalBestellingen
 	
     private static int aantalBestellingen = 0; 	//aantal objecten 
-	private static int bestellingsStatus=1;
+	private int bestellingsStatus=1;
 	private int[] aantalTeBestellen; 			//aantal te bestellen van een item
 	private int itemNummer; 					//nummer van het item binnen een bestellingsObject
 	private int[] prijs;
@@ -21,7 +21,7 @@ public class Bestelling {
 	
 	// ArrayList
 	static Scanner reader = new Scanner(System.in);
-	static ArrayList  = new ArrayList
+	//static ArrayList  = new ArrayList;
 	
 	public Bestelling(){
         id = ++aantalBestellingen;
@@ -38,7 +38,7 @@ public class Bestelling {
 		
 	}
 	
-	public static void maakBestelling()
+	public void maakBestelling()
 	{
 		if(bestellingsStatus==1)
 			bestellingsStatus=2;
@@ -48,7 +48,7 @@ public class Bestelling {
 			System.out.println("Bestelling is al bevestigd.");
 	}
 
-	public static void bevestigBestelling()
+	public void bevestigBestelling()
 	{
 		if(bestellingsStatus==2)
 			bestellingsStatus=3;
