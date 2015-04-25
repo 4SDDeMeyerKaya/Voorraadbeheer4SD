@@ -2,7 +2,7 @@
 public class Apotheker {
 	
 	
-	public static void verkoopMedicijn(medicijnID, aantal, kastID)
+	public static void verkoopMedicijn( medicijnID, aantal, kastID)
 	{
 		
 	}
@@ -12,12 +12,12 @@ public class Apotheker {
 		
 	}
 	
-	public static void geefKastInhoud(int kastID)
+	public void geefKastInhoud(int kastID)
 	{
-		System.out.println("Items in kast" + kastID + ": \n")
-		if(Medicijn.kastID = kastID)
+		System.out.println("Items in kast" + kastID + ": \n");
+		if (Medicijn.geefKastID() == kastID)
 		{
-			System.out.println(Medicijn.medicijnID + "\n")
+			System.out.println(Medicijn.geefMedicijnID() + "\n")
 		}		
 		
 	}
