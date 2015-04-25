@@ -14,14 +14,9 @@ public class Bestelling {
 	private int itemNummer; 					//nummer van het item binnen een bestellingsObject
 	private int[] prijs;
 	private Medicijn medicijnNaam;
-	
-	// add an instance variable for the object ID
 	private int id;
-	Medicijn[] medicijnID = new Medicijn[10];
-	
-	// ArrayList
 	static Scanner reader = new Scanner(System.in);
-	//static ArrayList  = new ArrayList;
+	
 	
 	public Bestelling(){
         id = ++aantalBestellingen;
