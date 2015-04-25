@@ -1,14 +1,10 @@
+/* Voorraadbeheer maakt alle objecten van Medicijn aan.
+ * 
+ */
+import java.util.*;
 
 public class Voorraadbeheer {
+
 	
-	public static void voorraadbeheerLogWrite(logLines: String*[])
-	{
-		
-	}
-	
-	public static void maakBestelling(bestellingsID: Bestelling)
-	{
-		
-	}
 
 }
