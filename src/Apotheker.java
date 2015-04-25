@@ -12,7 +12,7 @@ public class Apotheker {
 		
 	}
 	
-	public static void geefKastInhoud(kastID)
+	public static void geefKastInhoud(int kastID)
 	{
 		System.out.println("Items in kast" + kastID + ": \n")
 		if(Medicijn.kastID = kastID)
