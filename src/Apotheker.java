@@ -14,15 +14,11 @@ public class Apotheker {
 	
 	public static void geefKastInhoud(kastID)
 	{
-		System.out.println("Items in kast "+ kastID + "\n")
-		//kijken of de medicijnen in de kast zitten die wordt opgegeven
-		for(i=0; i <= 50; i++)	//50 als voorlopig aantal medicijnen
+		System.out.println("Items in kast" + kastID + ": \n")
+		if(Medicijn.kastID = kastID)
 		{
-			if(Medicijn.kastID = kastID)
-			{
-				System.out.println(Medicijn.medicijnID + "\n")
-			}
-		}
+			System.out.println(Medicijn.medicijnID + "\n")
+		}		
 		
 	}
 }

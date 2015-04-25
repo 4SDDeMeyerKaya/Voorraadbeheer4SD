@@ -29,9 +29,9 @@ public class Medicijn {
 		this.houdbaarheid = houdbaarheid;
 	}
 	
-	public static void voegMedicijnToe()
+	public static void voegMedicijnToe(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
 	{
-		Medicijn nieuwMedicijn = new Medicijn();
+		Medicijn nieuwMedicijn = new Medicijn(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid);
 	}
 	
 
@@ -66,6 +66,11 @@ public class Medicijn {
 			return true;	//in alle andere gevallen wel houdbaar
 		}
 		
+	}
+	
+	public static int geefMedicijnID()
+	{
+		return medicijnID;
 	}
 	
 	public static void wijzigMerknaam(String merknaam)
