@@ -35,15 +35,16 @@ public class VoorraadbeheerTest {
         	System.out.println("kast: ");
         	int kast = input.nextInt();
         
-        int medicijnID = 0; //ID mag eigenlijk gewoon weg
+        int medicijnID = 0; //ID mag eigenlijk gewoon weg, maar staat hier om de constructor juist te kunnen aanroepen
 		medlist.add(new Medicijn(medicijnID, merknaam, stofnaam, aantal, gewensteAantal, minimaAantal, fabrikant, prijs, kast, houdbaarheid));
         }
         
 		for(int i=0; i<medlist.size();i++){
-		System.out.println("size: " + medlist.size() +  "KastID van medicijn "+medlist.get(i) + " :" + medlist.get(i).kastID);
+		System.out.println("MEDICIJN NUMMER "+i+"\n"+"size: " + medlist.size() +  "KastID van medicijn "+medlist.get(i) + " :" + medlist.get(i).kastID);
+		//Test methode uit Medicijn
+		System.out.println("Result van controleerOpAantal method: "+medlist.get(i).controleerOpAantal());
 		}
 		
-		medlist.get(0).controleerOpAantal();
 		
 	}
 }
