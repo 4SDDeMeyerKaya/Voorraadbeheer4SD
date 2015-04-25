@@ -20,7 +20,7 @@ public class Bestelling {
         id = ++aantalBestellingen;
         bestellingsStatus=1;
         bestelAantal=0;
-        
+        //test change
     }
 	
 	public void voegBestellingsitemToe(Medicijn nieuwMedicijnID, int nieuwAantalTeBestellen, int nieuwPrijs, String[] medicijnNaam){
