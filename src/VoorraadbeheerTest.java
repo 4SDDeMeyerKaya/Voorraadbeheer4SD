@@ -40,7 +40,7 @@ public class VoorraadbeheerTest {
         }
         
 		for(int i=0; i<medlist.size();i++){
-		System.out.println("MEDICIJN NUMMER "+i+"\n"+"size: " + medlist.size() +  "KastID van medicijn "+medlist.get(i) + " :" + medlist.get(i).geefKastID());
+		System.out.println("MEDICIJN NUMMER "+i+"\n"+"size: " + medlist.size() +  "KastID: " + medlist.get(i).geefKastID());
 		//Test methode uit Medicijn
 		System.out.println("Result van controleerOpAantal method: "+medlist.get(i).controleerOpAantal());
 		}
