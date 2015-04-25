@@ -69,6 +69,11 @@ public class Medicijn {
 		return medicijnID;
 	}
 	
+	public int geefKastID()
+	{
+		return kastID;
+	}
+	
 	public void wijzigMerknaam(String merknaam)
 	{
 		this.merknaam = merknaam;	
