@@ -1,5 +1,7 @@
-//wijzigPlaatsBepaling nog afwerken
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.text.DateFormat;
+import java.text.ParseException;
 
 public class Medicijn {
 	
@@ -12,7 +14,8 @@ public class Medicijn {
 	String fabrikant;
 	int prijs;
 	int kastID;	
-	static String houdbaarheid;		//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
+	String houdbaarheid;		//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
+	
 	
 	
 	public Medicijn(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
@@ -29,16 +32,10 @@ public class Medicijn {
 		this.houdbaarheid = houdbaarheid;
 	}
 	
-	public static void voegMedicijnToe(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
-	{
-		Medicijn nieuwMedicijn = new Medicijn(int medicijnID, String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid);
-	}
-	
-
-	public static int controleerOpAantal()
+	public int controleerOpAantal()
 	{
 		//return 0 als er genoeg zijn, en anders hoeveel er te weinig zijn.
-		if (aantal =< minimumAantal)
+		if (aantal <= minimumAantal)
 		{
 			return gewensteAantal-aantal;
 		}
@@ -50,14 +47,13 @@ public class Medicijn {
 		
 	}
 	
-	public static boolean controleerOpHoudbaarheid()
-	{
+	public boolean controleerOpHoudbaarheid() throws ParseException
+	{	
+		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		Date huidig = new Date();
-		SimpleDateFormat sdf = new SimpledateFormat("dd-MM-yyyy");
-		Date houdbaarheidsDatum = sdf.format(houdbaarheid);
-		Date huidigD = sdf.format(huidig)
-		
-		if (huidigD.after(houdbaarheidsDatum))
+		Date houdbaarheidsDatum = sdf.parse(houdbaarheid); //zet String om naar Date om deze de kunnen vergelijken met huidig.
+				
+		if (huidig.after(houdbaarheidsDatum))
 		{
 			return false;	//niet meer houdbaar als de huidige datum later is dan de houdbaarheidsdatum
 		}
@@ -68,52 +64,52 @@ public class Medicijn {
 		
 	}
 	
-	public static int geefMedicijnID()
+	public int geefMedicijnID()
 	{
 		return medicijnID;
 	}
 	
-	public static void wijzigMerknaam(String merknaam)
+	public void wijzigMerknaam(String merknaam)
 	{
 		this.merknaam = merknaam;	
 	}
 	
-	public static void wijzigStofnaam(String stofnaam)
+	public void wijzigStofnaam(String stofnaam)
 	{
 		this.stofnaam = stofnaam;	
 	}
 	
-	public static void wijzigPlaatsBepaling(int kastID)
+	public void wijzigPlaatsBepaling(int kastID)
 	{
 		this.kastID = kastID;
 	}
 	
-	public static void wijzigAantal(int aantal)
+	public void wijzigAantal(int aantal)
 	{
 		this.aantal = aantal;
 	}
 	
-	public static void wijzigGewensteAantal(int aantal)
+	public void wijzigGewensteAantal(int aantal)
 	{
 		gewensteAantal = aantal;
 	}
 	
-	public static void wijzigMinimumAantal(int aantal)
+	public void wijzigMinimumAantal(int aantal)
 	{
 		minimumAantal = aantal;
 	}
 	
-	public static void wijzigFabrikant(String fabrikant)
+	public void wijzigFabrikant(String fabrikant)
 	{
 		this.fabrikant = fabrikant;
 	}
 	
-	public static void wijzigPrijs(int prijs)
+	public void wijzigPrijs(int prijs)
 	{
-		this.prijs = prijs
+		this.prijs = prijs;
 	}
 	
-	public static void vermeerderMedicijnAantal(int vermeerder)
+	public void vermeerderMedicijnAantal(int vermeerder)
 	{
 		aantal = aantal + vermeerder;
 	}
