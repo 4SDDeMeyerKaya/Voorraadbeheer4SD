@@ -18,7 +18,7 @@ public class BestelMedicijn {
 	public BestelMedicijn(String merknaam, int aantal, int prijs)
 	{
 		this.merknaam = merknaam;
-		this.prijs = prijs;
+		this.aantal = aantal;
 		this.prijs = prijs;
 	}
 	
