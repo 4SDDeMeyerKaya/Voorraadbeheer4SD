@@ -11,6 +11,7 @@ public class Voorraadbeheer {
 
 	ArrayList<Medicijn> medlist = new ArrayList<Medicijn>();
 	ArrayList<Bestelling> beslist = new ArrayList<Bestelling>();
+	ArrayList<BestelMedicijn> besmedlist = new ArrayList<BestelMedicijn>();
 	
 	public Voorraadbeheer(){
 
