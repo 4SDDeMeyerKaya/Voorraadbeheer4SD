@@ -9,9 +9,11 @@ public class Bestelling {
 	
 	ArrayList<BestelMedicijn> besmedlist = new ArrayList<BestelMedicijn>();
 	private boolean isBesteld;
+	private boolean isAangekomen;
 	
 	public Bestelling(){
 		isBesteld=false;
+		isAangekomen=false;
     }
 	
 	//voegMedicijnToe voegt een nieuw object van BestelMedicijn toe aan de lijst.
@@ -29,5 +31,13 @@ public class Bestelling {
 
 	public void setBesteld(boolean isBesteld) {
 		this.isBesteld = isBesteld;
+	}
+
+	public boolean isAangekomen() {
+		return isAangekomen;
+	}
+
+	public void setAangekomen(boolean isAangekomen) {
+		this.isAangekomen = isAangekomen;
 	}
 }

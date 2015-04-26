@@ -37,7 +37,8 @@ public class Voorraadbeheer {
 		Voorraadbeheer.beslist.add(new Bestelling());
 	}
 	
-	//voegBestelMed
+	//controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
+	//besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
 	
 	
 	
