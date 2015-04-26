@@ -18,13 +18,18 @@ public class Bestelling {
 	
 	//voegMedicijnToe voegt een nieuw object van BestelMedicijn toe aan de lijst.
 	public void voegMedicijnToe(String merknaam, int aantal, int prijs){
-		if (besmedlist.contains(merknaam))
-			System.out.println("Let op! Dit medicijn heeft u al eerder toegevoegd.");
-		else
-			this.besmedlist.add(new BestelMedicijn(merknaam, aantal, prijs));
+		boolean isAanwezig=false;
+		for(int i=0; i<besmedlist.size();i++){
+			if (besmedlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
+				System.out.println("Let op! Dit medicijn bevindt zich al in dit bestellingslijst.");
+				isAanwezig = true;
+				}	
+		}
+		if(isAanwezig==false)
+			besmedlist.add(new BestelMedicijn(merknaam, aantal, prijs));
 	}
 	
-
+	
 	public boolean isBesteld() {
 		return isBesteld;
 	}

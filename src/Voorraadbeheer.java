@@ -19,9 +19,14 @@ public class Voorraadbeheer {
 	
 	//voegMedicijnToe voegt een nieuw object van Medicijn toe aan de lijst.
 	public void voegMedicijnToe(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimaAantal, String fabrikant, int prijs, int kast, String houdbaarheid){
-		if (medlist.contains(merknaam))
-			System.out.println("Let op! Dit medicijn heeft u al eerder toegevoegd.");
-		else
+		boolean isAanwezig=false;
+		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
+			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
+				System.out.println("Let op! Dit medicijn heeft u al eerder toegevoegd.");
+				isAanwezig = true;
+				}
+		}
+		if(isAanwezig==false)
 			Voorraadbeheer.medlist.add(new Medicijn(merknaam, stofnaam, aantal, gewensteAantal, minimaAantal, fabrikant, prijs, kast, houdbaarheid));
 	}
 	
@@ -64,7 +69,7 @@ public class Voorraadbeheer {
 				
 			}
 				
-		}
+		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
 	}
 	
 	
