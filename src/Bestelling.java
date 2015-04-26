@@ -19,16 +19,13 @@ public class Bestelling {
 	
 	
 	public Bestelling(){
-		
-        id = ++aantalBestellingen;
         bestellingsStatus=1;
         itemNummer=0;
         //test change
     }
 	
-	public void voegItemToe(Medicijn nieuwMedicijnID, int nieuwAantalTeBestellen, int nieuwPrijs, String[] medicijnNaam){
+	public void voegItemToe(){
 		itemNummer=itemNummer+1;
-		medicijnID[itemNummer]=nieuwMedicijnID;
 		aantalTeBestellen[itemNummer]=nieuwAantalTeBestellen;
 		prijs[itemNummer]=nieuwPrijs;
 		
