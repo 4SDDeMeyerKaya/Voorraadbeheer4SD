@@ -5,6 +5,7 @@
  * Het geeft wel vele voordelen zoals bijvoorbeeld iteratief een lijst van objecten
  * te doorlopen.
  */
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Voorraadbeheer {
@@ -39,22 +40,31 @@ public class Voorraadbeheer {
 	
 	//controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
 	//besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
-	public void controleerOpTeBestellen(){
+	public void controleerOpTeBestellen() throws ParseException{
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			if (Voorraadbeheer.medlist.get(i).controleerOpAantal()>0){
-				for(int j=0; j<Voorraadbeheer.beslist.size();j++){
-					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){
-						for(int k=0; k<Voorraadbeheer.beslist.size();k++){
-							if Voorraadbeheer.beslist.get(j).besmedlist
+			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){ 			//Controleer of men dit medicijn moet bestellen
+																				//Indien ja
+				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
+					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){	//Enkel in niet aangekomen bestellingen zoeken
+						
+						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst
+							//VERGELIJK NAAM!
+							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
+									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
+							else
+								//HIER VOLGT:>>
+								//VOEG TOE AAN EEN BESTELLIJST! Het dient besteld te worden EN is niet reeds aanwezig.
+								//MAAK EEN EXCEPTION KLASSE AAN OM HET GEVAL WAARBIJ GEEN BESCHIKBAAR BESTELLING AANWEZIG IS
+								//VOEG TRY-CATCH TOE
+								;
+							
 						}
 					}
-
-					if Voorraadbeheer.beslist.get(j).besmedlist
 				}
 				
 			}
 				
-			}
+		}
 	}
 	
 	

@@ -45,6 +45,15 @@ public class Medicijn {
 		
 	}
 	
+	public int controleerOpBeide() throws ParseException{
+		int hoogste = 0;
+		if(controleerOpHoudbaarheid()>controleerOpAantal()) 
+			hoogste = controleerOpHoudbaarheid();
+		else
+			hoogste=controleerOpAantal();
+		return hoogste;
+	}
+	
 	public int controleerOpHoudbaarheid() throws ParseException
 	{	
 		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
