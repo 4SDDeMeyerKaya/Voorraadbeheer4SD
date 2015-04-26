@@ -22,6 +22,9 @@ public class BestelMedicijn {
 		this.prijs = prijs;
 	}
 	
+	public String geefMerknaam(){
+		return merknaam;
+	}
 	
 	public void vermeerderAantal(){
 		aantal++;

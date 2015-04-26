@@ -27,7 +27,7 @@ public class Voorraadbeheer {
 	//verwijderMedicijn zoekt naar overeenkomstige merknamen (in principe één hit max) en verwijdert dit object.
 	public void verwijderMedicijn(String merknaam){ 
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			if (Voorraadbeheer.medlist.get(i).merknaam.equalsIgnoreCase(merknaam))
+			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam))
 				Voorraadbeheer.medlist.remove(i);
 			}
 	}
@@ -39,7 +39,23 @@ public class Voorraadbeheer {
 	
 	//controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
 	//besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
-	
+	public void controleerOpTeBestellen(){
+		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
+			if (Voorraadbeheer.medlist.get(i).controleerOpAantal()>0){
+				for(int j=0; j<Voorraadbeheer.beslist.size();j++){
+					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){
+						for(int k=0; k<Voorraadbeheer.beslist.size();k++){
+							if Voorraadbeheer.beslist.get(j).besmedlist
+						}
+					}
+
+					if Voorraadbeheer.beslist.get(j).besmedlist
+				}
+				
+			}
+				
+			}
+	}
 	
 	
 	public static void main(String args[]){

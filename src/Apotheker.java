@@ -7,7 +7,7 @@ public class Apotheker {
 		
 	//}
 	
-	public void bevestigBestelling(Bestelling.getID())
+	public void bevestigBestelling(Bestelling.getID()
 	{
 			
 	}

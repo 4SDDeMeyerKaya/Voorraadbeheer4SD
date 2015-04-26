@@ -45,7 +45,7 @@ public class Medicijn {
 		
 	}
 	
-	public boolean controleerOpHoudbaarheid() throws ParseException
+	public int controleerOpHoudbaarheid() throws ParseException
 	{	
 		DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
 		Date huidig = new Date();
@@ -53,15 +53,22 @@ public class Medicijn {
 				
 		if (huidig.after(houdbaarheidsDatum))
 		{
-			return false;	//niet meer houdbaar als de huidige datum later is dan de houdbaarheidsdatum
+			wijzigAantal(0);		//indien niet meer houdbaar, moet het eruit en dient het programma
+									//de apotheker hiervan op de hoogte te houden.
+			System.out.println("Gelieve alle huidige "+geefMerknaam()+" uit kast "+geefKastID()+" te halen. [Houdb.datum]");
+			return gewensteAantal;	//Voorraadbeheer zal het gewensteAantal doorgeven in "besmedlist" om te bestellen.
 		}
 		else 	
 		{
-			return true;	//in alle andere gevallen wel houdbaar
+			return 0;	//in alle andere gevallen wel houdbaar
 		}
 		
 	}
 	
+	
+	public String geefMerknaam(){
+		return merknaam;
+	}
 	
 	public int geefKastID()
 	{
