@@ -178,11 +178,13 @@ public class GUItest {
 		frame.getContentPane().add(kast28);
 		
 		JPanel kast1 = new JPanel();
+		kast1.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast1.setBackground(SystemColor.control);
 		kast1.setBounds(66, 100, 400, 400);
 		frame.getContentPane().add(kast1);
 		
 		JPanel kast2 = new JPanel();
+		kast2.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast2.setBackground(SystemColor.menu);
 		kast2.setBounds(532, 100, 400, 400);
 		frame.getContentPane().add(kast2);
