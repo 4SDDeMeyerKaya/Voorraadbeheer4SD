@@ -66,6 +66,7 @@ public class GUItest {
 		frame.getContentPane().add(terminalPanel);
 		
 		JPanel kast10 = new JPanel();
+		kast10.setToolTipText("1");
 		kast10.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast10.setForeground(Color.BLACK);
 		kast10.setBackground(Color.WHITE);
