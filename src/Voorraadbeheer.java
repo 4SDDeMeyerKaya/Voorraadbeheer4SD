@@ -4,7 +4,14 @@
  * te benaderen.
  * Het geeft wel vele voordelen zoals bijvoorbeeld iteratief een lijst van objecten
  * te doorlopen.
+ * 
+ * Voorraadbeheer houdt ook een lijst van bestellingen bij. De lijst met te bestellen medicijnen wordt
+ * voor ieder nieuw object van Bestelling aangemaakt. Dit maakt het eenvoudiger om de medicijnen te men
+ * bestelt te groeperen en bewerkingen op uit te voeren.
+ * 
+ * Zie commentaar bij methodes voor details daarvan.
  */
+
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -43,8 +50,10 @@ public class Voorraadbeheer {
 		Voorraadbeheer.beslist.add(new Bestelling());
 	}
 	
-	//controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
-	//besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
+	/*controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
+	besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
+	*/
+	
 	public void controleerOpTeBestellen() throws ParseException{
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){ 			//Controleer of men dit medicijn moet bestellen
@@ -57,18 +66,17 @@ public class Voorraadbeheer {
 							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
 									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
 							else
-								//HIER VOLGT:>>
-								//VOEG TOE AAN EEN BESTELLIJST! Het dient besteld te worden EN is niet reeds aanwezig.
-								//MAAK EEN EXCEPTION KLASSE AAN OM HET GEVAL WAARBIJ GEEN BESCHIKBAAR BESTELLING AANWEZIG IS
+								//<< HIER VOLGT >>
+								//VOEG TOE AAN EEN BESTELLING! Het dient nog besteld te worden EN is niet reeds aanwezig.
+								//MAAK EEN EXCEPTION KLASSE AAN OM HET GEVAL WAARBIJ GEEN BESCHIKBARE BESTELLING AANWEZIG IS
+								//OP TE VANGEN.
 								//VOEG TRY-CATCH TOE
 								;
 							
 						}
 					}
 				}
-				
 			}
-				
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
 	}
 	
