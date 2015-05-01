@@ -1,5 +1,4 @@
 import java.awt.EventQueue;
-
 import javax.swing.JFrame;
 import java.awt.Color;
 import javax.swing.JButton;
@@ -17,11 +16,12 @@ import javax.swing.border.LineBorder;
 import java.awt.SystemColor;
 import javax.swing.JTabbedPane;
 import java.awt.FlowLayout;
+import javax.swing.JTextArea;
 //GUItest
 
 public class GUI {
 
-	private JFrame frame;
+	public JFrame frame;
 
 	/**
 	 * Launch the application.
@@ -49,7 +49,7 @@ public class GUI {
 	/**
 	 * Initialize the contents of the frame.
 	 */
-	private void initialize() {
+	public void initialize() {
 		frame = new JFrame();
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBackground(Color.WHITE);
@@ -57,13 +57,22 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
-		JTextPane terminalPanel = new JTextPane();
-		terminalPanel.setText("TERMINAL test tjoiezfpkmorithejgzkflmzjgreeijfosqkzmlekr");
-		terminalPanel.setFont(new Font("HelveticaNeueLT Pro 55 Roman", Font.PLAIN, 13));
-		terminalPanel.setForeground(Color.WHITE);
-		terminalPanel.setBackground(Color.BLACK);
-		terminalPanel.setBounds(1000, 0, 270, 700);
-		frame.getContentPane().add(terminalPanel);
+		JTextPane terminalTitle = new JTextPane();
+		terminalTitle.setToolTipText("");
+		terminalTitle.setText("TERMINAL");
+		terminalTitle.setEditable(false);
+		terminalTitle.setForeground(Color.WHITE);
+		terminalTitle.setBackground(Color.BLACK);
+		terminalTitle.setBounds(1000, 0, 280, 18);
+		frame.getContentPane().add(terminalTitle);
+		
+		JTextArea textAreaTerminal = new JTextArea();
+		textAreaTerminal.setEditable(false);
+		textAreaTerminal.setText("Variabele terminal text..");
+		textAreaTerminal.setForeground(Color.WHITE);
+		textAreaTerminal.setBackground(Color.BLACK);
+		textAreaTerminal.setBounds(1000, 18, 280, 675);
+		frame.getContentPane().add(textAreaTerminal);
 		
 		JPanel kast10 = new JPanel();
 		kast10.setToolTipText("Kast10");
@@ -214,7 +223,7 @@ public class GUI {
 		tabPane.setToolTipText("");
 		tabPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabPane.setBackground(Color.WHITE);
-		tabPane.setBounds(0, 400, 1000, 281);
+		tabPane.setBounds(0, 400, 1000, 290);
 		frame.getContentPane().add(tabPane);
 		
 		JPanel bestellingTab = new JPanel();
@@ -226,8 +235,7 @@ public class GUI {
 		medicijnTab.setToolTipText("Controle van medicijnen");
 		medicijnTab.setBackground(Color.WHITE);
 		tabPane.addTab("MEDICIJN", null, medicijnTab, null);
-		tabPane.setBackgroundAt(1, Color.WHITE);
-		
+		tabPane.setBackgroundAt(1, Color.WHITE);	
 		
 		
 		
