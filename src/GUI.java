@@ -17,11 +17,20 @@ import java.awt.SystemColor;
 import javax.swing.JTabbedPane;
 import java.awt.FlowLayout;
 import javax.swing.JTextArea;
+import javax.swing.JScrollPane;
+import javax.swing.ScrollPaneConstants;
+import javax.swing.JTable;
+import javax.swing.table.DefaultTableModel;
+import java.awt.GridBagLayout;
+import java.awt.GridBagConstraints;
+import javax.swing.ListSelectionModel;
 //GUItest
 
 public class GUI {
 
 	public JFrame frame;
+	private JTable tableMed;
+	private JTable tableBest;
 
 	/**
 	 * Launch the application.
@@ -58,21 +67,25 @@ public class GUI {
 		frame.getContentPane().setLayout(null);
 		
 		JTextPane terminalTitle = new JTextPane();
+		terminalTitle.setFont(new Font("Dialog", Font.BOLD, 12));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("TERMINAL");
+		terminalTitle.setText("                        TERMINAL");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
-		terminalTitle.setBounds(1000, 0, 280, 18);
+		terminalTitle.setBounds(1000, 0, 280, 20);
 		frame.getContentPane().add(terminalTitle);
 		
+		JScrollPane scrollPane = new JScrollPane();
+		scrollPane.setBounds(1000, 19, 280, 675);
+		frame.getContentPane().add(scrollPane);
+		
 		JTextArea textAreaTerminal = new JTextArea();
+		scrollPane.setViewportView(textAreaTerminal);
 		textAreaTerminal.setEditable(false);
-		textAreaTerminal.setText("Variabele terminal text..");
+		textAreaTerminal.setText("variabele text");
 		textAreaTerminal.setForeground(Color.WHITE);
 		textAreaTerminal.setBackground(Color.BLACK);
-		textAreaTerminal.setBounds(1000, 18, 280, 675);
-		frame.getContentPane().add(textAreaTerminal);
 		
 		JPanel kast10 = new JPanel();
 		kast10.setToolTipText("Kast10");
@@ -230,11 +243,117 @@ public class GUI {
 		bestellingTab.setToolTipText("Controle van bestellingen");
 		bestellingTab.setBackground(Color.WHITE);
 		tabPane.addTab("BESTELLING", null, bestellingTab, null);
+		bestellingTab.setLayout(null);
+		
+		JScrollPane scrollPaneBest = new JScrollPane();
+		scrollPaneBest.setBounds(0, 0, 1000, 260);
+		bestellingTab.add(scrollPaneBest);
+		
+		tableBest = new JTable();
+		tableBest.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+				{null, null, null},
+			},
+			new String[] {
+				"Merknaam", "Aantal (klik cel om aan te passen)", "Prijs"
+			}
+		));
+		tableBest.setForeground(Color.BLACK);
+		scrollPaneBest.setViewportView(tableBest);
 		
 		JPanel medicijnTab = new JPanel();
 		medicijnTab.setToolTipText("Controle van medicijnen");
 		medicijnTab.setBackground(Color.WHITE);
 		tabPane.addTab("MEDICIJN", null, medicijnTab, null);
+		medicijnTab.setLayout(null);
+		
+		JScrollPane scrollPaneMed = new JScrollPane();
+		scrollPaneMed.setBounds(0, 0, 1000, 260);
+		medicijnTab.add(scrollPaneMed);
+		
+		tableMed = new JTable();
+		tableMed.setFont(new Font("Dialog", Font.BOLD, 12));
+		tableMed.setToolTipText("Lijst van medicijnen");
+		tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableMed.setRowSelectionAllowed(false);
+		tableMed.setForeground(Color.BLACK);
+		tableMed.setFillsViewportHeight(true);
+		tableMed.setCellSelectionEnabled(true);
+		tableMed.setModel(new DefaultTableModel(
+			new Object[][] {
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+				{null, null, null, null, null, null, null, null, null},
+			},
+			new String[] {
+				"Merknaam", "Stofnaam", "Aantal", "Gewenst aantal", "Minimum aantal", "Fabrikant", "Prijs", "Kast ID", "Houdbaarheid"
+			}
+		));
+		tableMed.getColumnModel().getColumn(0).setPreferredWidth(180);
+		tableMed.getColumnModel().getColumn(0).setMinWidth(180);
+		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+		tableMed.getColumnModel().getColumn(2).setPreferredWidth(110);
+		tableMed.getColumnModel().getColumn(2).setMinWidth(110);
+		tableMed.getColumnModel().getColumn(3).setPreferredWidth(111);
+		tableMed.getColumnModel().getColumn(3).setMinWidth(111);
+		tableMed.getColumnModel().getColumn(4).setPreferredWidth(111);
+		tableMed.getColumnModel().getColumn(4).setMinWidth(111);
+		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+		tableMed.getColumnModel().getColumn(7).setPreferredWidth(55);
+		tableMed.getColumnModel().getColumn(7).setMinWidth(55);
+		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+		scrollPaneMed.setViewportView(tableMed);
 		tabPane.setBackgroundAt(1, Color.WHITE);	
 		
 		
