@@ -19,6 +19,8 @@ public class Voorraadbeheer {
 
 	static ArrayList<Medicijn> medlist = new ArrayList<Medicijn>();
 	static ArrayList<Bestelling> beslist = new ArrayList<Bestelling>();
+	private boolean nietBesteldBestaat;
+	static int besIndex; //In welk bestellingsobject binnen 'beslist' moet het volgend medicijn komen?
 	
 	public Voorraadbeheer(){
 
@@ -55,6 +57,11 @@ public class Voorraadbeheer {
 	*/
 	
 	public void controleerOpTeBestellen() throws ParseException, OrderException{
+		//Controleer al eerst eens of er een geschikt bestellingsobject bestaat om een medicijn in te plaatsen
+		//Op deze manier hoeven er geen meerdere bestellingen 'open' te staan.
+		if (Voorraadbeheer.controleerOpOpenBestelling()==1337)
+				throw new OrderException("Geen open bestellingen gevonden.");
+		besIndex= Voorraadbeheer.controleerOpOpenBestelling();
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){ 			//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
@@ -65,23 +72,25 @@ public class Voorraadbeheer {
 							//VERGELIJK NAAM!
 							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
 									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
-							else
-								//<< HIER VOLGT >>
-								//VOEG TOE AAN EEN BESTELLING! Het dient nog besteld te worden EN is niet reeds aanwezig.
-								Voorraadbeheer.beslist.get()
-								//MAAK EEN EXCEPTION KLASSE AAN OM HET GEVAL WAARBIJ GEEN BESCHIKBARE BESTELLING AANWEZIG IS
-								//OP TE VANGEN.
-								//VOEG TRY-CATCH TOE
-								;
-							
+							else 
+								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, medlist.get(i).controleerOpBeide(), medlist.get(i).prijs));
 						}
-					}
+					}	
 				}
 			}
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
 	}
 	
-	
+
+	private static int controleerOpOpenBestelling() {
+		int i=1337;
+		for(int j=0; j<Voorraadbeheer.beslist.size();j++){
+			if (Voorraadbeheer.beslist.get(j).isBesteld()==false)
+					i=j;
+		}
+		return i;
+	}
+
 	public static void main(String args[]){
 		
 		Voorraadbeheer vb = new Voorraadbeheer(); 
@@ -92,5 +101,13 @@ public class Voorraadbeheer {
 		System.out.println("merknaam: " + beslist.get(0).besmedlist.get(0).merknaam  +" aantal: "+ beslist.get(0).besmedlist.get(0).aantal +" prijs: "+ beslist.get(0).besmedlist.get(0).prijs);
 		System.out.println("merknaam: " + beslist.get(0).besmedlist.get(1).merknaam  +" aantal: "+ beslist.get(0).besmedlist.get(1).aantal +" prijs: "+ beslist.get(0).besmedlist.get(1).prijs);
 		
+	}
+
+	public boolean isNietBesteldBestaat() {
+		return nietBesteldBestaat;
+	}
+
+	public void setNietBesteldBestaat(boolean nietBesteldBestaat) {
+		this.nietBesteldBestaat = nietBesteldBestaat;
 	}
 }
