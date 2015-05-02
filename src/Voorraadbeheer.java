@@ -54,7 +54,7 @@ public class Voorraadbeheer {
 	besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
 	*/
 	
-	public void controleerOpTeBestellen() throws ParseException{
+	public void controleerOpTeBestellen() throws ParseException, OrderException{
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){ 			//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
@@ -68,6 +68,7 @@ public class Voorraadbeheer {
 							else
 								//<< HIER VOLGT >>
 								//VOEG TOE AAN EEN BESTELLING! Het dient nog besteld te worden EN is niet reeds aanwezig.
+								Voorraadbeheer.beslist.get()
 								//MAAK EEN EXCEPTION KLASSE AAN OM HET GEVAL WAARBIJ GEEN BESCHIKBARE BESTELLING AANWEZIG IS
 								//OP TE VANGEN.
 								//VOEG TRY-CATCH TOE

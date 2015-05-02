@@ -25,6 +25,11 @@ public class BestelMedicijn {
 	public String geefMerknaam(){
 		return merknaam;
 	}
+
+	public void wijzigAantal(int aantal)
+	{
+		this.aantal = aantal;
+	}
 	
 	public void vermeerderAantal(){
 		aantal++;

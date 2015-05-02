@@ -33,7 +33,7 @@ public class Bestelling {
 	public boolean isBesteld() {
 		return isBesteld;
 	}
-
+	
 	public void setBesteld(boolean isBesteld) {
 		this.isBesteld = isBesteld;
 	}
