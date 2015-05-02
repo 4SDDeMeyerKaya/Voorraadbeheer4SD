@@ -74,7 +74,7 @@ public class GUI {
 	 */
 	public void initialize() {
 		frame = new JFrame();
-		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/home/mats/Pictures/Farmacia1.png"));
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/home/mats/git/Voorraadbeheer4SD/Farmacia1.png"));
 		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBackground(Color.WHITE);
