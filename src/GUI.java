@@ -1,11 +1,16 @@
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
+
 import java.awt.Color;
+
 import javax.swing.JButton;
+
 import java.awt.BorderLayout;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import java.awt.Font;
+
 import javax.swing.SwingConstants;
 import javax.swing.JSplitPane;
 import javax.swing.JTextPane;
@@ -13,17 +18,26 @@ import javax.swing.JPanel;
 import javax.swing.border.SoftBevelBorder;
 import javax.swing.border.BevelBorder;
 import javax.swing.border.LineBorder;
+
 import java.awt.SystemColor;
+
 import javax.swing.JTabbedPane;
+
 import java.awt.FlowLayout;
+
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.ScrollPaneConstants;
 import javax.swing.JTable;
+import javax.swing.table.DefaultTableCellRenderer;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.JTableHeader;
+
 import java.awt.GridBagLayout;
 import java.awt.GridBagConstraints;
+
 import javax.swing.ListSelectionModel;
+import java.awt.Toolkit;
 //GUItest
 
 public class GUI {
@@ -60,6 +74,8 @@ public class GUI {
 	 */
 	public void initialize() {
 		frame = new JFrame();
+		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/home/mats/Pictures/Farmacia1.png"));
+		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
 		frame.setBackground(Color.WHITE);
 		frame.setBounds(100, 100, 1280, 720);
@@ -77,7 +93,7 @@ public class GUI {
 		frame.getContentPane().add(terminalTitle);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(1000, 19, 280, 675);
+		scrollPane.setBounds(1000, 18, 282, 675);
 		frame.getContentPane().add(scrollPane);
 		
 		JTextArea textAreaTerminal = new JTextArea();
@@ -250,9 +266,14 @@ public class GUI {
 		bestellingTab.add(scrollPaneBest);
 		
 		tableBest = new JTable();
+		tableBest.setCellSelectionEnabled(true);
+		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableBest.setFillsViewportHeight(true);
+		JTableHeader thB = tableBest.getTableHeader();
+		thB.setFont(new Font("Dialog", Font.BOLD, 12));
 		tableBest.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null},
+				{"merk1test", "1", "10000"},
 				{null, null, null},
 				{null, null, null},
 				{null, null, null},
@@ -291,7 +312,9 @@ public class GUI {
 		medicijnTab.add(scrollPaneMed);
 		
 		tableMed = new JTable();
-		tableMed.setFont(new Font("Dialog", Font.BOLD, 12));
+		JTableHeader thM = tableMed.getTableHeader();
+		thM.setFont(new Font("Dialog", Font.BOLD, 12));
+		tableMed.setFont(new Font("Dialog", Font.PLAIN, 12));
 		tableMed.setToolTipText("Lijst van medicijnen");
 		tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableMed.setRowSelectionAllowed(false);
@@ -300,7 +323,7 @@ public class GUI {
 		tableMed.setCellSelectionEnabled(true);
 		tableMed.setModel(new DefaultTableModel(
 			new Object[][] {
-				{null, null, null, null, null, null, null, null, null},
+				{"merk1", "stof1", "1", "1", "1", "fab1", "100", "12", "22-10-2015"},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
@@ -335,22 +358,22 @@ public class GUI {
 				"Merknaam", "Stofnaam", "Aantal", "Gewenst aantal", "Minimum aantal", "Fabrikant", "Prijs", "Kast ID", "Houdbaarheid"
 			}
 		));
-		tableMed.getColumnModel().getColumn(0).setPreferredWidth(180);
-		tableMed.getColumnModel().getColumn(0).setMinWidth(180);
+		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
 		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
 		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
-		tableMed.getColumnModel().getColumn(2).setPreferredWidth(110);
-		tableMed.getColumnModel().getColumn(2).setMinWidth(110);
-		tableMed.getColumnModel().getColumn(3).setPreferredWidth(111);
-		tableMed.getColumnModel().getColumn(3).setMinWidth(111);
-		tableMed.getColumnModel().getColumn(4).setPreferredWidth(111);
-		tableMed.getColumnModel().getColumn(4).setMinWidth(111);
+		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+		tableMed.getColumnModel().getColumn(3).setPreferredWidth(130);
+		tableMed.getColumnModel().getColumn(3).setMinWidth(130);
+		tableMed.getColumnModel().getColumn(4).setPreferredWidth(130);
+		tableMed.getColumnModel().getColumn(4).setMinWidth(130);
 		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
 		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
 		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
 		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
-		tableMed.getColumnModel().getColumn(7).setPreferredWidth(55);
-		tableMed.getColumnModel().getColumn(7).setMinWidth(55);
+		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
 		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
 		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
 		scrollPaneMed.setViewportView(tableMed);
