@@ -19,7 +19,6 @@ public class Voorraadbeheer {
 
 	static ArrayList<Medicijn> medlist = new ArrayList<Medicijn>();
 	static ArrayList<Bestelling> beslist = new ArrayList<Bestelling>();
-	private boolean nietBesteldBestaat;
 	static int besIndex; //In welk bestellingsobject binnen 'beslist' moet het volgend medicijn komen?
 	
 	public Voorraadbeheer(){
@@ -103,11 +102,4 @@ public class Voorraadbeheer {
 		
 	}
 
-	public boolean isNietBesteldBestaat() {
-		return nietBesteldBestaat;
-	}
-
-	public void setNietBesteldBestaat(boolean nietBesteldBestaat) {
-		this.nietBesteldBestaat = nietBesteldBestaat;
-	}
 }
