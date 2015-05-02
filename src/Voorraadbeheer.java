@@ -12,6 +12,7 @@
  * Zie commentaar bij methodes voor details.
  */
 
+import java.awt.EventQueue;
 import java.text.ParseException;
 import java.util.ArrayList;
 
@@ -109,6 +110,16 @@ public class Voorraadbeheer {
 
 	public static void main(String args[]){
 		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					GUI window = new GUI();
+					window.frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
 		Voorraadbeheer vb = new Voorraadbeheer(); 
 		vb.voegBestellingToe();
 		
