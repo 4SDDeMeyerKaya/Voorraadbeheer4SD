@@ -21,6 +21,7 @@ public class Voorraadbeheer {
 	static ArrayList<Medicijn> medlist = new ArrayList<Medicijn>();
 	static ArrayList<Bestelling> beslist = new ArrayList<Bestelling>();
 	static int besIndex; //In welk bestellingsobject binnen 'beslist' moet het volgend medicijn komen?
+	static Apotheker ap;
 	
 	public Voorraadbeheer(){
 
@@ -92,21 +93,6 @@ public class Voorraadbeheer {
 		return i;
 	}
 	
-	
-	/* setAangekomen()
-	 * Alle bestelde items van medicijnen in besmedlist gaan we toevoegen aan de aantallen in medlist.
-	 * We controleren op merknaam voor overeenkomstige medicijnen.
-	 * We zetten ineens ook de boolean isAangekomen van die bestelling op true.
-	 */
-	public void setAangekomen(int beslistIndex){ 
-		Voorraadbeheer.beslist.get(beslistIndex).setAangekomen(true);
-		for(int i=0;i<Voorraadbeheer.beslist.get(beslistIndex).besmedlist.size();i++){
-			for(int j=0;j<Voorraadbeheer.medlist.size();j++){
-				if(Voorraadbeheer.beslist.get(beslistIndex).besmedlist.get(i).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))
-					medlist.get(j).aantal=beslist.get(beslistIndex).besmedlist.get(i).aantal;
-			}
-		}
-	}
 
 	public static void main(String args[]){
 		
