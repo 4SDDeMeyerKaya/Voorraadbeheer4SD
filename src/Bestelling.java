@@ -21,7 +21,7 @@ public class Bestelling {
 		boolean isAanwezig=false;
 		for(int i=0; i<besmedlist.size();i++){
 			if (besmedlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
-				System.out.println("Let op! Dit medicijn bevindt zich al in dit bestellingslijst.");
+				System.out.println(merknaam + " bevindt zich al in de lijst. Dit medicijn is niet toegevoegd.");
 				isAanwezig = true;
 				}	
 		}

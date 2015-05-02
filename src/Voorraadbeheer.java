@@ -9,7 +9,7 @@
  * voor ieder nieuw object van Bestelling aangemaakt. Dit maakt het eenvoudiger om de medicijnen te men
  * bestelt te groeperen en bewerkingen op uit te voeren.
  * 
- * Zie commentaar bij methodes voor details daarvan.
+ * Zie commentaar bij methodes voor details.
  */
 
 import java.text.ParseException;
@@ -46,7 +46,7 @@ public class Voorraadbeheer {
 			}
 	}
 	
-	//voegBestellijstToe voegt een nieuw object van Bestelling toe aan de lijst.
+	//voegBestellingToe voegt een nieuw object van Bestelling toe aan de lijst.
 	public void voegBestellingToe(){
 		Voorraadbeheer.beslist.add(new Bestelling());
 	}
@@ -67,8 +67,8 @@ public class Voorraadbeheer {
 				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
 					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){	//Enkel in niet aangekomen bestellingen zoeken
 						
-						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst
-							//VERGELIJK NAAM!
+						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
+																								//voorwaarden voldoet gaan we de merknamen vergelijken
 							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
 									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
 							else 
@@ -80,6 +80,7 @@ public class Voorraadbeheer {
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
 	}
 	
+	
 
 	private static int controleerOpOpenBestelling() {
 		int i=1337;
@@ -89,12 +90,30 @@ public class Voorraadbeheer {
 		}
 		return i;
 	}
+	
+	
+	/* setAangekomen()
+	 * Alle bestelde items van medicijnen in besmedlist gaan we toevoegen aan de aantallen in medlist.
+	 * We controleren op merknaam voor overeenkomstige medicijnen.
+	 * We zetten ineens ook de boolean isAangekomen van die bestelling op true.
+	 */
+	public void setAangekomen(int beslistIndex){ 
+		Voorraadbeheer.beslist.get(beslistIndex).setAangekomen(true);
+		for(int i=0;i<Voorraadbeheer.beslist.get(beslistIndex).besmedlist.size();i++){
+			for(int j=0;j<Voorraadbeheer.medlist.size();j++){
+				if(Voorraadbeheer.beslist.get(beslistIndex).besmedlist.get(i).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))
+					medlist.get(j).aantal=beslist.get(beslistIndex).besmedlist.get(i).aantal;
+			}
+		}
+	}
 
 	public static void main(String args[]){
 		
 		Voorraadbeheer vb = new Voorraadbeheer(); 
 		vb.voegBestellingToe();
+		
 		beslist.get(0).voegMedicijnToe("Supradyne", 10, 20);
+		beslist.get(0).voegMedicijnToe("Aspirine", 1337, 1337);
 		beslist.get(0).voegMedicijnToe("Aspirine", 11, 21);
 		System.out.println("Bestelling ontvangen?: "+beslist.get(0).isBesteld());
 		System.out.println("merknaam: " + beslist.get(0).besmedlist.get(0).merknaam  +" aantal: "+ beslist.get(0).besmedlist.get(0).aantal +" prijs: "+ beslist.get(0).besmedlist.get(0).prijs);
