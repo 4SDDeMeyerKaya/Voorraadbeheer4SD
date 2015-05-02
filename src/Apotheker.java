@@ -1,14 +1,10 @@
-
 public class Apotheker {
 	
-	
-	//public static void verkoopMedicijn(medicijnID, aantal, kastID)
-	//{
+	public Apotheker(){
 		
-	//}
+	}
 	
-	public void bevestigBestelling(Bestelling.getID()
-	{
+	public void bevestigBestelling(int bestelIndex){
 			
 	}
 	
