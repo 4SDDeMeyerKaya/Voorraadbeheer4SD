@@ -52,6 +52,7 @@ public class GUI {
 	public GUI() {
 		
 		frame = new JFrame();
+		frame.getContentPane().setForeground(Color.BLACK);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("/home/mats/git/Voorraadbeheer4SD/Farmacia1.png"));
 		frame.setResizable(false);
 		frame.getContentPane().setBackground(Color.WHITE);
@@ -362,10 +363,16 @@ public class GUI {
 		PrintStream printStream = new PrintStream(new CustomOutputStream(textAreaTerminal));
 		
 		JButton BestellingControle = new JButton("Bestelling controleren");
+		BestellingControle.setForeground(Color.BLACK);
+		BestellingControle.setBackground(SystemColor.controlHighlight);
+		BestellingControle.setToolTipText("Controle van bestelling");
 		BestellingControle.setBounds(466, 400, 200, 25);
 		frame.getContentPane().add(BestellingControle);
 		
 		JButton button = new JButton("Medicijn toevoegen");
+		button.setForeground(Color.BLACK);
+		button.setBackground(SystemColor.controlHighlight);
+		button.setToolTipText("Toevoegen van medicijn");
 		button.setBounds(666, 400, 200, 25);
 		frame.getContentPane().add(button);
 		System.setOut(printStream);
