@@ -49,7 +49,7 @@ public class GUI {
 	private JTable tableBest;
 
 	/**
-	 * Launch the application.
+	 * Launch the appliccation.
 	 */
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
