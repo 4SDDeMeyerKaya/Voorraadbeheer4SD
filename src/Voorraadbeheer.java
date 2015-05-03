@@ -92,31 +92,5 @@ public class Voorraadbeheer {
 		}
 		return i;
 	}
-	
-
-	public static void main(String args[]){
-		Voorraadbeheer vb = new Voorraadbeheer(); 
-		vb.voegBestellingToe();
-		
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					GUI window = new GUI();
-					window.frame.setVisible(true);
-					beslist.get(0).voegMedicijnToe("Supradyne", 10, 20);
-					beslist.get(0).voegMedicijnToe("Aspirine", 1337, 1337);
-					beslist.get(0).voegMedicijnToe("Aspirine", 11, 21);
-					System.out.println("Bestelling ontvangen?: "+beslist.get(0).isBesteld());
-					System.out.println("merknaam: " + beslist.get(0).besmedlist.get(0).merknaam  +" aantal: "+ beslist.get(0).besmedlist.get(0).aantal +" prijs: "+ beslist.get(0).besmedlist.get(0).prijs);
-					System.out.println("merknaam: " + beslist.get(0).besmedlist.get(1).merknaam  +" aantal: "+ beslist.get(0).besmedlist.get(1).aantal +" prijs: "+ beslist.get(0).besmedlist.get(1).prijs);					
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-		
-		
-		
-	}
 
 }
