@@ -33,12 +33,7 @@ public class GUI {
 				try {
 					GUI window = new GUI();
 					window.frame.setVisible(true);
-					System.out.println("Random print test");
-					System.out.println("m");
-					System.out.println("a");
-					System.out.println("t");
-					System.out.println("s");
-					
+									
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
