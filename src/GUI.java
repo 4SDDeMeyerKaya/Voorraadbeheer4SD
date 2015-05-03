@@ -223,6 +223,20 @@ public class GUI {
 		kast2.setBounds(478, 50, 300, 300);
 		frame.getContentPane().add(kast2);
 		
+		JButton BestellingControle = new JButton("Bestelling controleren");
+		BestellingControle.setForeground(Color.BLACK);
+		BestellingControle.setBackground(SystemColor.controlHighlight);
+		BestellingControle.setToolTipText("Controle van bestelling");
+		BestellingControle.setBounds(466, 400, 200, 25);
+		frame.getContentPane().add(BestellingControle);
+		
+		JButton button = new JButton("Medicijn toevoegen");
+		button.setForeground(Color.BLACK);
+		button.setBackground(SystemColor.controlHighlight);
+		button.setToolTipText("Toevoegen van medicijn");
+		button.setBounds(666, 400, 200, 25);
+		frame.getContentPane().add(button);
+		
 		
 		JTabbedPane tabPane = new JTabbedPane(JTabbedPane.TOP);
 		tabPane.setForeground(new Color(0, 0, 0));
@@ -361,20 +375,6 @@ public class GUI {
 		
 		
 		PrintStream printStream = new PrintStream(new CustomOutputStream(textAreaTerminal));
-		
-		JButton BestellingControle = new JButton("Bestelling controleren");
-		BestellingControle.setForeground(Color.BLACK);
-		BestellingControle.setBackground(SystemColor.controlHighlight);
-		BestellingControle.setToolTipText("Controle van bestelling");
-		BestellingControle.setBounds(466, 400, 200, 25);
-		frame.getContentPane().add(BestellingControle);
-		
-		JButton button = new JButton("Medicijn toevoegen");
-		button.setForeground(Color.BLACK);
-		button.setBackground(SystemColor.controlHighlight);
-		button.setToolTipText("Toevoegen van medicijn");
-		button.setBounds(666, 400, 200, 25);
-		frame.getContentPane().add(button);
 		System.setOut(printStream);
 		System.setErr(printStream);
 		
