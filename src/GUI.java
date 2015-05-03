@@ -15,6 +15,7 @@ import javax.swing.table.JTableHeader;
 import javax.swing.ListSelectionModel;
 import java.awt.Toolkit;
 import java.io.PrintStream;
+import javax.swing.JButton;
 
 
 public class GUI {
@@ -359,6 +360,14 @@ public class GUI {
 		
 		
 		PrintStream printStream = new PrintStream(new CustomOutputStream(textAreaTerminal));
+		
+		JButton BestellingControle = new JButton("Bestelling controleren");
+		BestellingControle.setBounds(466, 400, 200, 25);
+		frame.getContentPane().add(BestellingControle);
+		
+		JButton button = new JButton("Medicijn toevoegen");
+		button.setBounds(666, 400, 200, 25);
+		frame.getContentPane().add(button);
 		System.setOut(printStream);
 		System.setErr(printStream);
 		
