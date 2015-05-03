@@ -32,8 +32,7 @@ public class GUI {
 			public void run() {
 				try {
 					GUI window = new GUI();
-					window.frame.setVisible(true);
-									
+					window.frame.setVisible(true);									
 				} catch (Exception e) {
 					e.printStackTrace();
 				}
