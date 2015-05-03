@@ -6,14 +6,20 @@ public class Apotheker {
 	
 	public void verkoopMedicijn(String merknaam){
 		for(int j=0;j<Voorraadbeheer.medlist.size();j++){
-			if(merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam()))
+			if(merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
 				Voorraadbeheer.medlist.get(j).aantal--;
+				Log.print();
+				System.out.println("1 "+ merknaam + " is verkocht.");
+			}
+			
 		}
 	}
 	
 	//Zet boolean isBesteld van een bestelling op true
 	public void bevestigBestelling(int beslistIndex){
 		Voorraadbeheer.beslist.get(beslistIndex).setBesteld(true);	
+		Log.print();
+		System.out.println("Bestelling met beslistIndex " + beslistIndex+ "is besteld.");
 	}
 	
 	/* setAangekomen()
@@ -23,10 +29,15 @@ public class Apotheker {
 	 */
 	public void setAangekomen(int beslistIndex){ 
 		Voorraadbeheer.beslist.get(beslistIndex).setAangekomen(true);
+		Log.print();
+		System.out.println("Bestelling met beslistIndex " + beslistIndex+ "is aangekomen.");
 		for(int i=0;i<Voorraadbeheer.beslist.get(beslistIndex).besmedlist.size();i++){
 			for(int j=0;j<Voorraadbeheer.medlist.size();j++){
 				if(Voorraadbeheer.beslist.get(beslistIndex).besmedlist.get(i).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam()))
 					Voorraadbeheer.medlist.get(j).aantal=Voorraadbeheer.beslist.get(beslistIndex).besmedlist.get(i).aantal;
+					Log.print();
+					System.out.println(Voorraadbeheer.medlist.get(j).geefMerknaam()+" is bijgevuld. +("+Voorraadbeheer.beslist.get(beslistIndex).besmedlist.get(i).aantal+")" );
+				
 			}
 		}
 	}

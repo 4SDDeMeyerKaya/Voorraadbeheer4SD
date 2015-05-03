@@ -32,20 +32,30 @@ public class Voorraadbeheer {
 		boolean isAanwezig=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
+				Log.print();
 				System.out.println("Let op! Dit medicijn heeft u al eerder toegevoegd.");
 				isAanwezig = true;
 				}
 		}
-		if(isAanwezig==false)
+		if(isAanwezig==false){
 			Voorraadbeheer.medlist.add(new Medicijn(merknaam, stofnaam, aantal, gewensteAantal, minimaAantal, fabrikant, prijs, kast, houdbaarheid));
+			Log.print();
+			System.out.println(merknaam + " is toegevoegd als aan 'medlist'.");
+		}
+			
 	}
 	
 	//verwijderMedicijn zoekt naar overeenkomstige merknamen (in principe één hit max) en verwijdert dit object.
 	public void verwijderMedicijn(String merknaam){ 
+		boolean gevonden=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam))
 				Voorraadbeheer.medlist.remove(i);
+				gevonden=true;
 			}
+			if (gevonden==false)
+				Log.print();
+				System.out.println("Te verwijderen medicijn niet gevonden.");
 	}
 	
 	//voegBestellingToe voegt een nieuw object van Bestelling toe aan de lijst.
@@ -73,8 +83,11 @@ public class Voorraadbeheer {
 																								//voorwaarden voldoet gaan we de merknamen vergelijken
 							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
 									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
-							else 
+							else{ 
 								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, medlist.get(i).controleerOpBeide(), medlist.get(i).prijs));
+								Log.print();
+								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +Voorraadbeheer.medlist.get(i).controleerOpBeide()+")");
+							}
 						}
 					}	
 				}

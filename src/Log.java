@@ -1,12 +1,21 @@
+/*
+ * Deze klasse dient als middel om in de Terminal steeds [HH:mm:ss] af te printen.
+ * We gebruiken dus enkel "Log.print()"
+ */
+
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.TimeZone;
 
 public class Log {
-	
-	//datum bvb: Mon May 04 09:51:52 CDT 2009
-	Date d = new Date();
-	
-	public void printDate(){
-		System.out.println(d);
+
+	public static void print(){
+		Date d1 = new Date();
+		
+		DateFormat df = new SimpleDateFormat("HH:mm:ss");
+		df.setTimeZone(TimeZone.getTimeZone("GMT+2")); //Houdt blijkbaar geen rekening met zomertijd.
+		System.out.print(" ["+df.format(d1)+"] ");
 	}
 }
 
