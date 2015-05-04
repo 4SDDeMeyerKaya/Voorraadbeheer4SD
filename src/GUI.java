@@ -1,11 +1,17 @@
 import java.awt.EventQueue;
+
 import javax.swing.JFrame;
+
 import java.awt.Color;
 import java.awt.Font;
+
 import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+
 import java.awt.SystemColor;
+
+import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
@@ -13,8 +19,12 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.ListSelectionModel;
+
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.io.PrintStream;
+
 import javax.swing.JButton;
 
 
@@ -222,6 +232,7 @@ public class GUI {
 		BestellingControle.setBackground(SystemColor.controlHighlight);
 		BestellingControle.setToolTipText("Controle van bestelling");
 		BestellingControle.setBounds(466, 400, 200, 25);
+		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
 		
 		JButton button = new JButton("Medicijn toevoegen");
@@ -229,6 +240,7 @@ public class GUI {
 		button.setBackground(SystemColor.controlHighlight);
 		button.setToolTipText("Toevoegen van medicijn");
 		button.setBounds(666, 400, 200, 25);
+		button.addActionListener(new ActionMedButton());
 		frame.getContentPane().add(button);
 		
 		
@@ -372,6 +384,37 @@ public class GUI {
 		System.setOut(printStream);
 		System.setErr(printStream);
 		
+	}
+	
+	static class ActionMedButton implements ActionListener{
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			// wat er gebeurd als de knop wordt ingedrukt
+			
+			JFrame frame2 = new JFrame("test");
+			frame2.setVisible(true);
+			frame2.setSize(200,200);
+			JLabel label = new JLabel("i am listening lelelele");
+			JPanel panel = new JPanel();
+			frame2.add(panel);
+			panel.add(label);
+			
+			
+			
+		}
+	}
+	
+	static class ActionBestellingButton implements ActionListener{
+		
+		@Override
+		public void actionPerformed(ActionEvent arg0) {
+			// TODO Auto-generated method stub
+			// wat er gebeurd als de knop wordt ingedrukt
+			
+			
+		}
 	}
 
 	
