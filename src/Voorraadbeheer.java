@@ -79,41 +79,30 @@ public class Voorraadbeheer {
 		besIndex= Voorraadbeheer.controleerOpOpenBestelling();
 		boolean ietsTeBestellen=false;
 		int controle=0;
-		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			controle=Voorraadbeheer.medlist.get(i).controleerOpBeide(); 
-			if (controle>0){
+		int i;
+		for(i=0; i<Voorraadbeheer.medlist.size();i++){
+			controle=Voorraadbeheer.medlist.get(i).controleerOpBeide();
+			if(controle>0){
+				ietsTeBestellen=true;			//we voegen medicijn toe indien attributen het toestaan. Verdere controle in methodes.
+				if(medlist.get(i).alGewaarschuwd==false && medlist.get(i).besteld==false){
+				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs);
+				medlist.get(i).besteld=true;
 				medlist.get(i).alGewaarschuwd=true;
-				ietsTeBestellen=true;											//Controleer of men dit medicijn moet bestellen
-																				//Indien ja
-				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
-					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){	//Enkel in niet aangekomen bestellingen zoeken
-						
-						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
-																								//voorwaarden voldoet gaan we de merknamen vergelijken
-							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(i).merknaam)!=true && medlist.get(i).besteld!=true){
-								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, controle, medlist.get(i).prijs));
-								Log.print();
-								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +controle+")");
-								medlist.get(i).besteld=true;
-							}
-						}
-					}	
 				}
 			}
+			
 		}
 		if (ietsTeBestellen==false){
 			Log.print();
 			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
-			}
+		}	
 	}
-	
-	
 
-	private static int controleerOpOpenBestelling() {
+	public static int controleerOpOpenBestelling() {
 		int i=1337;
 		for(int j=0; j<Voorraadbeheer.beslist.size();j++){
-			if (Voorraadbeheer.beslist.get(j).isBesteld()==false)
-					i=j;
+			if (Voorraadbeheer.beslist.get(j).isBesteld()==false && Voorraadbeheer.beslist.get(j).isBesteld()==false)
+				i=j;
 		}
 		return i;
 	}

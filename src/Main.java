@@ -4,7 +4,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Main {
 	public static void main(String args[]){
-		final Voorraadbeheer vb = new Voorraadbeheer(); 
 	
 		
 		EventQueue.invokeLater(new Runnable() {
