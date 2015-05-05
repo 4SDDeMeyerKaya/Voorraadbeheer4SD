@@ -21,6 +21,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.ListSelectionModel;
@@ -32,6 +33,9 @@ import java.io.PrintStream;
 import java.text.ParseException;
 
 import javax.swing.JButton;
+
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 
 public class GUI {
@@ -93,7 +97,19 @@ public class GUI {
 		textAreaTerminal.setBackground(Color.BLACK);
 		
 		JPanel kast10 = new JPanel();
-		kast10.setToolTipText("Kast10");
+		kast10.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast10 = new JFrame("Inhoud Kast 10");
+					kast10.setVisible(true);
+					kast10.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane10 = new JScrollPane();
+					kast10.add(scrollpane10);
+			    }
+			}
+		});
+		kast10.setToolTipText("Kast 10");
 		kast10.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast10.setForeground(Color.BLACK);
 		kast10.setBackground(Color.WHITE);
@@ -101,6 +117,18 @@ public class GUI {
 		frame.getContentPane().add(kast10);
 		
 		JPanel kast11 = new JPanel();
+		kast11.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast11 = new JFrame("Inhoud Kast 11");
+					kast11.setVisible(true);
+					kast11.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane11 = new JScrollPane();
+					kast11.add(scrollpane11);
+			    }
+			}
+		});
 		kast11.setToolTipText("Kast 11");
 		kast11.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast11.setBackground(Color.WHITE);
@@ -108,6 +136,18 @@ public class GUI {
 		frame.getContentPane().add(kast11);
 		
 		JPanel kast12 = new JPanel();
+		kast12.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast12 = new JFrame("Inhoud Kast 12");
+					kast12.setVisible(true);
+					kast12.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane12 = new JScrollPane();
+					kast12.add(scrollpane12);
+			    }
+			}
+		});
 		kast12.setToolTipText("Kast 12");
 		kast12.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast12.setBackground(Color.WHITE);
@@ -115,6 +155,18 @@ public class GUI {
 		frame.getContentPane().add(kast12);
 		
 		JPanel kast20 = new JPanel();
+		kast20.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast20 = new JFrame("Inhoud Kast 20");
+					kast20.setVisible(true);
+					kast20.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane20 = new JScrollPane();
+					kast20.add(scrollpane20);
+			    }
+			}
+		});
 		kast20.setToolTipText("Kast 20");
 		kast20.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast20.setBackground(Color.WHITE);
@@ -122,6 +174,18 @@ public class GUI {
 		frame.getContentPane().add(kast20);
 		
 		JPanel kast21 = new JPanel();
+		kast21.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast21 = new JFrame("Inhoud Kast 21");
+					kast21.setVisible(true);
+					kast21.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane21 = new JScrollPane();
+					kast21.add(scrollpane21);
+			    }
+			}
+		});
 		kast21.setToolTipText("Kast 21");
 		kast21.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast21.setBackground(Color.WHITE);
@@ -129,6 +193,18 @@ public class GUI {
 		frame.getContentPane().add(kast21);
 		
 		JPanel kast22 = new JPanel();
+		kast22.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast22 = new JFrame("Inhoud Kast 22");
+					kast22.setVisible(true);
+					kast22.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane22 = new JScrollPane();
+					kast22.add(scrollpane22);
+			    }
+			}
+		});
 		kast22.setToolTipText("Kast 22");
 		kast22.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast22.setBackground(Color.WHITE);
@@ -136,6 +212,18 @@ public class GUI {
 		frame.getContentPane().add(kast22);
 		
 		JPanel kast13 = new JPanel();
+		kast13.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast13 = new JFrame("Inhoud Kast 13");
+					kast13.setVisible(true);
+					kast13.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane13 = new JScrollPane();
+					kast13.add(scrollpane13);
+			    }
+			}
+		});
 		kast13.setToolTipText("Kast 13");
 		kast13.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast13.setBackground(Color.WHITE);
@@ -143,6 +231,18 @@ public class GUI {
 		frame.getContentPane().add(kast13);
 		
 		JPanel kast14 = new JPanel();
+		kast14.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast14 = new JFrame("Inhoud Kast 14");
+					kast14.setVisible(true);
+					kast14.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane14 = new JScrollPane();
+					kast14.add(scrollpane14);
+			    }
+			}
+		});
 		kast14.setToolTipText("Kast 14");
 		kast14.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast14.setBackground(Color.WHITE);
@@ -150,6 +250,18 @@ public class GUI {
 		frame.getContentPane().add(kast14);
 		
 		JPanel kast15 = new JPanel();
+		kast15.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast15 = new JFrame("Inhoud Kast 15");
+					kast15.setVisible(true);
+					kast15.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane15 = new JScrollPane();
+					kast15.add(scrollpane15);
+			    }
+			}
+		});
 		kast15.setToolTipText("Kast 15");
 		kast15.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast15.setBackground(Color.WHITE);
@@ -157,6 +269,18 @@ public class GUI {
 		frame.getContentPane().add(kast15);
 		
 		JPanel kast23 = new JPanel();
+		kast23.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast23 = new JFrame("Inhoud Kast 23");
+					kast23.setVisible(true);
+					kast23.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane23 = new JScrollPane();
+					kast23.add(scrollpane23);
+			    }
+			}
+		});
 		kast23.setToolTipText("Kast 23");
 		kast23.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast23.setBackground(Color.WHITE);
@@ -164,6 +288,18 @@ public class GUI {
 		frame.getContentPane().add(kast23);
 		
 		JPanel kast24 = new JPanel();
+		kast24.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast24 = new JFrame("Inhoud Kast 24");
+					kast24.setVisible(true);
+					kast24.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane24 = new JScrollPane();
+					kast24.add(scrollpane24);
+			    }
+			}
+		});
 		kast24.setToolTipText("Kast 24");
 		kast24.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast24.setBackground(Color.WHITE);
@@ -171,6 +307,18 @@ public class GUI {
 		frame.getContentPane().add(kast24);
 		
 		JPanel kast25 = new JPanel();
+		kast25.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast25 = new JFrame("Inhoud Kast 25");
+					kast25.setVisible(true);
+					kast25.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane25 = new JScrollPane();
+					kast25.add(scrollpane25);
+			    }
+			}
+		});
 		kast25.setToolTipText("Kast 25");
 		kast25.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast25.setBackground(Color.WHITE);
@@ -178,6 +326,18 @@ public class GUI {
 		frame.getContentPane().add(kast25);
 		
 		JPanel kast16 = new JPanel();
+		kast16.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast16 = new JFrame("Inhoud Kast 16");
+					kast16.setVisible(true);
+					kast16.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane16 = new JScrollPane();
+					kast16.add(scrollpane16);
+			    }
+			}
+		});
 		kast16.setToolTipText("Kast 16");
 		kast16.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast16.setBackground(Color.WHITE);
@@ -185,6 +345,18 @@ public class GUI {
 		frame.getContentPane().add(kast16);
 		
 		JPanel kast17 = new JPanel();
+		kast17.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast17 = new JFrame("Inhoud Kast 17");
+					kast17.setVisible(true);
+					kast17.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane17 = new JScrollPane();
+					kast17.add(scrollpane17);
+			    }
+			}
+		});
 		kast17.setToolTipText("Kast 17");
 		kast17.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast17.setBackground(Color.WHITE);
@@ -192,6 +364,18 @@ public class GUI {
 		frame.getContentPane().add(kast17);
 		
 		JPanel kast18 = new JPanel();
+		kast18.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast18 = new JFrame("Inhoud Kast 18");
+					kast18.setVisible(true);
+					kast18.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane18 = new JScrollPane();
+					kast18.add(scrollpane18);
+			    }
+			}
+		});
 		kast18.setToolTipText("Kast 18");
 		kast18.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast18.setBackground(Color.WHITE);
@@ -199,6 +383,18 @@ public class GUI {
 		frame.getContentPane().add(kast18);
 		
 		JPanel kast26 = new JPanel();
+		kast26.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast26 = new JFrame("Inhoud Kast 26");
+					kast26.setVisible(true);
+					kast26.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane26 = new JScrollPane();
+					kast26.add(scrollpane26);
+			    }
+			}
+		});
 		kast26.setToolTipText("Kast 26");
 		kast26.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast26.setBackground(Color.WHITE);
@@ -206,6 +402,18 @@ public class GUI {
 		frame.getContentPane().add(kast26);
 		
 		JPanel kast27 = new JPanel();
+		kast27.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast27 = new JFrame("Inhoud Kast 27");
+					kast27.setVisible(true);
+					kast27.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane27 = new JScrollPane();
+					kast27.add(scrollpane27);
+			    }
+			}
+		});
 		kast27.setToolTipText("Kast 27");
 		kast27.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast27.setBackground(Color.WHITE);
@@ -213,6 +421,18 @@ public class GUI {
 		frame.getContentPane().add(kast27);
 		
 		JPanel kast28 = new JPanel();
+		kast28.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mousePressed(MouseEvent e) {
+				if(SwingUtilities.isRightMouseButton(e)){
+					final JFrame kast28 = new JFrame("Inhoud Kast 28");
+					kast28.setVisible(true);
+					kast28.setBounds(300, 300, 300, 300);
+					JScrollPane scrollpane28 = new JScrollPane();
+					kast28.add(scrollpane28);
+			    }
+			}
+		});
 		kast28.setToolTipText("Kast 28");
 		kast28.setBorder(new LineBorder(new Color(0, 0, 0)));
 		kast28.setBackground(Color.WHITE);
@@ -425,7 +645,7 @@ public class GUI {
 
 			//Create and populate the panel.
 			JPanel p = new JPanel(new SpringLayout());
-			frame2.add(p);
+			frame2.getContentPane().add(p);
 			
 			// WERKT NIET , Y?
 			//for (int i = 0; i < numPairs; i++) {
