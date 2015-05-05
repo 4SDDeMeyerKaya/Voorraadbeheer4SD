@@ -125,6 +125,16 @@ public class GUI {
 					Fkast10.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane10 = new JScrollPane();
 					Fkast10.getContentPane().add(scrollpane10);
+					JTextPane kast10Title = new JTextPane();
+					kast10Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast10Title.setToolTipText("");
+					kast10Title.setText("               Medicijnen in Kast 10: ");
+					kast10Title.setEditable(false);
+					kast10Title.setForeground(Color.BLACK);
+					kast10Title.setBackground(Color.WHITE);
+					kast10Title.setBounds(0, 0, 300, 30);
+					Fkast10.getContentPane().add(kast10Title);
+					
 			    }
 			}
 		});
@@ -145,6 +155,15 @@ public class GUI {
 					Fkast11.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane11 = new JScrollPane();
 					Fkast11.getContentPane().add(scrollpane11);
+					JTextPane kast11Title = new JTextPane();
+					kast11Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast11Title.setToolTipText("");
+					kast11Title.setText("               Medicijnen in Kast 11: ");
+					kast11Title.setEditable(false);
+					kast11Title.setForeground(Color.BLACK);
+					kast11Title.setBackground(Color.WHITE);
+					kast11Title.setBounds(0, 0, 300, 30);
+					Fkast11.getContentPane().add(kast11Title);
 			    }
 			}
 		});
@@ -164,6 +183,15 @@ public class GUI {
 					Fkast12.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane12 = new JScrollPane();
 					Fkast12.getContentPane().add(scrollpane12);
+					JTextPane kast12Title = new JTextPane();
+					kast12Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast12Title.setToolTipText("");
+					kast12Title.setText("               Medicijnen in Kast 12: ");
+					kast12Title.setEditable(false);
+					kast12Title.setForeground(Color.BLACK);
+					kast12Title.setBackground(Color.WHITE);
+					kast12Title.setBounds(0, 0, 300, 30);
+					Fkast12.getContentPane().add(kast12Title);
 			    }
 			}
 		});
@@ -183,6 +211,15 @@ public class GUI {
 					Fkast20.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane20 = new JScrollPane();
 					Fkast20.getContentPane().add(scrollpane20);
+					JTextPane kast20Title = new JTextPane();
+					kast20Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast20Title.setToolTipText("");
+					kast20Title.setText("               Medicijnen in Kast 20: ");
+					kast20Title.setEditable(false);
+					kast20Title.setForeground(Color.BLACK);
+					kast20Title.setBackground(Color.WHITE);
+					kast20Title.setBounds(0, 0, 300, 30);
+					Fkast20.getContentPane().add(kast20Title);
 			    }
 			}
 		});
@@ -202,6 +239,15 @@ public class GUI {
 					Fkast21.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane21 = new JScrollPane();
 					Fkast21.getContentPane().add(scrollpane21);
+					JTextPane kast21Title = new JTextPane();
+					kast21Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast21Title.setToolTipText("");
+					kast21Title.setText("               Medicijnen in Kast 21: ");
+					kast21Title.setEditable(false);
+					kast21Title.setForeground(Color.BLACK);
+					kast21Title.setBackground(Color.WHITE);
+					kast21Title.setBounds(0, 0, 300, 30);
+					Fkast21.getContentPane().add(kast21Title);
 			    }
 			}
 		});
@@ -221,6 +267,15 @@ public class GUI {
 					Fkast22.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane22 = new JScrollPane();
 					Fkast22.getContentPane().add(scrollpane22);
+					JTextPane kast22Title = new JTextPane();
+					kast22Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast22Title.setToolTipText("");
+					kast22Title.setText("               Medicijnen in Kast 22: ");
+					kast22Title.setEditable(false);
+					kast22Title.setForeground(Color.BLACK);
+					kast22Title.setBackground(Color.WHITE);
+					kast22Title.setBounds(0, 0, 300, 30);
+					Fkast22.getContentPane().add(kast22Title);
 			    }
 			}
 		});
@@ -240,6 +295,15 @@ public class GUI {
 					Fkast13.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane13 = new JScrollPane();
 					Fkast13.getContentPane().add(scrollpane13);
+					JTextPane kast13Title = new JTextPane();
+					kast13Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast13Title.setToolTipText("");
+					kast13Title.setText("               Medicijnen in Kast 13: ");
+					kast13Title.setEditable(false);
+					kast13Title.setForeground(Color.BLACK);
+					kast13Title.setBackground(Color.WHITE);
+					kast13Title.setBounds(0, 0, 300, 30);
+					Fkast13.getContentPane().add(kast13Title);
 			    }
 			}
 		});
@@ -259,6 +323,15 @@ public class GUI {
 					Fkast14.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane14 = new JScrollPane();
 					Fkast14.getContentPane().add(scrollpane14);
+					JTextPane kast14Title = new JTextPane();
+					kast14Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast14Title.setToolTipText("");
+					kast14Title.setText("               Medicijnen in Kast 14: ");
+					kast14Title.setEditable(false);
+					kast14Title.setForeground(Color.BLACK);
+					kast14Title.setBackground(Color.WHITE);
+					kast14Title.setBounds(0, 0, 300, 30);
+					Fkast14.getContentPane().add(kast14Title);
 			    }
 			}
 		});
@@ -278,6 +351,15 @@ public class GUI {
 					Fkast15.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane15 = new JScrollPane();
 					Fkast15.getContentPane().add(scrollpane15);
+					JTextPane kast15Title = new JTextPane();
+					kast15Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast15Title.setToolTipText("");
+					kast15Title.setText("               Medicijnen in Kast 15: ");
+					kast15Title.setEditable(false);
+					kast15Title.setForeground(Color.BLACK);
+					kast15Title.setBackground(Color.WHITE);
+					kast15Title.setBounds(0, 0, 300, 30);
+					Fkast15.getContentPane().add(kast15Title);
 			    }
 			}
 		});
@@ -297,6 +379,15 @@ public class GUI {
 					Fkast23.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane23 = new JScrollPane();
 					Fkast23.getContentPane().add(scrollpane23);
+					JTextPane kast23Title = new JTextPane();
+					kast23Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast23Title.setToolTipText("");
+					kast23Title.setText("               Medicijnen in Kast 23: ");
+					kast23Title.setEditable(false);
+					kast23Title.setForeground(Color.BLACK);
+					kast23Title.setBackground(Color.WHITE);
+					kast23Title.setBounds(0, 0, 300, 30);
+					Fkast23.getContentPane().add(kast23Title);
 			    }
 			}
 		});
@@ -316,6 +407,15 @@ public class GUI {
 					Fkast24.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane24 = new JScrollPane();
 					Fkast24.getContentPane().add(scrollpane24);
+					JTextPane kast24Title = new JTextPane();
+					kast24Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast24Title.setToolTipText("");
+					kast24Title.setText("               Medicijnen in Kast 24: ");
+					kast24Title.setEditable(false);
+					kast24Title.setForeground(Color.BLACK);
+					kast24Title.setBackground(Color.WHITE);
+					kast24Title.setBounds(0, 0, 300, 30);
+					Fkast24.getContentPane().add(kast24Title);
 			    }
 			}
 		});
@@ -335,6 +435,15 @@ public class GUI {
 					Fkast25.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane25 = new JScrollPane();
 					Fkast25.getContentPane().add(scrollpane25);
+					JTextPane kast25Title = new JTextPane();
+					kast25Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast25Title.setToolTipText("");
+					kast25Title.setText("               Medicijnen in Kast : ");
+					kast25Title.setEditable(false);
+					kast25Title.setForeground(Color.BLACK);
+					kast25Title.setBackground(Color.WHITE);
+					kast25Title.setBounds(0, 0, 300, 30);
+					Fkast25.getContentPane().add(kast25Title);
 			    }
 			}
 		});
@@ -354,6 +463,15 @@ public class GUI {
 					Fkast16.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane16 = new JScrollPane();
 					Fkast16.getContentPane().add(scrollpane16);
+					JTextPane kast16Title = new JTextPane();
+					kast16Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast16Title.setToolTipText("");
+					kast16Title.setText("               Medicijnen in Kast 16: ");
+					kast16Title.setEditable(false);
+					kast16Title.setForeground(Color.BLACK);
+					kast16Title.setBackground(Color.WHITE);
+					kast16Title.setBounds(0, 0, 300, 30);
+					Fkast16.getContentPane().add(kast16Title);
 			    }
 			}
 		});
@@ -373,6 +491,15 @@ public class GUI {
 					Fkast17.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane17 = new JScrollPane();
 					Fkast17.getContentPane().add(scrollpane17);
+					JTextPane kast17Title = new JTextPane();
+					kast17Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast17Title.setToolTipText("");
+					kast17Title.setText("               Medicijnen in Kast 17: ");
+					kast17Title.setEditable(false);
+					kast17Title.setForeground(Color.BLACK);
+					kast17Title.setBackground(Color.WHITE);
+					kast17Title.setBounds(0, 0, 300, 30);
+					Fkast17.getContentPane().add(kast17Title);
 			    }
 			}
 		});
@@ -392,6 +519,15 @@ public class GUI {
 					Fkast18.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane18 = new JScrollPane();
 					Fkast18.getContentPane().add(scrollpane18);
+					JTextPane kast18Title = new JTextPane();
+					kast18Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast18Title.setToolTipText("");
+					kast18Title.setText("               Medicijnen in Kast 18: ");
+					kast18Title.setEditable(false);
+					kast18Title.setForeground(Color.BLACK);
+					kast18Title.setBackground(Color.WHITE);
+					kast18Title.setBounds(0, 0, 300, 30);
+					Fkast18.getContentPane().add(kast18Title);
 			    }
 			}
 		});
@@ -411,6 +547,15 @@ public class GUI {
 					Fkast26.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane26 = new JScrollPane();
 					Fkast26.getContentPane().add(scrollpane26);
+					JTextPane kast26Title = new JTextPane();
+					kast26Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast26Title.setToolTipText("");
+					kast26Title.setText("               Medicijnen in Kast 26: ");
+					kast26Title.setEditable(false);
+					kast26Title.setForeground(Color.BLACK);
+					kast26Title.setBackground(Color.WHITE);
+					kast26Title.setBounds(0, 0, 300, 30);
+					Fkast26.getContentPane().add(kast26Title);
 			    }
 			}
 		});
@@ -430,6 +575,15 @@ public class GUI {
 					Fkast27.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane27 = new JScrollPane();
 					Fkast27.getContentPane().add(scrollpane27);
+					JTextPane kast27Title = new JTextPane();
+					kast27Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast27Title.setToolTipText("");
+					kast27Title.setText("               Medicijnen in Kast 27: ");
+					kast27Title.setEditable(false);
+					kast27Title.setForeground(Color.BLACK);
+					kast27Title.setBackground(Color.WHITE);
+					kast27Title.setBounds(0, 0, 300, 30);
+					Fkast27.getContentPane().add(kast27Title);
 			    }
 			}
 		});
@@ -449,6 +603,15 @@ public class GUI {
 					Fkast28.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane28 = new JScrollPane();
 					Fkast28.getContentPane().add(scrollpane28);
+					JTextPane kast28Title = new JTextPane();
+					kast28Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast28Title.setToolTipText("");
+					kast28Title.setText("               Medicijnen in Kast 28: ");
+					kast28Title.setEditable(false);
+					kast28Title.setForeground(Color.BLACK);
+					kast28Title.setBackground(Color.WHITE);
+					kast28Title.setBounds(0, 0, 300, 30);
+					Fkast28.getContentPane().add(kast28Title);
 			    }
 			}
 		});
@@ -477,7 +640,7 @@ public class GUI {
 		BestellingControle.setForeground(Color.BLACK);
 		BestellingControle.setBackground(SystemColor.controlHighlight);
 		BestellingControle.setToolTipText("Controle van bestelling");
-		BestellingControle.setBounds(666, 400, 200, 25);
+		BestellingControle.setBounds(666, 400, 200, 23);
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
 		
@@ -486,7 +649,7 @@ public class GUI {
 		button.setForeground(Color.BLACK);
 		button.setBackground(SystemColor.controlHighlight);
 		button.setToolTipText("Toevoegen van medicijn");
-		button.setBounds(666, 400, 200, 25);
+		button.setBounds(666, 400, 200, 23);
 		button.addActionListener(new ActionMedButton());
 		frame.getContentPane().add(button);
 		
