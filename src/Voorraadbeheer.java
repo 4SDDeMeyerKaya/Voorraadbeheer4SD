@@ -74,8 +74,10 @@ public class Voorraadbeheer {
 				throw new OrderException("Nieuw bestellingslijst aangemaakt.");
 		besIndex= Voorraadbeheer.controleerOpOpenBestelling();
 		boolean ietsTeBestellen=false;
+		int controle=0;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){
+			try{controle=Voorraadbeheer.medlist.get(i).controleerOpBeide();}catch(ParseException e){}; 
+			if (controle>0){
 				ietsTeBestellen=true;//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
 				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
