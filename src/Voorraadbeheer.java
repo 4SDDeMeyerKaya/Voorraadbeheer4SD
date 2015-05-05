@@ -46,7 +46,7 @@ public class Voorraadbeheer {
 	}
 	
 	//verwijderMedicijn zoekt naar overeenkomstige merknamen (in principe één hit max) en verwijdert dit object.
-	public void verwijderMedicijn(String merknaam){ 
+	public static void verwijderMedicijn(String merknaam){ 
 		boolean gevonden=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam))
@@ -59,7 +59,7 @@ public class Voorraadbeheer {
 	}
 	
 	//voegBestellingToe voegt een nieuw object van Bestelling toe aan de lijst.
-	public void voegBestellingToe(){
+	public static void voegBestellingToe(){
 		Voorraadbeheer.beslist.add(new Bestelling());
 	}
 	
@@ -67,7 +67,7 @@ public class Voorraadbeheer {
 	besteld is en zich in een of ander bestellijst bevindt (dat nog niet is aangekomen).
 	*/
 	
-	public void controleerOpTeBestellen() throws ParseException, OrderException{
+	public static void controleerOpTeBestellen() throws ParseException, OrderException{
 		//Controleer al eerst eens of er een geschikt bestellingsobject bestaat om een medicijn in te plaatsen
 		//Op deze manier hoeven er geen meerdere bestellingen 'open' te staan.
 		if (Voorraadbeheer.controleerOpOpenBestelling()==1337)
