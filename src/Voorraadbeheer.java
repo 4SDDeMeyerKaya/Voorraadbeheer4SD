@@ -80,28 +80,32 @@ public class Voorraadbeheer {
 		boolean ietsTeBestellen=false;
 		int controle=0;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
+			boolean besteld=false;
 			try{controle=Voorraadbeheer.medlist.get(i).controleerOpBeide();}catch(ParseException e){}; 
 			if (controle>0){
-				ietsTeBestellen=true;//Controleer of men dit medicijn moet bestellen
+				ietsTeBestellen=true;											//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
 				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
 					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){	//Enkel in niet aangekomen bestellingen zoeken
 						
 						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
 																								//voorwaarden voldoet gaan we de merknamen vergelijken
-							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam())==false){
+							
+							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam())==false && besteld==false){
 								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, controle, medlist.get(i).prijs));
 								Log.print();
 								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +controle+")");
+								besteld=true;
 							}
 						}
 					}	
 				}
 			}
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
-		if (ietsTeBestellen==false)
+		if (ietsTeBestellen==false){
 			Log.print();
 			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
+			}
 	}
 	
 	

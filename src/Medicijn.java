@@ -63,7 +63,10 @@ public class Medicijn {
 		{
 			wijzigAantal(0);		//indien niet meer houdbaar, moet het eruit en dient het programma
 									//de apotheker hiervan op de hoogte te houden.
-			System.out.println("Gelieve alle huidige "+geefMerknaam()+" uit kast "+geefKastID()+" te halen. [Houdb.datum]");
+			Log.print();
+			System.out.println("Controle houdbaarheidsdatum "+ houdbaarheid +": ");
+			Log.print();
+			System.out.println("Gelieve "+geefMerknaam()+" uit kast "+geefKastID()+" te halen.");
 			return gewensteAantal;	//Voorraadbeheer zal het gewensteAantal doorgeven in "besmedlist" om te bestellen.
 		}
 		else 	
