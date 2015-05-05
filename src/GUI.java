@@ -29,6 +29,7 @@ import javax.swing.ListSelectionModel;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.text.ParseException;
 
@@ -43,6 +44,7 @@ public class GUI {
 	public JFrame frame;
 	private JTable tableMed;
 	private JTable tableBest;
+	private JTextArea textAreaTerminal;
 
 	/**
 	 * Launch the appliccation.
@@ -75,23 +77,40 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton clrLogButton = new JButton("Clear");
+		clrLogButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		clrLogButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+						System.out.println("clear console");
+						textAreaTerminal.setText("");
+			}
+				        
+				
+			
+		});
+		clrLogButton.setForeground(Color.WHITE);
+		clrLogButton.setBackground(Color.BLACK);
+		clrLogButton.setBounds(1200, 0, 74, 29);
+		frame.getContentPane().add(clrLogButton);
+		
 		JTextPane terminalTitle = new JTextPane();
-		terminalTitle.setFont(new Font("Dialog", Font.BOLD, 12));
+		terminalTitle.setFont(new Font("Arial", Font.BOLD, 14));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("                                                             LOG");
+		terminalTitle.setText("                                             LOG\n------------------------------------------------------------------------------------------------------\n");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
-		terminalTitle.setBounds(866, 0, 414, 18);
+		terminalTitle.setBounds(866, 0, 414, 37);
 		frame.getContentPane().add(terminalTitle);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(866, 17, 414, 675);
+		scrollPane.setBounds(866, 36, 414, 675);
 		frame.getContentPane().add(scrollPane);
 		
-		JTextArea textAreaTerminal = new JTextArea();
+		textAreaTerminal = new JTextArea();
+		textAreaTerminal.setFont(new Font("Arial", Font.PLAIN, 13));
 		scrollPane.setViewportView(textAreaTerminal);
-		textAreaTerminal.setText("------------------------------------------------------------------------------------------------------\n");
 		textAreaTerminal.setEditable(false);
 		textAreaTerminal.setForeground(Color.WHITE);
 		textAreaTerminal.setBackground(Color.BLACK);
@@ -101,11 +120,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast10 = new JFrame("Inhoud Kast 10");
-					kast10.setVisible(true);
-					kast10.setBounds(300, 300, 300, 300);
+					final JFrame Fkast10 = new JFrame("Inhoud Kast 10");
+					Fkast10.setVisible(true);
+					Fkast10.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane10 = new JScrollPane();
-					kast10.add(scrollpane10);
+					Fkast10.getContentPane().add(scrollpane10);
 			    }
 			}
 		});
@@ -121,11 +140,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast11 = new JFrame("Inhoud Kast 11");
-					kast11.setVisible(true);
-					kast11.setBounds(300, 300, 300, 300);
+					final JFrame Fkast11 = new JFrame("Inhoud Kast 11");
+					Fkast11.setVisible(true);
+					Fkast11.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane11 = new JScrollPane();
-					kast11.add(scrollpane11);
+					Fkast11.getContentPane().add(scrollpane11);
 			    }
 			}
 		});
@@ -140,11 +159,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast12 = new JFrame("Inhoud Kast 12");
-					kast12.setVisible(true);
-					kast12.setBounds(300, 300, 300, 300);
+					final JFrame Fkast12 = new JFrame("Inhoud Kast 12");
+					Fkast12.setVisible(true);
+					Fkast12.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane12 = new JScrollPane();
-					kast12.add(scrollpane12);
+					Fkast12.getContentPane().add(scrollpane12);
 			    }
 			}
 		});
@@ -159,11 +178,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast20 = new JFrame("Inhoud Kast 20");
-					kast20.setVisible(true);
-					kast20.setBounds(300, 300, 300, 300);
+					final JFrame Fkast20 = new JFrame("Inhoud Kast 20");
+					Fkast20.setVisible(true);
+					Fkast20.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane20 = new JScrollPane();
-					kast20.add(scrollpane20);
+					Fkast20.getContentPane().add(scrollpane20);
 			    }
 			}
 		});
@@ -178,11 +197,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast21 = new JFrame("Inhoud Kast 21");
-					kast21.setVisible(true);
-					kast21.setBounds(300, 300, 300, 300);
+					final JFrame Fkast21 = new JFrame("Inhoud Kast 21");
+					Fkast21.setVisible(true);
+					Fkast21.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane21 = new JScrollPane();
-					kast21.add(scrollpane21);
+					Fkast21.getContentPane().add(scrollpane21);
 			    }
 			}
 		});
@@ -197,11 +216,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast22 = new JFrame("Inhoud Kast 22");
-					kast22.setVisible(true);
-					kast22.setBounds(300, 300, 300, 300);
+					final JFrame Fkast22 = new JFrame("Inhoud Kast 22");
+					Fkast22.setVisible(true);
+					Fkast22.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane22 = new JScrollPane();
-					kast22.add(scrollpane22);
+					Fkast22.getContentPane().add(scrollpane22);
 			    }
 			}
 		});
@@ -216,11 +235,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast13 = new JFrame("Inhoud Kast 13");
-					kast13.setVisible(true);
-					kast13.setBounds(300, 300, 300, 300);
+					final JFrame Fkast13 = new JFrame("Inhoud Kast 13");
+					Fkast13.setVisible(true);
+					Fkast13.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane13 = new JScrollPane();
-					kast13.add(scrollpane13);
+					Fkast13.getContentPane().add(scrollpane13);
 			    }
 			}
 		});
@@ -235,11 +254,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast14 = new JFrame("Inhoud Kast 14");
-					kast14.setVisible(true);
-					kast14.setBounds(300, 300, 300, 300);
+					final JFrame Fkast14 = new JFrame("Inhoud Kast 14");
+					Fkast14.setVisible(true);
+					Fkast14.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane14 = new JScrollPane();
-					kast14.add(scrollpane14);
+					Fkast14.getContentPane().add(scrollpane14);
 			    }
 			}
 		});
@@ -254,11 +273,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast15 = new JFrame("Inhoud Kast 15");
-					kast15.setVisible(true);
-					kast15.setBounds(300, 300, 300, 300);
+					final JFrame Fkast15 = new JFrame("Inhoud Kast 15");
+					Fkast15.setVisible(true);
+					Fkast15.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane15 = new JScrollPane();
-					kast15.add(scrollpane15);
+					Fkast15.getContentPane().add(scrollpane15);
 			    }
 			}
 		});
@@ -273,11 +292,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast23 = new JFrame("Inhoud Kast 23");
-					kast23.setVisible(true);
-					kast23.setBounds(300, 300, 300, 300);
+					final JFrame Fkast23 = new JFrame("Inhoud Kast 23");
+					Fkast23.setVisible(true);
+					Fkast23.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane23 = new JScrollPane();
-					kast23.add(scrollpane23);
+					Fkast23.getContentPane().add(scrollpane23);
 			    }
 			}
 		});
@@ -292,11 +311,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast24 = new JFrame("Inhoud Kast 24");
-					kast24.setVisible(true);
-					kast24.setBounds(300, 300, 300, 300);
+					final JFrame Fkast24 = new JFrame("Inhoud Kast 24");
+					Fkast24.setVisible(true);
+					Fkast24.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane24 = new JScrollPane();
-					kast24.add(scrollpane24);
+					Fkast24.getContentPane().add(scrollpane24);
 			    }
 			}
 		});
@@ -311,11 +330,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast25 = new JFrame("Inhoud Kast 25");
-					kast25.setVisible(true);
-					kast25.setBounds(300, 300, 300, 300);
+					final JFrame Fkast25 = new JFrame("Inhoud Kast 25");
+					Fkast25.setVisible(true);
+					Fkast25.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane25 = new JScrollPane();
-					kast25.add(scrollpane25);
+					Fkast25.getContentPane().add(scrollpane25);
 			    }
 			}
 		});
@@ -330,11 +349,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast16 = new JFrame("Inhoud Kast 16");
-					kast16.setVisible(true);
-					kast16.setBounds(300, 300, 300, 300);
+					final JFrame Fkast16 = new JFrame("Inhoud Kast 16");
+					Fkast16.setVisible(true);
+					Fkast16.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane16 = new JScrollPane();
-					kast16.add(scrollpane16);
+					Fkast16.getContentPane().add(scrollpane16);
 			    }
 			}
 		});
@@ -349,11 +368,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast17 = new JFrame("Inhoud Kast 17");
-					kast17.setVisible(true);
-					kast17.setBounds(300, 300, 300, 300);
+					final JFrame Fkast17 = new JFrame("Inhoud Kast 17");
+					Fkast17.setVisible(true);
+					Fkast17.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane17 = new JScrollPane();
-					kast17.add(scrollpane17);
+					Fkast17.getContentPane().add(scrollpane17);
 			    }
 			}
 		});
@@ -368,11 +387,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast18 = new JFrame("Inhoud Kast 18");
-					kast18.setVisible(true);
-					kast18.setBounds(300, 300, 300, 300);
+					final JFrame Fkast18 = new JFrame("Inhoud Kast 18");
+					Fkast18.setVisible(true);
+					Fkast18.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane18 = new JScrollPane();
-					kast18.add(scrollpane18);
+					Fkast18.getContentPane().add(scrollpane18);
 			    }
 			}
 		});
@@ -387,11 +406,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast26 = new JFrame("Inhoud Kast 26");
-					kast26.setVisible(true);
-					kast26.setBounds(300, 300, 300, 300);
+					final JFrame Fkast26 = new JFrame("Inhoud Kast 26");
+					Fkast26.setVisible(true);
+					Fkast26.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane26 = new JScrollPane();
-					kast26.add(scrollpane26);
+					Fkast26.getContentPane().add(scrollpane26);
 			    }
 			}
 		});
@@ -406,11 +425,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast27 = new JFrame("Inhoud Kast 27");
-					kast27.setVisible(true);
-					kast27.setBounds(300, 300, 300, 300);
+					final JFrame Fkast27 = new JFrame("Inhoud Kast 27");
+					Fkast27.setVisible(true);
+					Fkast27.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane27 = new JScrollPane();
-					kast27.add(scrollpane27);
+					Fkast27.getContentPane().add(scrollpane27);
 			    }
 			}
 		});
@@ -425,11 +444,11 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast28 = new JFrame("Inhoud Kast 28");
-					kast28.setVisible(true);
-					kast28.setBounds(300, 300, 300, 300);
+					final JFrame Fkast28 = new JFrame("Inhoud Kast 28");
+					Fkast28.setVisible(true);
+					Fkast28.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane28 = new JScrollPane();
-					kast28.add(scrollpane28);
+					Fkast28.getContentPane().add(scrollpane28);
 			    }
 			}
 		});
@@ -454,6 +473,7 @@ public class GUI {
 		frame.getContentPane().add(kast2);
 		
 		final JButton BestellingControle = new JButton("Bestelling controleren");
+		BestellingControle.setFont(new Font("Arial", Font.PLAIN, 14));
 		BestellingControle.setForeground(Color.BLACK);
 		BestellingControle.setBackground(SystemColor.controlHighlight);
 		BestellingControle.setToolTipText("Controle van bestelling");
@@ -462,6 +482,7 @@ public class GUI {
 		frame.getContentPane().add(BestellingControle);
 		
 		final JButton button = new JButton("Medicijn toevoegen");
+		button.setFont(new Font("Arial", Font.PLAIN, 14));
 		button.setForeground(Color.BLACK);
 		button.setBackground(SystemColor.controlHighlight);
 		button.setToolTipText("Toevoegen van medicijn");
@@ -509,6 +530,7 @@ public class GUI {
 		bestellingTab.add(scrollPaneBest);
 		
 		tableBest = new JTable();
+		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableBest.setCellSelectionEnabled(true);
 		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableBest.setFillsViewportHeight(true);
@@ -557,7 +579,7 @@ public class GUI {
 		tableMed = new JTable();
 		JTableHeader thM = tableMed.getTableHeader();
 		thM.setFont(new Font("Dialog", Font.BOLD, 12));
-		tableMed.setFont(new Font("Dialog", Font.PLAIN, 12));
+		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableMed.setToolTipText("Lijst van medicijnen");
 		tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableMed.setRowSelectionAllowed(false);
@@ -850,9 +872,8 @@ public class GUI {
 	}
 		
 	}
-	
-	 
-
-	
+	public JTextArea getTextAreaTerminal() {
+		return textAreaTerminal;
+	}
 }
 
