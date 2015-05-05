@@ -85,9 +85,10 @@ public class Voorraadbeheer {
 						
 						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
 																								//voorwaarden voldoet gaan we de merknamen vergelijken
-							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
+							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam())){
+									Log.print();
 									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
-							else{ 
+							}else{ 
 								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, medlist.get(i).controleerOpBeide(), medlist.get(i).prijs));
 								Log.print();
 								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +Voorraadbeheer.medlist.get(i).controleerOpBeide()+")");
@@ -97,9 +98,11 @@ public class Voorraadbeheer {
 				}
 			}
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
-		if (ietsTeBestellen==false)
+		if (ietsTeBestellen==false){
 			Log.print();
 			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
+		}
+			
 	}
 	
 	
