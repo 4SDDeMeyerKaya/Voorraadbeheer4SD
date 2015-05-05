@@ -98,6 +98,7 @@ public class Voorraadbeheer {
 			}
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
 		if (ietsTeBestellen==false)
+			Log.print();
 			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
 	}
 	
