@@ -83,8 +83,9 @@ public class Voorraadbeheer {
 		for(i=0; i<Voorraadbeheer.medlist.size();i++){
 			controle=Voorraadbeheer.medlist.get(i).controleerOpBeide();
 			if(controle>0){
-				ietsTeBestellen=true;			//we voegen medicijn toe indien attributen het toestaan. Verdere controle in methodes.
+							//we voegen medicijn toe indien attributen het toestaan. Verdere controle in methodes.
 				if(medlist.get(i).alGewaarschuwd==false && medlist.get(i).besteld==false){
+				ietsTeBestellen=true;
 				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs);
 				medlist.get(i).besteld=true;
 				medlist.get(i).alGewaarschuwd=true;
