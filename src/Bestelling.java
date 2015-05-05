@@ -48,5 +48,15 @@ public class Bestelling {
 
 	public void setAangekomen(boolean isAangekomen) {
 		this.isAangekomen = isAangekomen;
+		if (isAangekomen==true){
+			for(int i=0; i<besmedlist.size();i++){
+				for(int j=0; j<Voorraadbeheer.medlist.size();j++){
+					if(besmedlist.get(i).merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
+						Voorraadbeheer.medlist.get(j).alGewaarschuwd=false;
+						Voorraadbeheer.medlist.get(j).besteld=false;
+					}
+				}
+			}
+		}
 	}
 }

@@ -14,6 +14,8 @@ public class Medicijn {
 	int prijs;
 	int kastID;	
 	String houdbaarheid;//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
+	boolean alGewaarschuwd;
+	boolean besteld;
 	
 	
 	public Medicijn(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)
@@ -27,6 +29,7 @@ public class Medicijn {
 		this.prijs = prijs;
 		this.kastID = kastID;
 		this.houdbaarheid = houdbaarheid;
+		alGewaarschuwd=false;
 	}
 	
 	public int controleerOpAantal()
@@ -59,7 +62,7 @@ public class Medicijn {
 		Date huidig = new Date();
 		Date houdbaarheidsDatum = sdf.parse(houdbaarheid); //zet String om naar Date om deze de kunnen vergelijken met huidig.
 				
-		if (huidig.after(houdbaarheidsDatum))
+		if (huidig.after(houdbaarheidsDatum) && alGewaarschuwd==false)
 		{
 			wijzigAantal(0);		//indien niet meer houdbaar, moet het eruit en dient het programma
 									//de apotheker hiervan op de hoogte te houden.

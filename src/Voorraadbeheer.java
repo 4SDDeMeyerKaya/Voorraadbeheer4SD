@@ -31,16 +31,16 @@ public class Voorraadbeheer {
 	public static void voegMedicijnToe(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimaAantal, String fabrikant, int prijs, int kast, String houdbaarheid){
 		boolean isAanwezig=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
+			if (Voorraadbeheer.medlist.get(i).merknaam.equalsIgnoreCase(merknaam)){
 				Log.print();
-				System.out.println("Let op! Dit medicijn heeft u al eerder toegevoegd.");
+				System.out.println(merknaam+ " bestaat al en is niet toegevoegd.");
 				isAanwezig = true;
 				}
 		}
 		if(isAanwezig==false){
 			Voorraadbeheer.medlist.add(new Medicijn(merknaam, stofnaam, aantal, gewensteAantal, minimaAantal, fabrikant, prijs, kast, houdbaarheid));
 			Log.print();
-			System.out.println(merknaam + " is toegevoegd als aan 'medlist'.");
+			System.out.println(merknaam + " is toegevoegd aan 'medlist'.");
 		}
 			
 	}
@@ -80,9 +80,9 @@ public class Voorraadbeheer {
 		boolean ietsTeBestellen=false;
 		int controle=0;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			boolean besteld=false;
-			try{controle=Voorraadbeheer.medlist.get(i).controleerOpBeide();}catch(ParseException e){}; 
+			controle=Voorraadbeheer.medlist.get(i).controleerOpBeide(); 
 			if (controle>0){
+				medlist.get(i).alGewaarschuwd=true;
 				ietsTeBestellen=true;											//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
 				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
@@ -90,18 +90,17 @@ public class Voorraadbeheer {
 						
 						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
 																								//voorwaarden voldoet gaan we de merknamen vergelijken
-							
-							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam())==false && besteld==false){
+							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(i).merknaam)!=true && medlist.get(i).besteld!=true){
 								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, controle, medlist.get(i).prijs));
 								Log.print();
 								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +controle+")");
-								besteld=true;
+								medlist.get(i).besteld=true;
 							}
 						}
 					}	
 				}
 			}
-		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
+		}
 		if (ietsTeBestellen==false){
 			Log.print();
 			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
