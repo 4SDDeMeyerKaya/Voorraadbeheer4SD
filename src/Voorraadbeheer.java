@@ -28,7 +28,7 @@ public class Voorraadbeheer {
 	}
 	
 	//voegMedicijnToe voegt een nieuw object van Medicijn toe aan de lijst.
-	public void voegMedicijnToe(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimaAantal, String fabrikant, int prijs, int kast, String houdbaarheid){
+	public static void voegMedicijnToe(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimaAantal, String fabrikant, int prijs, int kast, String houdbaarheid){
 		boolean isAanwezig=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
 			if (Voorraadbeheer.medlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){

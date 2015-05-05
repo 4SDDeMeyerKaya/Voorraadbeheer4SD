@@ -502,6 +502,9 @@ public class GUI {
 		    //button
 		    JLabel l9 = new JLabel("", JLabel.TRAILING);
 		    p.add(l9);
+		    final int tempaantal;
+		    final int tempprijs;
+		    final int tempkastid;
 		    final JButton bevestig = new JButton("Bevestig");
 			bevestig.setForeground(Color.BLACK);
 			bevestig.setBackground(SystemColor.controlHighlight);
@@ -526,12 +529,13 @@ public class GUI {
 					    //Gewenst Aantal
 						try{
 					    	int gewaantaltemp = Integer.parseInt(textField3.getText());
+					    	gewaantaltemp=tempaantal;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
 					    
 					    //Minimum aantal
-						String gewaantaltemp = textField4.getText();
+						int gewaantaltemp = textField4.getText();
 					    		    
 					    
 					    //Fabrikant
@@ -540,6 +544,7 @@ public class GUI {
 					    //Prijs
 						try{
 						    int prijstemp = Integer.parseInt(textField6.getText());
+						    prijstemp=tempprijs;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
@@ -547,6 +552,7 @@ public class GUI {
 					    //KastID
 						try{
 						    int kastidtemp = Integer.parseInt(textField7.getText());
+						    kastidtemp=tempkastid;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
@@ -555,8 +561,9 @@ public class GUI {
 						String houdbaarheidtemp = textField8.getText();
 						
 						Log.print();
-						System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
-						Medicijn medicijnAangemaakt = new Medicijn(merknaamtemp, stofnaamtemp, aantaltemp, gewaantaltemp, fabrikanttemp, prijstemp, kastidtemp, houdbaarheidtemp);
+						System.out.println(" Medicijn ingegeven met merknaam: " + merknaamtemp);
+						int aantaltemp;
+						Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, gewaantaltemp, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
 						
 						frame2.setVisible(false);
 		                frame2.dispose();
