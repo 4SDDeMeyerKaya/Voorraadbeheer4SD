@@ -570,7 +570,7 @@ public class GUI {
 						String houdbaarheidtemp = textField8.getText();
 						
 						Log.print();
-						System.out.println(" Medicijn ingegeven met merknaam: " + merknaamtemp);
+						System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
 						Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
 						
 						frame2.setVisible(false);
