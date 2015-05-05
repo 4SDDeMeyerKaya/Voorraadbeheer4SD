@@ -38,6 +38,8 @@ import java.util.Date;
 
 import javax.swing.JButton;
 
+import com.thehowtotutorial.splashscreen.JSplash;
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
@@ -823,7 +825,8 @@ public class GUI {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
-			// wat er gebeurd als de knop wordt ingedrukt
+			// wat er gebeurd als de knop wordt ingedrukt	
+			
 			
 			final JFrame frame2 = new JFrame("Medicijn toevoegen.");
 			frame2.setVisible(true);

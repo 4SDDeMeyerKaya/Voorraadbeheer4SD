@@ -9,6 +9,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
+					Splash splash = new Splash();
 					GUI window = new GUI();
 					window.frame.setVisible(true);
 					Voorraadbeheer.voegBestellingToe();
