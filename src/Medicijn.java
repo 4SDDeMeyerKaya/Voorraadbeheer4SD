@@ -13,8 +13,7 @@ public class Medicijn {
 	String fabrikant;
 	int prijs;
 	int kastID;	
-	String houdbaarheid;		//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
-	
+	String houdbaarheid;//String die de datum voorstelt in het formaat "dd-MM-yyyy' zoals sdf.
 	
 	
 	public Medicijn(String merknaam, String stofnaam, int aantal, int gewensteAantal, int minimumAantal, String fabrikant, int prijs, int kastID, String houdbaarheid)

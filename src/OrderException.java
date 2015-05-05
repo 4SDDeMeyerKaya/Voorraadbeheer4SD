@@ -11,7 +11,7 @@ public class OrderException extends Exception {
 	}
 	
 	public void createOrder(){
-		Voorraadbeheer.beslist.add(new Bestelling());
+		Voorraadbeheer.voegBestellingToe();
 	}
 
 }

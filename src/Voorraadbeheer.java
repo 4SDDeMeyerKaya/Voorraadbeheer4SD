@@ -61,6 +61,8 @@ public class Voorraadbeheer {
 	//voegBestellingToe voegt een nieuw object van Bestelling toe aan de lijst.
 	public static void voegBestellingToe(){
 		Voorraadbeheer.beslist.add(new Bestelling());
+		Log.print();
+		System.out.println("Nieuw open bestelling toegevoegd.");
 	}
 	
 	/*controleerOpTeBestellen zoekt op hoeveel medicijnen er te bestellen zijn en houdt rekening met het aantal dat reeds
@@ -70,8 +72,10 @@ public class Voorraadbeheer {
 	public static void controleerOpTeBestellen() throws ParseException, OrderException{
 		//Controleer al eerst eens of er een geschikt bestellingsobject bestaat om een medicijn in te plaatsen
 		//Op deze manier hoeven er geen meerdere bestellingen 'open' te staan.
-		if (Voorraadbeheer.controleerOpOpenBestelling()==1337)
-				throw new OrderException("Nieuw bestellingslijst aangemaakt.");
+		if (Voorraadbeheer.controleerOpOpenBestelling()==1337){
+				Log.print();
+				throw new OrderException("Geen open bestelling beschikbaar.");
+		}
 		besIndex= Voorraadbeheer.controleerOpOpenBestelling();
 		boolean ietsTeBestellen=false;
 		int controle=0;
@@ -85,12 +89,10 @@ public class Voorraadbeheer {
 						
 						for(int k=0; k<Voorraadbeheer.beslist.get(j).besmedlist.size();k++){	//in ieder bestelmed. lijst dat tot hier toeaan de
 																								//voorwaarden voldoet gaan we de merknamen vergelijken
-							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam()))	
-									System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is reeds aanwezig in een niet aangekomen bestellingslijst.");
-							else{ 
-								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, medlist.get(i).controleerOpBeide(), medlist.get(i).prijs));
+							if (Voorraadbeheer.beslist.get(j).besmedlist.get(k).geefMerknaam().equalsIgnoreCase(Voorraadbeheer.medlist.get(i).geefMerknaam())==false){
+								Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(medlist.get(i).merknaam, controle, medlist.get(i).prijs));
 								Log.print();
-								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +Voorraadbeheer.medlist.get(i).controleerOpBeide()+")");
+								System.out.println(Voorraadbeheer.medlist.get(i).geefMerknaam()+" is toegevoegd aan een bestelling."+" (Aantal: " +controle+")");
 							}
 						}
 					}	
