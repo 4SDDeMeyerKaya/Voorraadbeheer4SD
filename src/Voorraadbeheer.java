@@ -72,7 +72,7 @@ public class Voorraadbeheer {
 	public static void controleerOpTeBestellen() throws ParseException, OrderException{
 		//Controleer al eerst eens of er een geschikt bestellingsobject bestaat om een medicijn in te plaatsen
 		//Op deze manier hoeven er geen meerdere bestellingen 'open' te staan.
-		if (Voorraadbeheer.controleerOpOpenBestelling()==1337){
+		if (Voorraadbeheer.controleerOpOpenBestelling()==1337){ //1337 is een arbitrair gekozen nummer. Int is nodig om de juiste bestellingslijstindex door te geven.
 				Log.print();
 				throw new OrderException("Geen open bestelling beschikbaar.");
 		}

@@ -3,6 +3,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 
 import java.awt.Color;
+import java.awt.Component;
 import java.awt.Font;
 
 import javax.swing.JTextPane;
@@ -24,6 +25,7 @@ import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
+import javax.swing.table.TableCellRenderer;
 import javax.swing.ListSelectionModel;
 
 import java.awt.Toolkit;
@@ -102,7 +104,7 @@ public class GUI {
 		JTextPane terminalTitle = new JTextPane();
 		terminalTitle.setFont(new Font("Arial", Font.BOLD, 14));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("                                             LOG\n------------------------------------------------------------------------------------------------------\n");
+		terminalTitle.setText("                                             LOG\n________________________________________________________________________\n");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
@@ -697,7 +699,23 @@ public class GUI {
 		scrollPaneBest.setBounds(0, 0, 866, 260);
 		bestellingTab.add(scrollPaneBest);
 		
-		tableBest = new JTable();
+		tableBest = new JTable(){
+			public boolean isCellEditable(int data, int columns){
+				return false;
+			}
+			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+				Component c = super.prepareRenderer(r, data, columns);
+				
+				if (data % 2 == 0) //alternating colours among rows
+					c.setBackground(Color.WHITE);
+				
+				else c.setBackground(Color.LIGHT_GRAY);
+				
+				
+				return c;
+			}
+			
+		};
 		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableBest.setCellSelectionEnabled(true);
 		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -744,18 +762,36 @@ public class GUI {
 		scrollPaneMed.setBounds(0, 0, 866, 260);
 		medicijnTab.add(scrollPaneMed);
 		
-		tableMed = new JTable();
+		tableMed = new JTable(){
+			public boolean isCellEditable(int data, int columns){
+				return false;
+			}
+			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+				Component c = super.prepareRenderer(r, data, columns);
+				
+				if (data % 2 == 0) //alternating colours among rows
+					c.setBackground(Color.WHITE);
+				
+				else c.setBackground(Color.LIGHT_GRAY);
+				
+				if (isCellSelected(data, columns))
+					c.setBackground(Color.gray);
+				
+				return c;
+			}
+			
+		};
 		JTableHeader thM = tableMed.getTableHeader();
 		thM.setFont(new Font("Dialog", Font.BOLD, 12));
 		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableMed.setToolTipText("Lijst van medicijnen");
-		tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		tableMed.setRowSelectionAllowed(false);
+		//tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableMed.setRowSelectionAllowed(true);
 		tableMed.setForeground(Color.BLACK);
 		tableMed.setFillsViewportHeight(true);
-		tableMed.setCellSelectionEnabled(true);
+		tableMed.setCellSelectionEnabled(false);
 		tableMed.setModel(new DefaultTableModel(
-			new Object[][] {
+			new Object[][]  {
 				{"merk1", "stof1", "1", "1", "1", "fab1", "100", "12", "22-10-2015"},
 				{null, null, null, null, null, null, null, null, null},
 				{null, null, null, null, null, null, null, null, null},
