@@ -1040,8 +1040,7 @@ public class GUI {
 						
 
 		            }
-		        });
-			
+		        });		
 			
 
 			//Lay out the panel.
@@ -1054,8 +1053,7 @@ public class GUI {
 			
 			
 		}
-	}
-	
+	}	
 	
 	
 	static class ActionBestellingButton implements ActionListener{
