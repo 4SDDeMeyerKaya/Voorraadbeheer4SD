@@ -743,7 +743,8 @@ public class GUI {
 					    	int aantaltemp = Integer.parseInt(textField2.getText());
 					    	tempaantal=aantaltemp;
 					    }catch(NumberFormatException ex){
-					    	//System.err.println("Illegal input.");
+					    	Log.print();
+					    	System.err.println("Geen geldig aantal opgegeven.");
 					    }
 					    
 					    //Gewenst Aantal
@@ -752,7 +753,8 @@ public class GUI {
 					    	int gewaantaltemp = Integer.parseInt(textField3.getText());
 					    	tempgewaantal=gewaantaltemp;
 					    }catch(NumberFormatException ex){
-					    	//System.err.println("Illegal input.");
+					    	Log.print();
+					    	System.err.println("Geen geldig gewenst aantal opgegeven.");
 					    }
 					    
 					    //Minimum aantal
@@ -762,7 +764,8 @@ public class GUI {
 					    	int minaantaltemp = Integer.parseInt(textField4.getText());
 					    	tempminaantal=minaantaltemp;
 					    }catch(NumberFormatException ex){
-					    	//System.err.println("Illegal input.");
+					    	Log.print();
+					    	System.err.println("Geen geldig minimum aantal opgegeven.");
 					    }
 					    		    
 					    
@@ -775,7 +778,8 @@ public class GUI {
 						    int prijstemp = Integer.parseInt(textField6.getText());
 						    tempprijs=prijstemp;
 					    }catch(NumberFormatException ex){
-					    	//System.err.println("Illegal input.");
+					    	Log.print();
+					    	System.err.println("Geen geldige prijs opgegeven.");
 					    }
 					    
 					    //KastID
@@ -784,15 +788,24 @@ public class GUI {
 						    int kastidtemp = Integer.parseInt(textField7.getText());
 						    tempkastid=kastidtemp;
 					    }catch(NumberFormatException ex){
-					    	//System.err.println("Illegal input.");
+					    	Log.print();
+					    	System.err.println("Geen geldig kast ID opgegeven.");
 					    }
 					    
 					    //Houdbaarheid
 						String houdbaarheidtemp = textField8.getText();
 						
-						Log.print();
-						System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
-						Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
+						if(tempaantal != 0 && tempgewaantal != 0 && tempminaantal != 0 && tempprijs != 0 && tempkastid != 0)
+						{
+							Log.print();
+							System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
+							Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
+						}
+						else
+						{
+							Log.print();
+							System.out.println("Medicijn niet toegevoegd wegens incorrecte parameters.");
+						}
 						
 						frame2.setVisible(false);
 		                frame2.dispose();
