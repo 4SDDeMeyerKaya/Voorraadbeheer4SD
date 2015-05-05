@@ -502,9 +502,6 @@ public class GUI {
 		    //button
 		    JLabel l9 = new JLabel("", JLabel.TRAILING);
 		    p.add(l9);
-		    final int tempaantal;
-		    final int tempprijs;
-		    final int tempkastid;
 		    final JButton bevestig = new JButton("Bevestig");
 			bevestig.setForeground(Color.BLACK);
 			bevestig.setBackground(SystemColor.controlHighlight);
@@ -520,25 +517,29 @@ public class GUI {
 					    String stofnaamtemp = textField1.getText();
 					    
 					 	//Aantal
+					    int tempaantal = 0;
 						try{
 					    	int aantaltemp = Integer.parseInt(textField2.getText());
-					    	int aantaltempint = aantaltemp;
+					    	tempaantal=aantaltemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
 					    
 					    //Gewenst Aantal
+						int tempgewaantal=0;
 						try{
 					    	int gewaantaltemp = Integer.parseInt(textField3.getText());
-					    	gewaantaltemp=tempaantal;
+					    	tempgewaantal=gewaantaltemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
 					    
 					    //Minimum aantal
 						//Aantal
+						int tempminaantal=0;
 						try{
 					    	int minaantaltemp = Integer.parseInt(textField4.getText());
+					    	tempminaantal=minaantaltemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
@@ -548,17 +549,19 @@ public class GUI {
 						String fabrikanttemp = textField5.getText();
 					    
 					    //Prijs
+						int tempprijs=0;
 						try{
 						    int prijstemp = Integer.parseInt(textField6.getText());
-						    int tempprijs = prijstemp;
+						    tempprijs=prijstemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
 					    
 					    //KastID
+						int tempkastid=0;
 						try{
 						    int kastidtemp = Integer.parseInt(textField7.getText());
-						    kastidtemp=tempkastid;
+						    tempkastid=kastidtemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
@@ -568,8 +571,7 @@ public class GUI {
 						
 						Log.print();
 						System.out.println(" Medicijn ingegeven met merknaam: " + merknaamtemp);
-						int aantaltemp;
-						Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, gewaantaltemp, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
+						Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
 						
 						frame2.setVisible(false);
 		                frame2.dispose();
