@@ -522,6 +522,7 @@ public class GUI {
 					 	//Aantal
 						try{
 					    	int aantaltemp = Integer.parseInt(textField2.getText());
+					    	int aantaltempint = aantaltemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
@@ -535,7 +536,12 @@ public class GUI {
 					    }
 					    
 					    //Minimum aantal
-						int gewaantaltemp = textField4.getText();
+						//Aantal
+						try{
+					    	int minaantaltemp = Integer.parseInt(textField4.getText());
+					    }catch(NumberFormatException ex){
+					    	//System.err.println("Illegal input.");
+					    }
 					    		    
 					    
 					    //Fabrikant
@@ -544,7 +550,7 @@ public class GUI {
 					    //Prijs
 						try{
 						    int prijstemp = Integer.parseInt(textField6.getText());
-						    prijstemp=tempprijs;
+						    int tempprijs = prijstemp;
 					    }catch(NumberFormatException ex){
 					    	//System.err.println("Illegal input.");
 					    }
