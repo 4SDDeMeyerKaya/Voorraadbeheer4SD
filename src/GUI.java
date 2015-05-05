@@ -8,14 +8,19 @@ import java.awt.Font;
 import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 
 import java.awt.SystemColor;
 
+import javax.swing.JEditorPane;
 import javax.swing.JLabel;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.SpringLayout;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.ListSelectionModel;
@@ -227,15 +232,15 @@ public class GUI {
 		kast2.setBounds(478, 50, 300, 300);
 		frame.getContentPane().add(kast2);
 		
-		JButton BestellingControle = new JButton("Bestelling controleren");
+		final JButton BestellingControle = new JButton("Bestelling controleren");
 		BestellingControle.setForeground(Color.BLACK);
 		BestellingControle.setBackground(SystemColor.controlHighlight);
 		BestellingControle.setToolTipText("Controle van bestelling");
-		BestellingControle.setBounds(466, 400, 200, 25);
+		BestellingControle.setBounds(666, 400, 200, 25);
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
 		
-		JButton button = new JButton("Medicijn toevoegen");
+		final JButton button = new JButton("Medicijn toevoegen");
 		button.setForeground(Color.BLACK);
 		button.setBackground(SystemColor.controlHighlight);
 		button.setToolTipText("Toevoegen van medicijn");
@@ -252,6 +257,24 @@ public class GUI {
 		tabPane.setTabLayoutPolicy(JTabbedPane.SCROLL_TAB_LAYOUT);
 		tabPane.setBackground(Color.WHITE);
 		tabPane.setBounds(0, 400, 866, 290);
+		 ChangeListener changeListener = new ChangeListener() {
+		      public void stateChanged(ChangeEvent changeEvent) {
+		        JTabbedPane sourceTabbedPane = (JTabbedPane) changeEvent.getSource();
+		        int index = sourceTabbedPane.getSelectedIndex();
+		        if(index == 0)
+		        {
+		        	button.setVisible(false);
+		        	BestellingControle.setVisible(true);      	
+		        	      	
+		        }
+		        else if(index == 1)
+		        {
+		        	BestellingControle.setVisible(false);
+		        	button.setVisible(true);
+		        }
+		      }
+		    };
+		    tabPane.addChangeListener(changeListener);
 		frame.getContentPane().add(tabPane);
 		
 		JPanel bestellingTab = new JPanel();
@@ -393,18 +416,169 @@ public class GUI {
 			// TODO Auto-generated method stub
 			// wat er gebeurd als de knop wordt ingedrukt
 			
-			JFrame frame2 = new JFrame("test");
+			final JFrame frame2 = new JFrame("Medicijn toevoegen.");
 			frame2.setVisible(true);
-			frame2.setSize(200,200);
-			JLabel label = new JLabel("i am listening lelelele");
-			JPanel panel = new JPanel();
-			frame2.add(panel);
-			panel.add(label);
+			frame2.setSize(300,310);
+			String[] labels = {"Merknaam: ", "Stofnaam: ", "Aantal: ", "Gewenste Aantal: ", "Minimum Aantal: ", "Fabrikant: ", "Prijs: ", "Kast ID: ", "Houdbaarheid: "};
+			int numPairs = labels.length;
+
+			//Create and populate the panel.
+			JPanel p = new JPanel(new SpringLayout());
+			frame2.add(p);
+			
+			// WERKT NIET , Y?
+			//for (int i = 0; i < numPairs; i++) {
+			    //JLabel li = new JLabel(labels[i], JLabel.TRAILING);
+			    //p.add(li);
+			    //final JTextField textFieldi = new JTextField(10);
+			    //li.setLabelFor(textFieldi);
+			    //p.add(textFieldi);
+			//}
+			
+			//Merknaam
+			JLabel l0 = new JLabel(labels[0], JLabel.TRAILING);
+			p.add(l0);
+		    final JTextField textField0 = new JTextField(10);
+		    l0.setLabelFor(textField0);
+		    p.add(textField0);
+		    
+		    //Stofnaam
+			JLabel l1 = new JLabel(labels[1], JLabel.TRAILING);
+			p.add(l1);
+		    final JTextField textField1 = new JTextField(10);
+		    l1.setLabelFor(textField1);
+		    p.add(textField1);
+		    
+		 	//Aantal
+			JLabel l2 = new JLabel(labels[2], JLabel.TRAILING);
+			p.add(l2);
+		    final JTextField textField2 = new JTextField(10);
+		    l2.setLabelFor(textField2);
+		    p.add(textField2);
+		    
+		    //Gewenst Aantal
+			JLabel l3 = new JLabel(labels[3], JLabel.TRAILING);
+			p.add(l3);
+		    final JTextField textField3 = new JTextField(10);
+		    l3.setLabelFor(textField3);
+		    p.add(textField3);
+		    
+		    //Minimum aantal
+			JLabel l4 = new JLabel(labels[4], JLabel.TRAILING);
+			p.add(l4);
+		    final JTextField textField4 = new JTextField(10);
+		    l4.setLabelFor(textField4);
+		    p.add(textField4);		    		    
+		    
+		    //Fabrikant
+			JLabel l5 = new JLabel(labels[5], JLabel.TRAILING);
+			p.add(l5);
+		    final JTextField textField5 = new JTextField(10);
+		    l5.setLabelFor(textField5);
+		    p.add(textField5);
+		    
+		    //Prijs
+			JLabel l6 = new JLabel(labels[6], JLabel.TRAILING);
+			p.add(l6);
+		    final JTextField textField6 = new JTextField(10);
+		    l6.setLabelFor(textField6);
+		    p.add(textField6);
+		    
+		    //KastID
+			JLabel l7 = new JLabel(labels[7], JLabel.TRAILING);
+			p.add(l7);
+		    final JTextField textField7 = new JTextField(10);
+		    l7.setLabelFor(textField7);
+		    p.add(textField7);
+		    		    
+		    //Houdbaarheid
+			JLabel l8 = new JLabel(labels[8], JLabel.TRAILING);
+			p.add(l8);
+		    final JTextField textField8 = new JTextField(10);
+		    l8.setLabelFor(textField8);
+		    p.add(textField8);			
+			
+		    
+		    //button
+		    JLabel l9 = new JLabel("", JLabel.TRAILING);
+		    p.add(l9);
+		    final JButton bevestig = new JButton("Bevestig");
+			bevestig.setForeground(Color.BLACK);
+			bevestig.setBackground(SystemColor.controlHighlight);
+			l9.setLabelFor(bevestig);
+		    p.add(bevestig);
+			bevestig.addActionListener(new ActionListener(){
+				 @Override
+		            public void actionPerformed(ActionEvent arg0) {
+
+					 String merknaamtemp = textField0.getText();
+					    
+					    //Stofnaam			
+					    String stofnaamtemp = textField1.getText();
+					    
+					 	//Aantal
+						try{
+					    	int aantaltemp = Integer.parseInt(textField2.getText());
+					    }catch(NumberFormatException ex){
+					    	//System.err.println("Illegal input.");
+					    }
+					    
+					    //Gewenst Aantal
+						try{
+					    	int gewaantaltemp = Integer.parseInt(textField3.getText());
+					    }catch(NumberFormatException ex){
+					    	//System.err.println("Illegal input.");
+					    }
+					    
+					    //Minimum aantal
+						String gewaantaltemp = textField4.getText();
+					    		    
+					    
+					    //Fabrikant
+						String fabrikanttemp = textField5.getText();
+					    
+					    //Prijs
+						try{
+						    int prijstemp = Integer.parseInt(textField6.getText());
+					    }catch(NumberFormatException ex){
+					    	//System.err.println("Illegal input.");
+					    }
+					    
+					    //KastID
+						try{
+						    int kastidtemp = Integer.parseInt(textField7.getText());
+					    }catch(NumberFormatException ex){
+					    	//System.err.println("Illegal input.");
+					    }
+					    
+					    //Houdbaarheid
+						String houdbaarheidtemp = textField8.getText();
+						
+						Log.print();
+						System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
+						
+						frame2.setVisible(false);
+		                frame2.dispose();
+						
+
+		            }
+		        });
+			
+			
+
+			//Lay out the panel.
+			SpringUtilities.makeCompactGrid(p,
+			                                10, 2, //rows, cols
+			                                6, 6,        //initX, initY
+			                                6, 6);       //xPad, yPad
+			
 			
 			
 			
 		}
 	}
+	
+	
 	
 	static class ActionBestellingButton implements ActionListener{
 		
@@ -416,6 +590,8 @@ public class GUI {
 			
 		}
 	}
+	
+	 
 
 	
 }
