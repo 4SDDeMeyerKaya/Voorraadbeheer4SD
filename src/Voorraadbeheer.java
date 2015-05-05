@@ -71,10 +71,12 @@ public class Voorraadbeheer {
 		//Controleer al eerst eens of er een geschikt bestellingsobject bestaat om een medicijn in te plaatsen
 		//Op deze manier hoeven er geen meerdere bestellingen 'open' te staan.
 		if (Voorraadbeheer.controleerOpOpenBestelling()==1337)
-				throw new OrderException("Geen open bestellingen gevonden.");
+				throw new OrderException("Nieuw bestellingslijst aangemaakt.");
 		besIndex= Voorraadbeheer.controleerOpOpenBestelling();
+		boolean ietsTeBestellen=false;
 		for(int i=0; i<Voorraadbeheer.medlist.size();i++){
-			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){ 			//Controleer of men dit medicijn moet bestellen
+			if (Voorraadbeheer.medlist.get(i).controleerOpBeide()>0){
+				ietsTeBestellen=true;//Controleer of men dit medicijn moet bestellen
 																				//Indien ja
 				for(int j=0; j<Voorraadbeheer.beslist.size();j++){				
 					if(Voorraadbeheer.beslist.get(j).isAangekomen()==false){	//Enkel in niet aangekomen bestellingen zoeken
@@ -93,6 +95,8 @@ public class Voorraadbeheer {
 				}
 			}
 		}//PS: Ik durf hiervan geen BIG-O-notatie neerpennen.
+		if (ietsTeBestellen==false)
+			System.out.println("Er zijn geen nieuwe bestellingsitems toegevoegd.");
 	}
 	
 	
