@@ -31,7 +31,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.IOException;
 import java.io.PrintStream;
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import javax.swing.JButton;
 
@@ -826,7 +829,6 @@ public class GUI {
 			frame2.setVisible(true);
 			frame2.setSize(300,310);
 			String[] labels = {"Merknaam: ", "Stofnaam: ", "Aantal: ", "Gewenste Aantal: ", "Minimum Aantal: ", "Fabrikant: ", "Prijs: ", "Kast ID: ", "Houdbaarheid: "};
-			int numPairs = labels.length;
 
 			//Create and populate the panel.
 			JPanel p = new JPanel(new SpringLayout());
@@ -979,18 +981,59 @@ public class GUI {
 					    
 					    //Houdbaarheid
 						String houdbaarheidtemp = textField8.getText();
+						DateFormat sdf = new SimpleDateFormat("dd-MM-yyyy");
+						Date huidigdate = new Date();
+						Date houdbaarheidsDatumtemp = new Date();
+						try {
+							houdbaarheidsDatumtemp = sdf.parse(houdbaarheidtemp);
+						} catch (ParseException e) {
+							Log.print();
+							System.err.println("Geen geldige datum opgegeven");							
+						}
 						
-						if(tempaantal != 0 && tempgewaantal != 0 && tempminaantal != 0 && tempprijs != 0 && tempkastid != 0)
+						if(tempaantal != 0 && tempgewaantal != 0 && tempminaantal != 0 && tempprijs != 0 && tempkastid != 0 && huidigdate.before(houdbaarheidsDatumtemp))
 						{
 							Log.print();
 							System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
 							Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
 						}
+						else if(tempaantal == 0)
+						{
+							Log.print();
+							System.out.println("Geen geldig aantal ingegeven");
+						}
+						else if(tempgewaantal == 0)
+						{
+							Log.print();
+							System.out.println("Geen geldig gewenst aantal ingegeven");
+						}
+						else if(tempminaantal == 0)
+						{
+							Log.print();
+							System.out.println("Geen geldig minimum aantal ingegeven");
+						}
+						else if(tempprijs == 0)
+						{
+							Log.print();
+							System.out.println("Geen geldige prijs ingegeven");
+						}
+						else if( tempkastid < 10 || tempkastid > 28 || tempkastid == 19)
+						{
+							Log.print();
+							System.out.println("Incorrect kast ID ingegeven.");
+						}
+						else if(huidigdate.after(houdbaarheidsDatumtemp))
+						{
+							Log.print();
+							System.out.println("Het medicijn is niet meer houdbaar.");
+						}
+						
 						else
 						{
 							Log.print();
-							System.out.println("Medicijn niet toegevoegd wegens incorrecte parameters.");
+							System.out.println("Incorrecte parameters ingegeven, probeer opnieuw.");
 						}
+										
 						
 						frame2.setVisible(false);
 		                frame2.dispose();
