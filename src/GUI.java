@@ -29,6 +29,7 @@ import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.PrintStream;
+import java.text.ParseException;
 
 import javax.swing.JButton;
 
@@ -73,7 +74,7 @@ public class GUI {
 		JTextPane terminalTitle = new JTextPane();
 		terminalTitle.setFont(new Font("Dialog", Font.BOLD, 12));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("                                                           TERMINAL");
+		terminalTitle.setText("                                                             LOG");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
@@ -601,10 +602,20 @@ public class GUI {
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
 			// TODO Auto-generated method stub
-			// wat er gebeurd als de knop wordt ingedrukt
+			// wat er gebeurd als de knop wordt ingedrukt	
 			
+		
+		try {
+			Voorraadbeheer.controleerOpTeBestellen();
+		} catch (ParseException e) {
 			
+		} catch (OrderException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+		
+	}
+		
 	}
 	
 	 
