@@ -102,7 +102,7 @@ public class GUI {
 		JTextPane terminalTitle = new JTextPane();
 		terminalTitle.setFont(new Font("Arial", Font.BOLD, 14));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("                                             LOG\n------------------------------------------------------------------------------------------------------\n");
+		terminalTitle.setText("                                             LOG\n________________________________________________________________________\n");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
