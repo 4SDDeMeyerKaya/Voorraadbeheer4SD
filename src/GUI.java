@@ -556,6 +556,7 @@ public class GUI {
 						
 						Log.print();
 						System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
+						Medicijn medicijnAangemaakt = new Medicijn(merknaamtemp, stofnaamtemp, aantaltemp, gewaantaltemp, fabrikanttemp, prijstemp, kastidtemp, houdbaarheidtemp);
 						
 						frame2.setVisible(false);
 		                frame2.dispose();
