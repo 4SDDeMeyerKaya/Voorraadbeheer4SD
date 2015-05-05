@@ -29,6 +29,7 @@ import javax.swing.ListSelectionModel;
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
 import java.io.PrintStream;
 import java.text.ParseException;
 
@@ -43,6 +44,7 @@ public class GUI {
 	public JFrame frame;
 	private JTable tableMed;
 	private JTable tableBest;
+	private JTextArea textAreaTerminal;
 
 	/**
 	 * Launch the appliccation.
@@ -75,23 +77,40 @@ public class GUI {
 		frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		frame.getContentPane().setLayout(null);
 		
+		JButton clrLogButton = new JButton("Clear");
+		clrLogButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		clrLogButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseReleased(MouseEvent arg0) {
+						System.out.println("clear console");
+						textAreaTerminal.setText("");
+			}
+				        
+				
+			
+		});
+		clrLogButton.setForeground(Color.WHITE);
+		clrLogButton.setBackground(Color.BLACK);
+		clrLogButton.setBounds(1200, 0, 74, 29);
+		frame.getContentPane().add(clrLogButton);
+		
 		JTextPane terminalTitle = new JTextPane();
-		terminalTitle.setFont(new Font("Dialog", Font.BOLD, 12));
+		terminalTitle.setFont(new Font("Arial", Font.BOLD, 14));
 		terminalTitle.setToolTipText("");
-		terminalTitle.setText("                                                             LOG");
+		terminalTitle.setText("                                             LOG\n------------------------------------------------------------------------------------------------------\n");
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
-		terminalTitle.setBounds(866, 0, 414, 18);
+		terminalTitle.setBounds(866, 0, 414, 37);
 		frame.getContentPane().add(terminalTitle);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(866, 17, 414, 675);
+		scrollPane.setBounds(866, 36, 414, 675);
 		frame.getContentPane().add(scrollPane);
 		
-		JTextArea textAreaTerminal = new JTextArea();
+		textAreaTerminal = new JTextArea();
+		textAreaTerminal.setFont(new Font("Arial", Font.PLAIN, 13));
 		scrollPane.setViewportView(textAreaTerminal);
-		textAreaTerminal.setText("------------------------------------------------------------------------------------------------------\n");
 		textAreaTerminal.setEditable(false);
 		textAreaTerminal.setForeground(Color.WHITE);
 		textAreaTerminal.setBackground(Color.BLACK);
@@ -101,11 +120,21 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast10 = new JFrame("Inhoud Kast 10");
-					kast10.setVisible(true);
-					kast10.setBounds(300, 300, 300, 300);
+					final JFrame Fkast10 = new JFrame("Inhoud Kast 10");
+					Fkast10.setVisible(true);
+					Fkast10.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane10 = new JScrollPane();
-					kast10.add(scrollpane10);
+					Fkast10.getContentPane().add(scrollpane10);
+					JTextPane kast10Title = new JTextPane();
+					kast10Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast10Title.setToolTipText("");
+					kast10Title.setText("               Medicijnen in Kast 10: ");
+					kast10Title.setEditable(false);
+					kast10Title.setForeground(Color.BLACK);
+					kast10Title.setBackground(Color.WHITE);
+					kast10Title.setBounds(0, 0, 300, 30);
+					Fkast10.getContentPane().add(kast10Title);
+					
 			    }
 			}
 		});
@@ -121,11 +150,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast11 = new JFrame("Inhoud Kast 11");
-					kast11.setVisible(true);
-					kast11.setBounds(300, 300, 300, 300);
+					final JFrame Fkast11 = new JFrame("Inhoud Kast 11");
+					Fkast11.setVisible(true);
+					Fkast11.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane11 = new JScrollPane();
-					kast11.add(scrollpane11);
+					Fkast11.getContentPane().add(scrollpane11);
+					JTextPane kast11Title = new JTextPane();
+					kast11Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast11Title.setToolTipText("");
+					kast11Title.setText("               Medicijnen in Kast 11: ");
+					kast11Title.setEditable(false);
+					kast11Title.setForeground(Color.BLACK);
+					kast11Title.setBackground(Color.WHITE);
+					kast11Title.setBounds(0, 0, 300, 30);
+					Fkast11.getContentPane().add(kast11Title);
 			    }
 			}
 		});
@@ -140,11 +178,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast12 = new JFrame("Inhoud Kast 12");
-					kast12.setVisible(true);
-					kast12.setBounds(300, 300, 300, 300);
+					final JFrame Fkast12 = new JFrame("Inhoud Kast 12");
+					Fkast12.setVisible(true);
+					Fkast12.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane12 = new JScrollPane();
-					kast12.add(scrollpane12);
+					Fkast12.getContentPane().add(scrollpane12);
+					JTextPane kast12Title = new JTextPane();
+					kast12Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast12Title.setToolTipText("");
+					kast12Title.setText("               Medicijnen in Kast 12: ");
+					kast12Title.setEditable(false);
+					kast12Title.setForeground(Color.BLACK);
+					kast12Title.setBackground(Color.WHITE);
+					kast12Title.setBounds(0, 0, 300, 30);
+					Fkast12.getContentPane().add(kast12Title);
 			    }
 			}
 		});
@@ -159,11 +206,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast20 = new JFrame("Inhoud Kast 20");
-					kast20.setVisible(true);
-					kast20.setBounds(300, 300, 300, 300);
+					final JFrame Fkast20 = new JFrame("Inhoud Kast 20");
+					Fkast20.setVisible(true);
+					Fkast20.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane20 = new JScrollPane();
-					kast20.add(scrollpane20);
+					Fkast20.getContentPane().add(scrollpane20);
+					JTextPane kast20Title = new JTextPane();
+					kast20Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast20Title.setToolTipText("");
+					kast20Title.setText("               Medicijnen in Kast 20: ");
+					kast20Title.setEditable(false);
+					kast20Title.setForeground(Color.BLACK);
+					kast20Title.setBackground(Color.WHITE);
+					kast20Title.setBounds(0, 0, 300, 30);
+					Fkast20.getContentPane().add(kast20Title);
 			    }
 			}
 		});
@@ -178,11 +234,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast21 = new JFrame("Inhoud Kast 21");
-					kast21.setVisible(true);
-					kast21.setBounds(300, 300, 300, 300);
+					final JFrame Fkast21 = new JFrame("Inhoud Kast 21");
+					Fkast21.setVisible(true);
+					Fkast21.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane21 = new JScrollPane();
-					kast21.add(scrollpane21);
+					Fkast21.getContentPane().add(scrollpane21);
+					JTextPane kast21Title = new JTextPane();
+					kast21Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast21Title.setToolTipText("");
+					kast21Title.setText("               Medicijnen in Kast 21: ");
+					kast21Title.setEditable(false);
+					kast21Title.setForeground(Color.BLACK);
+					kast21Title.setBackground(Color.WHITE);
+					kast21Title.setBounds(0, 0, 300, 30);
+					Fkast21.getContentPane().add(kast21Title);
 			    }
 			}
 		});
@@ -197,11 +262,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast22 = new JFrame("Inhoud Kast 22");
-					kast22.setVisible(true);
-					kast22.setBounds(300, 300, 300, 300);
+					final JFrame Fkast22 = new JFrame("Inhoud Kast 22");
+					Fkast22.setVisible(true);
+					Fkast22.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane22 = new JScrollPane();
-					kast22.add(scrollpane22);
+					Fkast22.getContentPane().add(scrollpane22);
+					JTextPane kast22Title = new JTextPane();
+					kast22Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast22Title.setToolTipText("");
+					kast22Title.setText("               Medicijnen in Kast 22: ");
+					kast22Title.setEditable(false);
+					kast22Title.setForeground(Color.BLACK);
+					kast22Title.setBackground(Color.WHITE);
+					kast22Title.setBounds(0, 0, 300, 30);
+					Fkast22.getContentPane().add(kast22Title);
 			    }
 			}
 		});
@@ -216,11 +290,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast13 = new JFrame("Inhoud Kast 13");
-					kast13.setVisible(true);
-					kast13.setBounds(300, 300, 300, 300);
+					final JFrame Fkast13 = new JFrame("Inhoud Kast 13");
+					Fkast13.setVisible(true);
+					Fkast13.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane13 = new JScrollPane();
-					kast13.add(scrollpane13);
+					Fkast13.getContentPane().add(scrollpane13);
+					JTextPane kast13Title = new JTextPane();
+					kast13Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast13Title.setToolTipText("");
+					kast13Title.setText("               Medicijnen in Kast 13: ");
+					kast13Title.setEditable(false);
+					kast13Title.setForeground(Color.BLACK);
+					kast13Title.setBackground(Color.WHITE);
+					kast13Title.setBounds(0, 0, 300, 30);
+					Fkast13.getContentPane().add(kast13Title);
 			    }
 			}
 		});
@@ -235,11 +318,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast14 = new JFrame("Inhoud Kast 14");
-					kast14.setVisible(true);
-					kast14.setBounds(300, 300, 300, 300);
+					final JFrame Fkast14 = new JFrame("Inhoud Kast 14");
+					Fkast14.setVisible(true);
+					Fkast14.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane14 = new JScrollPane();
-					kast14.add(scrollpane14);
+					Fkast14.getContentPane().add(scrollpane14);
+					JTextPane kast14Title = new JTextPane();
+					kast14Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast14Title.setToolTipText("");
+					kast14Title.setText("               Medicijnen in Kast 14: ");
+					kast14Title.setEditable(false);
+					kast14Title.setForeground(Color.BLACK);
+					kast14Title.setBackground(Color.WHITE);
+					kast14Title.setBounds(0, 0, 300, 30);
+					Fkast14.getContentPane().add(kast14Title);
 			    }
 			}
 		});
@@ -254,11 +346,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast15 = new JFrame("Inhoud Kast 15");
-					kast15.setVisible(true);
-					kast15.setBounds(300, 300, 300, 300);
+					final JFrame Fkast15 = new JFrame("Inhoud Kast 15");
+					Fkast15.setVisible(true);
+					Fkast15.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane15 = new JScrollPane();
-					kast15.add(scrollpane15);
+					Fkast15.getContentPane().add(scrollpane15);
+					JTextPane kast15Title = new JTextPane();
+					kast15Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast15Title.setToolTipText("");
+					kast15Title.setText("               Medicijnen in Kast 15: ");
+					kast15Title.setEditable(false);
+					kast15Title.setForeground(Color.BLACK);
+					kast15Title.setBackground(Color.WHITE);
+					kast15Title.setBounds(0, 0, 300, 30);
+					Fkast15.getContentPane().add(kast15Title);
 			    }
 			}
 		});
@@ -273,11 +374,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast23 = new JFrame("Inhoud Kast 23");
-					kast23.setVisible(true);
-					kast23.setBounds(300, 300, 300, 300);
+					final JFrame Fkast23 = new JFrame("Inhoud Kast 23");
+					Fkast23.setVisible(true);
+					Fkast23.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane23 = new JScrollPane();
-					kast23.add(scrollpane23);
+					Fkast23.getContentPane().add(scrollpane23);
+					JTextPane kast23Title = new JTextPane();
+					kast23Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast23Title.setToolTipText("");
+					kast23Title.setText("               Medicijnen in Kast 23: ");
+					kast23Title.setEditable(false);
+					kast23Title.setForeground(Color.BLACK);
+					kast23Title.setBackground(Color.WHITE);
+					kast23Title.setBounds(0, 0, 300, 30);
+					Fkast23.getContentPane().add(kast23Title);
 			    }
 			}
 		});
@@ -292,11 +402,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast24 = new JFrame("Inhoud Kast 24");
-					kast24.setVisible(true);
-					kast24.setBounds(300, 300, 300, 300);
+					final JFrame Fkast24 = new JFrame("Inhoud Kast 24");
+					Fkast24.setVisible(true);
+					Fkast24.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane24 = new JScrollPane();
-					kast24.add(scrollpane24);
+					Fkast24.getContentPane().add(scrollpane24);
+					JTextPane kast24Title = new JTextPane();
+					kast24Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast24Title.setToolTipText("");
+					kast24Title.setText("               Medicijnen in Kast 24: ");
+					kast24Title.setEditable(false);
+					kast24Title.setForeground(Color.BLACK);
+					kast24Title.setBackground(Color.WHITE);
+					kast24Title.setBounds(0, 0, 300, 30);
+					Fkast24.getContentPane().add(kast24Title);
 			    }
 			}
 		});
@@ -311,11 +430,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast25 = new JFrame("Inhoud Kast 25");
-					kast25.setVisible(true);
-					kast25.setBounds(300, 300, 300, 300);
+					final JFrame Fkast25 = new JFrame("Inhoud Kast 25");
+					Fkast25.setVisible(true);
+					Fkast25.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane25 = new JScrollPane();
-					kast25.add(scrollpane25);
+					Fkast25.getContentPane().add(scrollpane25);
+					JTextPane kast25Title = new JTextPane();
+					kast25Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast25Title.setToolTipText("");
+					kast25Title.setText("               Medicijnen in Kast : ");
+					kast25Title.setEditable(false);
+					kast25Title.setForeground(Color.BLACK);
+					kast25Title.setBackground(Color.WHITE);
+					kast25Title.setBounds(0, 0, 300, 30);
+					Fkast25.getContentPane().add(kast25Title);
 			    }
 			}
 		});
@@ -330,11 +458,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast16 = new JFrame("Inhoud Kast 16");
-					kast16.setVisible(true);
-					kast16.setBounds(300, 300, 300, 300);
+					final JFrame Fkast16 = new JFrame("Inhoud Kast 16");
+					Fkast16.setVisible(true);
+					Fkast16.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane16 = new JScrollPane();
-					kast16.add(scrollpane16);
+					Fkast16.getContentPane().add(scrollpane16);
+					JTextPane kast16Title = new JTextPane();
+					kast16Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast16Title.setToolTipText("");
+					kast16Title.setText("               Medicijnen in Kast 16: ");
+					kast16Title.setEditable(false);
+					kast16Title.setForeground(Color.BLACK);
+					kast16Title.setBackground(Color.WHITE);
+					kast16Title.setBounds(0, 0, 300, 30);
+					Fkast16.getContentPane().add(kast16Title);
 			    }
 			}
 		});
@@ -349,11 +486,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast17 = new JFrame("Inhoud Kast 17");
-					kast17.setVisible(true);
-					kast17.setBounds(300, 300, 300, 300);
+					final JFrame Fkast17 = new JFrame("Inhoud Kast 17");
+					Fkast17.setVisible(true);
+					Fkast17.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane17 = new JScrollPane();
-					kast17.add(scrollpane17);
+					Fkast17.getContentPane().add(scrollpane17);
+					JTextPane kast17Title = new JTextPane();
+					kast17Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast17Title.setToolTipText("");
+					kast17Title.setText("               Medicijnen in Kast 17: ");
+					kast17Title.setEditable(false);
+					kast17Title.setForeground(Color.BLACK);
+					kast17Title.setBackground(Color.WHITE);
+					kast17Title.setBounds(0, 0, 300, 30);
+					Fkast17.getContentPane().add(kast17Title);
 			    }
 			}
 		});
@@ -368,11 +514,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast18 = new JFrame("Inhoud Kast 18");
-					kast18.setVisible(true);
-					kast18.setBounds(300, 300, 300, 300);
+					final JFrame Fkast18 = new JFrame("Inhoud Kast 18");
+					Fkast18.setVisible(true);
+					Fkast18.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane18 = new JScrollPane();
-					kast18.add(scrollpane18);
+					Fkast18.getContentPane().add(scrollpane18);
+					JTextPane kast18Title = new JTextPane();
+					kast18Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast18Title.setToolTipText("");
+					kast18Title.setText("               Medicijnen in Kast 18: ");
+					kast18Title.setEditable(false);
+					kast18Title.setForeground(Color.BLACK);
+					kast18Title.setBackground(Color.WHITE);
+					kast18Title.setBounds(0, 0, 300, 30);
+					Fkast18.getContentPane().add(kast18Title);
 			    }
 			}
 		});
@@ -387,11 +542,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast26 = new JFrame("Inhoud Kast 26");
-					kast26.setVisible(true);
-					kast26.setBounds(300, 300, 300, 300);
+					final JFrame Fkast26 = new JFrame("Inhoud Kast 26");
+					Fkast26.setVisible(true);
+					Fkast26.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane26 = new JScrollPane();
-					kast26.add(scrollpane26);
+					Fkast26.getContentPane().add(scrollpane26);
+					JTextPane kast26Title = new JTextPane();
+					kast26Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast26Title.setToolTipText("");
+					kast26Title.setText("               Medicijnen in Kast 26: ");
+					kast26Title.setEditable(false);
+					kast26Title.setForeground(Color.BLACK);
+					kast26Title.setBackground(Color.WHITE);
+					kast26Title.setBounds(0, 0, 300, 30);
+					Fkast26.getContentPane().add(kast26Title);
 			    }
 			}
 		});
@@ -406,11 +570,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast27 = new JFrame("Inhoud Kast 27");
-					kast27.setVisible(true);
-					kast27.setBounds(300, 300, 300, 300);
+					final JFrame Fkast27 = new JFrame("Inhoud Kast 27");
+					Fkast27.setVisible(true);
+					Fkast27.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane27 = new JScrollPane();
-					kast27.add(scrollpane27);
+					Fkast27.getContentPane().add(scrollpane27);
+					JTextPane kast27Title = new JTextPane();
+					kast27Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast27Title.setToolTipText("");
+					kast27Title.setText("               Medicijnen in Kast 27: ");
+					kast27Title.setEditable(false);
+					kast27Title.setForeground(Color.BLACK);
+					kast27Title.setBackground(Color.WHITE);
+					kast27Title.setBounds(0, 0, 300, 30);
+					Fkast27.getContentPane().add(kast27Title);
 			    }
 			}
 		});
@@ -425,11 +598,20 @@ public class GUI {
 			@Override
 			public void mousePressed(MouseEvent e) {
 				if(SwingUtilities.isRightMouseButton(e)){
-					final JFrame kast28 = new JFrame("Inhoud Kast 28");
-					kast28.setVisible(true);
-					kast28.setBounds(300, 300, 300, 300);
+					final JFrame Fkast28 = new JFrame("Inhoud Kast 28");
+					Fkast28.setVisible(true);
+					Fkast28.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane28 = new JScrollPane();
-					kast28.add(scrollpane28);
+					Fkast28.getContentPane().add(scrollpane28);
+					JTextPane kast28Title = new JTextPane();
+					kast28Title.setFont(new Font("Arial", Font.BOLD, 14));
+					kast28Title.setToolTipText("");
+					kast28Title.setText("               Medicijnen in Kast 28: ");
+					kast28Title.setEditable(false);
+					kast28Title.setForeground(Color.BLACK);
+					kast28Title.setBackground(Color.WHITE);
+					kast28Title.setBounds(0, 0, 300, 30);
+					Fkast28.getContentPane().add(kast28Title);
 			    }
 			}
 		});
@@ -454,18 +636,20 @@ public class GUI {
 		frame.getContentPane().add(kast2);
 		
 		final JButton BestellingControle = new JButton("Bestelling controleren");
+		BestellingControle.setFont(new Font("Arial", Font.PLAIN, 14));
 		BestellingControle.setForeground(Color.BLACK);
 		BestellingControle.setBackground(SystemColor.controlHighlight);
 		BestellingControle.setToolTipText("Controle van bestelling");
-		BestellingControle.setBounds(666, 400, 200, 25);
+		BestellingControle.setBounds(666, 400, 200, 23);
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
 		
 		final JButton button = new JButton("Medicijn toevoegen");
+		button.setFont(new Font("Arial", Font.PLAIN, 14));
 		button.setForeground(Color.BLACK);
 		button.setBackground(SystemColor.controlHighlight);
 		button.setToolTipText("Toevoegen van medicijn");
-		button.setBounds(666, 400, 200, 25);
+		button.setBounds(666, 400, 200, 23);
 		button.addActionListener(new ActionMedButton());
 		frame.getContentPane().add(button);
 		
@@ -509,6 +693,7 @@ public class GUI {
 		bestellingTab.add(scrollPaneBest);
 		
 		tableBest = new JTable();
+		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableBest.setCellSelectionEnabled(true);
 		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableBest.setFillsViewportHeight(true);
@@ -557,7 +742,7 @@ public class GUI {
 		tableMed = new JTable();
 		JTableHeader thM = tableMed.getTableHeader();
 		thM.setFont(new Font("Dialog", Font.BOLD, 12));
-		tableMed.setFont(new Font("Dialog", Font.PLAIN, 12));
+		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableMed.setToolTipText("Lijst van medicijnen");
 		tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 		tableMed.setRowSelectionAllowed(false);
@@ -850,9 +1035,8 @@ public class GUI {
 	}
 		
 	}
-	
-	 
-
-	
+	public JTextArea getTextAreaTerminal() {
+		return textAreaTerminal;
+	}
 }
 
