@@ -16,6 +16,7 @@ public class Log {
 		DateFormat df = new SimpleDateFormat("HH:mm:ss");
 		df.setTimeZone(TimeZone.getTimeZone("GMT+2")); //Houdt blijkbaar geen rekening met zomertijd.
 		System.out.print(" ["+df.format(d1)+"] ");
+		GUI.updateTabellen(); //Aangezien Log.print() toch overal wordt aangeroepen, hoeven we deze methode niet overal apart in te stoppen.
 	}
 }
 
