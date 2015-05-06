@@ -6,3 +6,5 @@ Jebus stofnaam 30 60 31 JesusIndustries 12 12 01-01-0000
 Openmedicijnentxt6 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
 Openmedicijnentxt7 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
 Openmedicijnentxt8 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
+a a 30 60 31 a 30 12 16-12-2016
+b b 30 60 31 a 30 12 16-12-2016

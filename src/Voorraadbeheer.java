@@ -171,11 +171,13 @@ public class Voorraadbeheer {
 				outputStream.print(medlist.get(i).prijs+" ");
 				outputStream.print(medlist.get(i).kastID+" ");
 				outputStream.println(medlist.get(i).houdbaarheid);
-				outputStream.close();
+
 			}
+			outputStream.close();
 		}catch (FileNotFoundException e){
 			
 		}
+
 	}
 
 }

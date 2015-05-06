@@ -36,9 +36,9 @@ public class Splash {
 			Thread.sleep(800);
 			splash.splashOff();			
 			GUI window = new GUI();
-			window.frame.setVisible(true);			
+			window.frame.setVisible(true);	
+			Voorraadbeheer.importMedicijnen();		
 			Voorraadbeheer.voegBestellingToe();
-			Voorraadbeheer.importMedicijnen();
 			Thread.sleep(50);
 			GUI.updateTabellen();
 			//GUI.updateKasten();
