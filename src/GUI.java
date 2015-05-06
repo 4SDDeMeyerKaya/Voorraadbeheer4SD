@@ -104,7 +104,7 @@ public class GUI {
 		});
 		clrLogButton.setForeground(Color.WHITE);
 		clrLogButton.setBackground(Color.BLACK);
-		clrLogButton.setBounds(1200, 0, 74, 29);
+		clrLogButton.setBounds(1200, 0, 74, 36);
 		frame.getContentPane().add(clrLogButton);
 		
 		JTextPane terminalTitle = new JTextPane();
@@ -114,11 +114,11 @@ public class GUI {
 		terminalTitle.setEditable(false);
 		terminalTitle.setForeground(Color.WHITE);
 		terminalTitle.setBackground(Color.BLACK);
-		terminalTitle.setBounds(866, 0, 414, 37);
+		terminalTitle.setBounds(866, 0, 414, 39);
 		frame.getContentPane().add(terminalTitle);
 		
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(866, 36, 414, 675);
+		scrollPane.setBounds(866, 38, 414, 675);
 		frame.getContentPane().add(scrollPane);
 		
 		textAreaTerminal = new JTextArea();
