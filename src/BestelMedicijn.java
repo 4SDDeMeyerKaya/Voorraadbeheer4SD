@@ -13,9 +13,10 @@ public class BestelMedicijn {
 	String merknaam;
 	int aantal;
 	int prijs;
+	int bestelIndex;
 	
 	
-	public BestelMedicijn(String merknaam, int aantal, int prijs)
+	public BestelMedicijn(String merknaam, int aantal, int prijs, int bestelIndex)
 	{
 		this.merknaam = merknaam;
 		this.aantal = aantal;

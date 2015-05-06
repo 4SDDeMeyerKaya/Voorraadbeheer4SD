@@ -17,7 +17,7 @@ public class Bestelling {
     }
 	
 	//voegMedicijnToe voegt een nieuw object van BestelMedicijn toe aan de lijst.
-	public void voegMedicijnToe(String merknaam, int aantal, int prijs){
+	public void voegMedicijnToe(String merknaam, int aantal, int prijs, int bestelIndex){
 		boolean isAanwezig=false;
 		for(int i=0; i<besmedlist.size();i++){
 			if (besmedlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
@@ -27,7 +27,7 @@ public class Bestelling {
 				}	
 		}
 		if(isAanwezig==false){
-			besmedlist.add(new BestelMedicijn(merknaam, aantal, prijs));
+			besmedlist.add(new BestelMedicijn(merknaam, aantal, prijs, bestelIndex));
 			Log.print();
 			System.out.println(merknaam + " is besteld. (Aantal: "+aantal+")");
 			}
