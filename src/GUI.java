@@ -1436,7 +1436,7 @@ public class GUI {
         }
         
         public static void updateBesTabellen(){
-            String[] colName = { "Bestellingsnummer", "Merknaam", "Aantal", "Prijs"};
+            String[] colName = { "Bestellingsnummer","Status", "Merknaam", "Aantal", "Prijs"};
     JTableHeader thM = tableBest.getTableHeader();
             thM.setFont(new Font("Dialog", Font.BOLD, 12));
             tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -1447,15 +1447,16 @@ public class GUI {
         for (int i=0;i<Voorraadbeheer.beslist.size();i++) {
         	for(int j=0;j<Voorraadbeheer.beslist.get(i).besmedlist.size();j++){
         		object[k][0] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).bestelIndex;
-        		object[k][1] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).merknaam;
-        		object[k][2] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).aantal;
-        		object[k][3] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).prijs;
+        		object[k][1] = Voorraadbeheer.beslist.get(i).getStatus();
+        		object[k][2] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).merknaam;
+        		object[k][3] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).aantal;
+        		object[k][4] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).prijs;
         		k++;
         	}
             tableBest.setFillsViewportHeight(true);
             tableBest.setCellSelectionEnabled(false);
             tableBest.setModel(new DefaultTableModel(object, colName));
-
+            
         }
     }
     }

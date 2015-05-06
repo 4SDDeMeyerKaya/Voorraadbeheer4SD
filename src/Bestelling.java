@@ -33,6 +33,18 @@ public class Bestelling {
 			}
 	}
 	
+	public String getStatus(){
+		if (isBesteld()==false){
+			return "Nog niet besteld";
+		}
+		else{
+			if(isAangekomen()==false){
+				return "Besteld";
+			}
+			else
+				return "Reeds aangekomen";
+		}
+	}
 	
 	public boolean isBesteld() {
 		return isBesteld;
