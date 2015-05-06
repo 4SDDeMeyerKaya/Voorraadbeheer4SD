@@ -23,6 +23,7 @@ import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.SpringLayout;
 import javax.swing.SwingUtilities;
+import javax.swing.table.AbstractTableModel;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
@@ -37,6 +38,8 @@ import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 
@@ -44,6 +47,9 @@ import com.thehowtotutorial.splashscreen.JSplash;
 
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+
+import javax.swing.AbstractAction;
+import javax.swing.Action;
 
 
 public class GUI {
@@ -55,7 +61,7 @@ public class GUI {
 
 	/**
 	 * Launch the appliccation.
-	 */
+	 *
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -69,7 +75,7 @@ public class GUI {
 		});
 	}
 
-	/**
+	**
 	 * Create the application.
 	 */
 	public GUI() {
@@ -650,6 +656,71 @@ public class GUI {
 		BestellingControle.setBounds(666, 400, 200, 23);
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
+
+		
+		
+		JButton UpdateTabel = new JButton("Update tabellen");
+		UpdateTabel.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+
+				String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
+		                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+		        JTableHeader thM = tableMed.getTableHeader();
+				thM.setFont(new Font("Dialog", Font.BOLD, 12));
+				tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+
+		        Object[][] object = new Object[100][100];
+		        int i = 0;
+		        if (Voorraadbeheer.medlist.size() != 0) {
+		            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+		                object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
+		                object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
+		                object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
+		                object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
+		                object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
+		                object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
+		                object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
+		                object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
+		                object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
+		                
+		                tableMed.setFillsViewportHeight(true);
+		        		tableMed.setCellSelectionEnabled(false);
+		        		tableMed.setModel(new DefaultTableModel(object, colName));
+		        		
+		        		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+		        		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
+		        		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+		        		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+		        		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+		        		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+		        		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
+		        		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
+		        		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
+		        		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
+		        		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+		        		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+		        		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+		        		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+		        		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+		        		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
+		        		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+		        		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+		            }
+		        }
+			}
+		});
+		
+		
+		
+		
+		UpdateTabel.setToolTipText("Wijzigingen aan tabellen weergeven");
+		UpdateTabel.setForeground(Color.BLACK);
+		UpdateTabel.setFont(new Font("Arial", Font.PLAIN, 14));
+		UpdateTabel.setBackground(SystemColor.controlHighlight);
+		UpdateTabel.setBounds(459, 400, 200, 23);
+		frame.getContentPane().add(UpdateTabel);
+		
 		
 		final JButton button = new JButton("Medicijn toevoegen");
 		button.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -703,7 +774,7 @@ public class GUI {
 			public boolean isCellEditable(int data, int columns){
 				return false;
 			}
-			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+			/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
 				Component c = super.prepareRenderer(r, data, columns);
 				
 				if (data % 2 == 0) //alternating colours among rows
@@ -713,7 +784,7 @@ public class GUI {
 				
 				
 				return c;
-			}
+			}*/
 			
 		};
 		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
@@ -751,7 +822,7 @@ public class GUI {
 		));
 		tableBest.setForeground(Color.BLACK);
 		scrollPaneBest.setViewportView(tableBest);
-		
+
 		JPanel medicijnTab = new JPanel();
 		medicijnTab.setToolTipText("Controle van medicijnen");
 		medicijnTab.setBackground(Color.WHITE);
@@ -761,7 +832,9 @@ public class GUI {
 		JScrollPane scrollPaneMed = new JScrollPane();
 		scrollPaneMed.setBounds(0, 0, 866, 260);
 		medicijnTab.add(scrollPaneMed);
+	
 		
+
 		tableMed = new JTable(){
 			public boolean isCellEditable(int data, int columns){
 				return false;
@@ -774,15 +847,60 @@ public class GUI {
 				
 				else c.setBackground(Color.LIGHT_GRAY);
 				
-				if (isCellSelected(data, columns))
-					c.setBackground(Color.gray);
-				
 				return c;
 			}
 			
 		};
-		JTableHeader thM = tableMed.getTableHeader();
+
+		
+        String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
+                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+        JTableHeader thM = tableMed.getTableHeader();
 		thM.setFont(new Font("Dialog", Font.BOLD, 12));
+		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+
+        Object[][] object = new Object[100][100];
+        int i = 0;
+        if (Voorraadbeheer.medlist.size() != 0) {
+            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+                object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
+                object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
+                object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
+                object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
+                object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
+                object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
+                object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
+                object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
+                object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
+                
+                tableMed.setFillsViewportHeight(true);
+        		tableMed.setCellSelectionEnabled(false);
+        		tableMed.setModel(new DefaultTableModel(object, colName));
+        		
+        		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+        		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
+        		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+        		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+        		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+        		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+        		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+        		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+        		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+        		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+        		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+        		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
+        		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+        		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+            }
+        }
+		
+		/*
+		JTableHeader thM1 = tableMed.getTableHeader();
+		thM1.setFont(new Font("Dialog", Font.BOLD, 12));
 		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 		tableMed.setToolTipText("Lijst van medicijnen");
 		//tableMed.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
@@ -826,25 +944,11 @@ public class GUI {
 			new String[] {
 				"Merknaam", "Stofnaam", "Aantal", "GA", "MA", "Fabrikant", "Prijs", "Kast ID", "Houdbaarheid"
 			}
-		));
-		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
-		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
-		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
-		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
-		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
-		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
-		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
-		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
-		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
-		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
-		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
-		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
-		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
-		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
-		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
-		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
-		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
-		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+		));*/
+
+
+
+		
 		scrollPaneMed.setViewportView(tableMed);
 		tabPane.setBackgroundAt(1, Color.WHITE);
 		
@@ -856,6 +960,7 @@ public class GUI {
 		
 	}
 	
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	static class ActionMedButton implements ActionListener{
 		
 		@Override
@@ -1099,8 +1204,6 @@ public class GUI {
 		
 		@Override
 		public void actionPerformed(ActionEvent arg0) {
-			// TODO Auto-generated method stub
-			// wat er gebeurd als de knop wordt ingedrukt	
 			
 		
 		try {
@@ -1108,15 +1211,20 @@ public class GUI {
 		} catch (ParseException e) {
 			
 		} catch (OrderException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		
 	}
 		
 	}
+	
+	
+	
+
+	
 	public JTextArea getTextAreaTerminal() {
 		return textAreaTerminal;
 	}
+
 }
 
