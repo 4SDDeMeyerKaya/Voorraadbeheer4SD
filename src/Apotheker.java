@@ -4,7 +4,7 @@ public class Apotheker {
 		
 	}
 	
-	public void verkoopMedicijn(String merknaam){
+	public static void verkoopMedicijn(String merknaam){
 		for(int j=0;j<Voorraadbeheer.medlist.size();j++){
 			if(merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
 				Voorraadbeheer.medlist.get(j).aantal--;

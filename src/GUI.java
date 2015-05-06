@@ -83,6 +83,7 @@ public class GUI {
 	public GUI() {
 		
 		frame = new JFrame();
+		frame.setTitle("Asclepius ~De Meyer & Kaya");
 		frame.getContentPane().setForeground(Color.BLACK);
 		frame.setIconImage(Toolkit.getDefaultToolkit().getImage("Farmacia1.png"));
 		frame.setResizable(false);
@@ -97,13 +98,94 @@ public class GUI {
 		clrLogButton.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseReleased(MouseEvent arg0) {
-						System.out.println("clear console");
-						textAreaTerminal.setText("");
+					textAreaTerminal.setText("");
 			}
 				        
 				
 			
 		});
+		
+		JButton verkoopButton = new JButton("Verkoop Medicijn");
+		verkoopButton.setBackground(SystemColor.controlHighlight);
+		verkoopButton.addMouseListener(new MouseAdapter() {
+			@Override
+			public void mouseClicked(MouseEvent arg0) {
+				final JFrame frameverkoop = new JFrame("Medicijn verkopen");
+				frameverkoop.setVisible(true);
+				frameverkoop.setSize(500,110);
+
+				//Create and populate the panel.
+				JPanel p = new JPanel(new SpringLayout());
+				frameverkoop.getContentPane().add(p);
+				
+				//Merknaam
+				JLabel l0 = new JLabel("Merknaam van het verkochte medicijn: ", JLabel.TRAILING);
+				p.add(l0);
+			    final JTextField textField0 = new JTextField(200);
+			    l0.setLabelFor(textField0);
+			    p.add(textField0);
+			    
+			  //button
+			    JLabel l1 = new JLabel("", JLabel.TRAILING);
+			    p.add(l1);
+			    final JButton bevestig = new JButton("Bevestig");
+				bevestig.setForeground(Color.BLACK);
+				bevestig.setBackground(SystemColor.controlHighlight);
+				l1.setLabelFor(bevestig);
+			    p.add(bevestig);
+				bevestig.addActionListener(new ActionListener(){
+					 @Override
+			            public void actionPerformed(ActionEvent arg0) {
+
+						 String medicijnnaamtemp = textField0.getText();
+						 boolean geldig = false;
+						 
+						 int i = 0;
+					        if (Voorraadbeheer.medlist.size() != 0) {
+					            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+					            	if(Voorraadbeheer.medlist.get(i).merknaam.equals(medicijnnaamtemp)){
+					            		geldig = true;
+					            	}
+					            }
+					        }		 
+												    
+					        if(geldig = true)
+							{
+								Log.print();
+								System.out.println("Medicijn verkocht met merknaam: " + medicijnnaamtemp);
+								Apotheker.verkoopMedicijn(medicijnnaamtemp);
+								frameverkoop.setVisible(false);
+							   	frameverkoop.dispose();
+							}
+						   	else if(geldig = false)
+						   	{
+						   		Log.print();
+								System.out.println("Incorrecte medicijn ingegeven, probeer opnieuw.");
+								frameverkoop.setVisible(false);
+							   	frameverkoop.dispose();
+							}
+								
+			            }
+			        });		
+				
+
+				//Lay out the panel.
+				SpringUtilities.makeCompactGrid(p,
+				                                2, 2, //rows, cols
+				                                6, 6,        //initX, initY
+				                                6, 6);       //xPad, yPad
+			    
+			    
+			    
+			    
+				
+				
+			}
+		});
+		verkoopButton.setFont(new Font("Arial", Font.PLAIN, 14));
+		verkoopButton.setForeground(Color.BLACK);
+		verkoopButton.setBounds(466, 400, 200, 23);
+		frame.getContentPane().add(verkoopButton);
 		clrLogButton.setForeground(Color.WHITE);
 		clrLogButton.setBackground(Color.BLACK);
 		clrLogButton.setBounds(1200, 0, 74, 36);
@@ -802,70 +884,6 @@ public class GUI {
 		BestellingControle.setBounds(666, 400, 200, 23);
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
-
-		/*
-		JButton UpdateTabel = new JButton("Update tabellen");
-		UpdateTabel.addMouseListener(new MouseAdapter() {
-			@Override
-			public void mouseClicked(MouseEvent arg0) {
-
-				String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
-		                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
-		        JTableHeader thM = tableMed.getTableHeader();
-				thM.setFont(new Font("Dialog", Font.BOLD, 12));
-				tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
-
-		        Object[][] object = new Object[100][100];
-		        int i = 0;
-		        if (Voorraadbeheer.medlist.size() != 0) {
-		            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
-		                object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
-		                object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
-		                object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
-		                object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
-		                object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
-		                object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
-		                object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
-		                object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
-		                object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
-		                
-		                tableMed.setFillsViewportHeight(true);
-		        		tableMed.setCellSelectionEnabled(false);
-		        		tableMed.setModel(new DefaultTableModel(object, colName));
-		        		
-		        		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
-		        		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
-		        		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
-		        		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
-		        		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
-		        		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
-		        		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
-		        		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
-		        		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
-		        		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
-		        		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
-		        		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
-		        		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
-		        		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
-		        		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
-		        		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
-		        		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
-		        		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
-		            }
-		        }
-			}
-		});
-		*/
-		
-		
-		/*
-		UpdateTabel.setToolTipText("Wijzigingen aan tabellen weergeven");
-		UpdateTabel.setForeground(Color.BLACK);
-		UpdateTabel.setFont(new Font("Arial", Font.PLAIN, 14));
-		UpdateTabel.setBackground(SystemColor.controlHighlight);
-		UpdateTabel.setBounds(466, 400, 200, 23);
-		frame.getContentPane().add(UpdateTabel);
-		*/
 		
 		final JButton button = new JButton("Medicijn toevoegen");
 		button.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -1257,47 +1275,62 @@ public class GUI {
 							Log.print();
 							System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
 							Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if(tempaantal == 0)
 						{
 							Log.print();
 							System.out.println("Geen geldig aantal ingegeven");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if(tempgewaantal == 0)
 						{
 							Log.print();
 							System.out.println("Geen geldig gewenst aantal ingegeven");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if(tempminaantal == 0)
 						{
 							Log.print();
 							System.out.println("Geen geldig minimum aantal ingegeven");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if(tempprijs == 0)
 						{
 							Log.print();
 							System.out.println("Geen geldige prijs ingegeven");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if( tempkastid < 10 || tempkastid > 28 || tempkastid == 19)
 						{
 							Log.print();
 							System.out.println("Incorrect kast ID ingegeven.");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						else if(huidigdate.after(houdbaarheidsDatumtemp))
 						{
 							Log.print();
 							System.out.println("Het medicijn is niet meer houdbaar.");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 						
 						else
 						{
 							Log.print();
 							System.out.println("Incorrecte parameters ingegeven, probeer opnieuw.");
+							frame2.setVisible(false);
+			                frame2.dispose();
 						}
 										
 						
-						frame2.setVisible(false);
-		                frame2.dispose();
+						
 						
 
 		            }
@@ -1343,9 +1376,52 @@ public class GUI {
 		return textAreaTerminal;
 	}
 	
-	
-	
+	public static void updateTabellen(){
+		String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
+                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+        JTableHeader thM = tableMed.getTableHeader();
+		thM.setFont(new Font("Dialog", Font.BOLD, 12));
+		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 
+        Object[][] object = new Object[100][100];
+        int i = 0;
+        if (Voorraadbeheer.medlist.size() != 0) {
+            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+                object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
+                object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
+                object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
+                object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
+                object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
+                object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
+                object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
+                object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
+                object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
+                
+                tableMed.setFillsViewportHeight(true);
+        		tableMed.setCellSelectionEnabled(false);
+        		tableMed.setModel(new DefaultTableModel(object, colName));
+        		
+        		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+        		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
+        		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+        		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+        		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+        		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+        		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+        		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+        		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+        		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+        		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+        		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
+        		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+        		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+            }
+        }
+	}
 }
 
 
