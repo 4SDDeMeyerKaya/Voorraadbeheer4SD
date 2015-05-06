@@ -41,6 +41,7 @@ public class Splash {
 			Voorraadbeheer.importMedicijnen();
 			Thread.sleep(50);
 			GUI.updateTabellen();
+			//GUI.updateKasten();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
