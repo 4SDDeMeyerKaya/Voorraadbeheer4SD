@@ -14,7 +14,7 @@ public class Apotheker {
 					}
 				else{
 					Log.print();
-					System.out.println("Er zijn niet genoeg "+merknaam+" artikelen.");
+					System.out.println("Er zijn niet genoeg "+merknaam+" medicijnen.");
 					}
 			}
 			
