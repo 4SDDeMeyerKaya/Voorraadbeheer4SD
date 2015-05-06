@@ -1,10 +1,11 @@
 import java.awt.Color;
+import java.io.FileNotFoundException;
 
 import com.thehowtotutorial.splashscreen.*;
 
 public class Splash {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub		
 		try {
 			JSplash splash = new JSplash(Main.class.getResource("pharmacy.jpg"), true, true, false, null, null, Color.RED, Color.BLACK);						
@@ -84,28 +85,7 @@ public class Splash {
 			GUI window = new GUI();
 			window.frame.setVisible(true);			
 			Voorraadbeheer.voegBestellingToe();
-			Voorraadbeheer.medlist.add(new Medicijn("A","a",30,60,31,"a",30,10,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("B","a",30,60,31,"a",30,11,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("C","a",30,60,31,"a",30,11,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("D","a",30,60,31,"a",30,12,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("E","a",30,60,31,"a",30,13,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("F","a",30,60,31,"a",30,14,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("G","a",30,60,31,"a",30,15,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("H","a",30,60,31,"a",30,16,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("I","a",30,60,31,"a",30,17,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("J","a",30,60,31,"a",30,18,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("K","a",30,60,31,"a",30,19,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("A","a",30,60,31,"a",30,20,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("B","a",30,60,31,"a",30,21,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("C","a",30,60,31,"a",30,21,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("D","a",30,60,31,"a",30,22,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("E","a",30,60,31,"a",30,23,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("F","a",30,60,31,"a",30,24,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("G","a",30,60,31,"a",30,25,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("H","a",30,60,31,"a",30,26,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("I","a",30,60,31,"a",30,27,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("J","a",30,60,31,"a",30,28,"06-06-2015"));
-			Voorraadbeheer.medlist.add(new Medicijn("K","a",30,60,31,"a",30,29,"06-06-2015"));
+			Voorraadbeheer.importMedicijnen();
 			Thread.sleep(50);
 			GUI.updateTabellen();
 		} catch (InterruptedException e) {
