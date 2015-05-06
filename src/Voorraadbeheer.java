@@ -14,6 +14,7 @@
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.text.ParseException;
 import java.util.ArrayList;
 import java.util.InputMismatchException;
@@ -154,6 +155,27 @@ public class Voorraadbeheer {
 
 	        }
 	        in.close();
+	}
+	
+	public static void writeToTXT(){
+		String filename= "medicijnen.txt";
+		try{
+			PrintWriter outputStream = new PrintWriter(filename);
+			for (int i =0;i<medlist.size();i++){
+				outputStream.print(medlist.get(i).merknaam+" ");
+				outputStream.print(medlist.get(i).stofnaam+" ");
+				outputStream.print(medlist.get(i).aantal+" ");
+				outputStream.print(medlist.get(i).gewensteAantal+" ");
+				outputStream.print(medlist.get(i).minimumAantal+" ");
+				outputStream.print(medlist.get(i).fabrikant+" ");
+				outputStream.print(medlist.get(i).prijs+" ");
+				outputStream.print(medlist.get(i).kastID+" ");
+				outputStream.println(medlist.get(i).houdbaarheid);
+				outputStream.close();
+			}
+		}catch (FileNotFoundException e){
+			
+		}
 	}
 
 }
