@@ -661,8 +661,7 @@ public class GUI {
 		UpdateTabel.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent arg0) {
-				
-				tableMed.repaint();
+
 				String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
 		                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
 		        JTableHeader thM = tableMed.getTableHeader();
@@ -838,7 +837,7 @@ public class GUI {
 			public boolean isCellEditable(int data, int columns){
 				return false;
 			}
-			/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
 				Component c = super.prepareRenderer(r, data, columns);
 				
 				if (data % 2 == 0) //alternating colours among rows
@@ -846,11 +845,8 @@ public class GUI {
 				
 				else c.setBackground(Color.LIGHT_GRAY);
 				
-				if (isCellSelected(data, columns))
-					c.setBackground(Color.gray);
-				
 				return c;
-			}*/
+			}
 			
 		};
 
