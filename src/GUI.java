@@ -55,7 +55,7 @@ import javax.swing.Action;
 public class GUI {
 
 	public JFrame frame;
-	private JTable tableMed;
+	public static JTable tableMed;
 	private JTable tableBest;
 	private JTextArea textAreaTerminal;
 
@@ -78,6 +78,8 @@ public class GUI {
 	**
 	 * Create the application.
 	 */
+
+	
 	public GUI() {
 		
 		frame = new JFrame();
@@ -801,8 +803,7 @@ public class GUI {
 		BestellingControle.addActionListener(new ActionBestellingButton());
 		frame.getContentPane().add(BestellingControle);
 
-		
-		
+		/*
 		JButton UpdateTabel = new JButton("Update tabellen");
 		UpdateTabel.addMouseListener(new MouseAdapter() {
 			@Override
@@ -854,17 +855,17 @@ public class GUI {
 		        }
 			}
 		});
+		*/
 		
 		
-		
-		
+		/*
 		UpdateTabel.setToolTipText("Wijzigingen aan tabellen weergeven");
 		UpdateTabel.setForeground(Color.BLACK);
 		UpdateTabel.setFont(new Font("Arial", Font.PLAIN, 14));
 		UpdateTabel.setBackground(SystemColor.controlHighlight);
 		UpdateTabel.setBounds(466, 400, 200, 23);
 		frame.getContentPane().add(UpdateTabel);
-		
+		*/
 		
 		final JButton button = new JButton("Medicijn toevoegen");
 		button.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -1055,35 +1056,6 @@ public class GUI {
 		tableMed.setModel(new DefaultTableModel(
 			new Object[][]  {
 				{"merk1", "stof1", "1", "1", "1", "fab1", "100", "12", "22-10-2015"},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
-				{null, null, null, null, null, null, null, null, null},
 			},
 			new String[] {
 				"Merknaam", "Stofnaam", "Aantal", "GA", "MA", "Fabrikant", "Prijs", "Kast ID", "Houdbaarheid"
@@ -1103,8 +1075,9 @@ public class GUI {
 		System.setErr(printStream);
 		
 	}
-	
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	static class ActionMedButton implements ActionListener{
 		
 		@Override
@@ -1369,6 +1342,55 @@ public class GUI {
 	public JTextArea getTextAreaTerminal() {
 		return textAreaTerminal;
 	}
+	
+	public static void updateTabellen(){
+		String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
+                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+        JTableHeader thM = tableMed.getTableHeader();
+		thM.setFont(new Font("Dialog", Font.BOLD, 12));
+		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+
+        Object[][] object = new Object[100][100];
+        int i = 0;
+        if (Voorraadbeheer.medlist.size() != 0) {
+            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+                object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
+                object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
+                object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
+                object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
+                object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
+                object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
+                object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
+                object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
+                object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
+                
+                tableMed.setFillsViewportHeight(true);
+        		tableMed.setCellSelectionEnabled(false);
+        		tableMed.setModel(new DefaultTableModel(object, colName));
+        		
+        		tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+        		tableMed.getColumnModel().getColumn(0).setMinWidth(160);
+        		tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+        		tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+        		tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+        		tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+        		tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(3).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
+        		tableMed.getColumnModel().getColumn(4).setMinWidth(63);
+        		tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+        		tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+        		tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+        		tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+        		tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+        		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
+        		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+        		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+            }
+        }
+	}
 
 }
+
+
 

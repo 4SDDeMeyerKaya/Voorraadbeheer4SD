@@ -106,6 +106,8 @@ public class Splash {
 			Voorraadbeheer.medlist.add(new Medicijn("I","a",30,60,31,"a",30,27,"06-06-2015"));
 			Voorraadbeheer.medlist.add(new Medicijn("J","a",30,60,31,"a",30,28,"06-06-2015"));
 			Voorraadbeheer.medlist.add(new Medicijn("K","a",30,60,31,"a",30,29,"06-06-2015"));
+			Thread.sleep(50);
+			GUI.updateTabellen();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
