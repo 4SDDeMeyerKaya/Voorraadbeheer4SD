@@ -991,36 +991,12 @@ public class GUI {
                 tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
                 tableBest.setFillsViewportHeight(true);
                 JTableHeader thB = tableBest.getTableHeader();
-                tableBest.setModel(new DefaultTableModel(
-                                new Object[][] {
-                                        {"merk1test", "1", "10000"},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                                {null, null, null},
-                                        },
-                                        new String[] {
-                                                "Merknaam", "Aantal (klik cel om aan te passen)", "Prijs"
-                                        }
-                                ));
                 tableBest.setForeground(Color.BLACK);
                 scrollPaneBest.setViewportView(tableBest);
                
+                
+                
+                
                 JPanel medicijnTab = new JPanel();
                 medicijnTab.setToolTipText("Controle van medicijnen");
                 medicijnTab.setBackground(Color.WHITE);
@@ -1412,7 +1388,7 @@ public class GUI {
                 return textAreaTerminal;
         }
        
-        public static void updateTabellen(){
+        public static void updateMedTabellen(){
                 String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
                 "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
         JTableHeader thM = tableMed.getTableHeader();
