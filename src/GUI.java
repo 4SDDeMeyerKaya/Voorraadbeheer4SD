@@ -58,6 +58,24 @@ public class GUI {
 	public static JTable tableMed;
 	private JTable tableBest;
 	private JTextArea textAreaTerminal;
+	public static JPanel kast10;
+	public static JPanel kast11;
+	public static JPanel kast12;
+	public static JPanel kast13;
+	public static JPanel kast14;
+	public static JPanel kast15;
+	public static JPanel kast16;
+	public static JPanel kast17;
+	public static JPanel kast18;
+	public static JPanel kast20;
+	public static JPanel kast21;
+	public static JPanel kast22;
+	public static JPanel kast23;
+	public static JPanel kast24;
+	public static JPanel kast25;
+	public static JPanel kast26;
+	public static JPanel kast27;
+	public static JPanel kast28;
 
 	/**
 	 * Launch the appliccation.
@@ -162,6 +180,7 @@ public class GUI {
 								frameverkoop.setVisible(false);
 							   	frameverkoop.dispose();
 							}
+					        
 								
 			            }
 			        });		
@@ -241,8 +260,8 @@ public class GUI {
 			    }
 			}
 		});
-		kast10.setToolTipText("Kast 10");
-		kast10.setBorder(new LineBorder(new Color(0, 0, 0)));
+		kast10.setToolTipText("Kast 10");		
+        kast10.setBorder(new LineBorder(Color.GREEN));
 		kast10.setForeground(Color.BLACK);
 		kast10.setBackground(Color.WHITE);
 		kast10.setBounds(99, 60, 86, 86);
@@ -1420,6 +1439,22 @@ public class GUI {
         		
             }
         }
+	}
+        
+        public static void updateKasten(){
+        	int j = 0;
+        	if (Voorraadbeheer.medlist.size() != 0) {
+        		for (j=0;j<Voorraadbeheer.medlist.size();j++) {
+        			if(Voorraadbeheer.medlist.get(j).controleerOpAantal() == 0)
+        			{
+        				kast10.setBorder(new LineBorder(Color.GREEN));
+        			}
+        			else
+        			{
+        				kast10.setBorder(new LineBorder(Color.ORANGE));
+        			}
+        		}
+        	}
 	}
 }
 
