@@ -1,19 +1,18 @@
 import java.awt.EventQueue;
 import java.util.concurrent.TimeUnit;
-import java.awt.Color;
 
-import com.thehowtotutorial.splashscreen.*;
+
+
 
 
 public class Main {
-	public static void main(String args[]){
+	public static void main(final String args[]){
 
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Splash.create();					
 					GUI window = new GUI();
-					window.frame.setVisible(true);
+					window.frame.setVisible(true);					
 					Voorraadbeheer.voegBestellingToe();
 					Voorraadbeheer.medlist.add(new Medicijn("A","a",30,60,31,"a",30,12,"06-06-2015"));
 					Voorraadbeheer.medlist.add(new Medicijn("B","a",30,60,31,"a",30,12,"06-06-2015"));
