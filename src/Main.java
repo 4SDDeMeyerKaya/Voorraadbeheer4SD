@@ -1,5 +1,8 @@
 import java.awt.EventQueue;
 import java.util.concurrent.TimeUnit;
+import java.awt.Color;
+
+import com.thehowtotutorial.splashscreen.*;
 
 
 public class Main {
@@ -8,7 +11,7 @@ public class Main {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					Splash splash = new Splash();
+					Splash.create();					
 					GUI window = new GUI();
 					window.frame.setVisible(true);
 					Voorraadbeheer.voegBestellingToe();

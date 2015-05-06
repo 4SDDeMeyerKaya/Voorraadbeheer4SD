@@ -4,11 +4,11 @@ import com.thehowtotutorial.splashscreen.*;
 
 public class Splash {
 
-	public Splash() {
+	public static void create() {
 		// TODO Auto-generated method stub
 		
 		try {
-			JSplash splash = new JSplash(Splash.class.getResource("pharmacy.jpg"), true, true, false, "V1", null, Color.RED, Color.BLACK);
+			JSplash splash = new JSplash(Splash.class.getResource("pharmacy.jpg"), true, true, false, null, null, Color.RED, Color.BLACK);
 			splash.splashOn();
 			splash.setProgress(20,"idk");
 			Thread.sleep(1000);
