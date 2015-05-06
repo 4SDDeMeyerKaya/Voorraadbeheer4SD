@@ -7,7 +7,15 @@ public class Apotheker {
 	public static void verkoopMedicijn(String merknaam){
 		for(int j=0;j<Voorraadbeheer.medlist.size();j++){
 			if(merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
-				Voorraadbeheer.medlist.get(j).aantal--;
+				if (Voorraadbeheer.medlist.get(j).aantal>0){
+					Voorraadbeheer.medlist.get(j).aantal--;
+					Log.print();
+					System.out.println("Medicijn verkocht met merknaam: " + merknaam);
+					}
+				else{
+					Log.print();
+					System.out.println("Er zijn niet genoeg "+merknaam+" artikelen.");
+					}
 			}
 			
 		}

@@ -151,8 +151,6 @@ public class GUI {
 												    
 					        if(geldig)
 							{
-								Log.print();
-								System.out.println("Medicijn verkocht met merknaam: " + medicijnnaamtemp);
 								Apotheker.verkoopMedicijn(medicijnnaamtemp);
 								frameverkoop.setVisible(false);
 							   	frameverkoop.dispose();
