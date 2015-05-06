@@ -138,11 +138,19 @@ public class GUI {
 					Fkast10.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane10 = new JScrollPane();
 					Fkast10.getContentPane().add(scrollpane10);
-					JTextPane kast10Title = new JTextPane();
-					kast10Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast10Title = new JTextArea();
+					kast10Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast10Title.setToolTipText("");
-					kast10Title.setText("               Medicijnen in Kast 10: ");
-					kast10Title.setEditable(false);
+					kast10Title.setText("               Medicijnen in Kast 10: \n");
+			        int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 10){
+			            		kast10Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }            
+			        kast10Title.setEditable(false);
 					kast10Title.setForeground(Color.BLACK);
 					kast10Title.setBackground(Color.WHITE);
 					kast10Title.setBounds(0, 0, 300, 30);
@@ -168,10 +176,18 @@ public class GUI {
 					Fkast11.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane11 = new JScrollPane();
 					Fkast11.getContentPane().add(scrollpane11);
-					JTextPane kast11Title = new JTextPane();
-					kast11Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast11Title = new JTextArea();
+					kast11Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast11Title.setToolTipText("");
-					kast11Title.setText("               Medicijnen in Kast 11: ");
+					kast11Title.setText("               Medicijnen in Kast 11: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 11){
+			            		kast11Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        } 
 					kast11Title.setEditable(false);
 					kast11Title.setForeground(Color.BLACK);
 					kast11Title.setBackground(Color.WHITE);
@@ -196,10 +212,18 @@ public class GUI {
 					Fkast12.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane12 = new JScrollPane();
 					Fkast12.getContentPane().add(scrollpane12);
-					JTextPane kast12Title = new JTextPane();
-					kast12Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast12Title = new JTextArea();
+					kast12Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast12Title.setToolTipText("");
-					kast12Title.setText("               Medicijnen in Kast 12: ");
+					kast12Title.setText("               Medicijnen in Kast 12: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 12){
+			            		kast12Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        } 
 					kast12Title.setEditable(false);
 					kast12Title.setForeground(Color.BLACK);
 					kast12Title.setBackground(Color.WHITE);
@@ -224,10 +248,18 @@ public class GUI {
 					Fkast20.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane20 = new JScrollPane();
 					Fkast20.getContentPane().add(scrollpane20);
-					JTextPane kast20Title = new JTextPane();
-					kast20Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast20Title = new JTextArea();
+					kast20Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast20Title.setToolTipText("");
-					kast20Title.setText("               Medicijnen in Kast 20: ");
+					kast20Title.setText("               Medicijnen in Kast 20: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 20){
+			            		kast20Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast20Title.setEditable(false);
 					kast20Title.setForeground(Color.BLACK);
 					kast20Title.setBackground(Color.WHITE);
@@ -252,10 +284,18 @@ public class GUI {
 					Fkast21.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane21 = new JScrollPane();
 					Fkast21.getContentPane().add(scrollpane21);
-					JTextPane kast21Title = new JTextPane();
-					kast21Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast21Title = new JTextArea();
+					kast21Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast21Title.setToolTipText("");
-					kast21Title.setText("               Medicijnen in Kast 21: ");
+					kast21Title.setText("               Medicijnen in Kast 21: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 21){
+			            		kast21Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast21Title.setEditable(false);
 					kast21Title.setForeground(Color.BLACK);
 					kast21Title.setBackground(Color.WHITE);
@@ -280,10 +320,18 @@ public class GUI {
 					Fkast22.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane22 = new JScrollPane();
 					Fkast22.getContentPane().add(scrollpane22);
-					JTextPane kast22Title = new JTextPane();
-					kast22Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast22Title = new JTextArea();
+					kast22Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast22Title.setToolTipText("");
-					kast22Title.setText("               Medicijnen in Kast 22: ");
+					kast22Title.setText("               Medicijnen in Kast 22: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 22){
+			            		kast22Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast22Title.setEditable(false);
 					kast22Title.setForeground(Color.BLACK);
 					kast22Title.setBackground(Color.WHITE);
@@ -308,10 +356,18 @@ public class GUI {
 					Fkast13.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane13 = new JScrollPane();
 					Fkast13.getContentPane().add(scrollpane13);
-					JTextPane kast13Title = new JTextPane();
-					kast13Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast13Title = new JTextArea();
+					kast13Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast13Title.setToolTipText("");
-					kast13Title.setText("               Medicijnen in Kast 13: ");
+					kast13Title.setText("               Medicijnen in Kast 13: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 13){
+			            		kast13Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast13Title.setEditable(false);
 					kast13Title.setForeground(Color.BLACK);
 					kast13Title.setBackground(Color.WHITE);
@@ -336,10 +392,18 @@ public class GUI {
 					Fkast14.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane14 = new JScrollPane();
 					Fkast14.getContentPane().add(scrollpane14);
-					JTextPane kast14Title = new JTextPane();
-					kast14Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast14Title = new JTextArea();
+					kast14Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast14Title.setToolTipText("");
-					kast14Title.setText("               Medicijnen in Kast 14: ");
+					kast14Title.setText("               Medicijnen in Kast 14: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 14){
+			            		kast14Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast14Title.setEditable(false);
 					kast14Title.setForeground(Color.BLACK);
 					kast14Title.setBackground(Color.WHITE);
@@ -364,10 +428,18 @@ public class GUI {
 					Fkast15.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane15 = new JScrollPane();
 					Fkast15.getContentPane().add(scrollpane15);
-					JTextPane kast15Title = new JTextPane();
-					kast15Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast15Title = new JTextArea();
+					kast15Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast15Title.setToolTipText("");
-					kast15Title.setText("               Medicijnen in Kast 15: ");
+					kast15Title.setText("               Medicijnen in Kast 15: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 15){
+			            		kast15Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast15Title.setEditable(false);
 					kast15Title.setForeground(Color.BLACK);
 					kast15Title.setBackground(Color.WHITE);
@@ -392,10 +464,18 @@ public class GUI {
 					Fkast23.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane23 = new JScrollPane();
 					Fkast23.getContentPane().add(scrollpane23);
-					JTextPane kast23Title = new JTextPane();
-					kast23Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast23Title = new JTextArea();
+					kast23Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast23Title.setToolTipText("");
-					kast23Title.setText("               Medicijnen in Kast 23: ");
+					kast23Title.setText("               Medicijnen in Kast 23: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 23){
+			            		kast23Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast23Title.setEditable(false);
 					kast23Title.setForeground(Color.BLACK);
 					kast23Title.setBackground(Color.WHITE);
@@ -420,10 +500,18 @@ public class GUI {
 					Fkast24.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane24 = new JScrollPane();
 					Fkast24.getContentPane().add(scrollpane24);
-					JTextPane kast24Title = new JTextPane();
-					kast24Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast24Title = new JTextArea();
+					kast24Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast24Title.setToolTipText("");
-					kast24Title.setText("               Medicijnen in Kast 24: ");
+					kast24Title.setText("               Medicijnen in Kast 24: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 24){
+			            		kast24Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast24Title.setEditable(false);
 					kast24Title.setForeground(Color.BLACK);
 					kast24Title.setBackground(Color.WHITE);
@@ -448,10 +536,18 @@ public class GUI {
 					Fkast25.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane25 = new JScrollPane();
 					Fkast25.getContentPane().add(scrollpane25);
-					JTextPane kast25Title = new JTextPane();
-					kast25Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast25Title = new JTextArea();
+					kast25Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast25Title.setToolTipText("");
-					kast25Title.setText("               Medicijnen in Kast : ");
+					kast25Title.setText("               Medicijnen in Kast 25: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 25){
+			            		kast25Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast25Title.setEditable(false);
 					kast25Title.setForeground(Color.BLACK);
 					kast25Title.setBackground(Color.WHITE);
@@ -476,10 +572,18 @@ public class GUI {
 					Fkast16.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane16 = new JScrollPane();
 					Fkast16.getContentPane().add(scrollpane16);
-					JTextPane kast16Title = new JTextPane();
-					kast16Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast16Title = new JTextArea();
+					kast16Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast16Title.setToolTipText("");
-					kast16Title.setText("               Medicijnen in Kast 16: ");
+					kast16Title.setText("               Medicijnen in Kast 16: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 16){
+			            		kast16Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast16Title.setEditable(false);
 					kast16Title.setForeground(Color.BLACK);
 					kast16Title.setBackground(Color.WHITE);
@@ -504,10 +608,18 @@ public class GUI {
 					Fkast17.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane17 = new JScrollPane();
 					Fkast17.getContentPane().add(scrollpane17);
-					JTextPane kast17Title = new JTextPane();
-					kast17Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast17Title = new JTextArea();
+					kast17Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast17Title.setToolTipText("");
-					kast17Title.setText("               Medicijnen in Kast 17: ");
+					kast17Title.setText("               Medicijnen in Kast 17: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 17){
+			            		kast17Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast17Title.setEditable(false);
 					kast17Title.setForeground(Color.BLACK);
 					kast17Title.setBackground(Color.WHITE);
@@ -532,10 +644,18 @@ public class GUI {
 					Fkast18.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane18 = new JScrollPane();
 					Fkast18.getContentPane().add(scrollpane18);
-					JTextPane kast18Title = new JTextPane();
-					kast18Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast18Title = new JTextArea();
+					kast18Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast18Title.setToolTipText("");
-					kast18Title.setText("               Medicijnen in Kast 18: ");
+					kast18Title.setText("               Medicijnen in Kast 18: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 18){
+			            		kast18Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast18Title.setEditable(false);
 					kast18Title.setForeground(Color.BLACK);
 					kast18Title.setBackground(Color.WHITE);
@@ -560,10 +680,18 @@ public class GUI {
 					Fkast26.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane26 = new JScrollPane();
 					Fkast26.getContentPane().add(scrollpane26);
-					JTextPane kast26Title = new JTextPane();
-					kast26Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast26Title = new JTextArea();
+					kast26Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast26Title.setToolTipText("");
-					kast26Title.setText("               Medicijnen in Kast 26: ");
+					kast26Title.setText("               Medicijnen in Kast 26: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 26){
+			            		kast26Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast26Title.setEditable(false);
 					kast26Title.setForeground(Color.BLACK);
 					kast26Title.setBackground(Color.WHITE);
@@ -588,10 +716,18 @@ public class GUI {
 					Fkast27.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane27 = new JScrollPane();
 					Fkast27.getContentPane().add(scrollpane27);
-					JTextPane kast27Title = new JTextPane();
-					kast27Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast27Title = new JTextArea();
+					kast27Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast27Title.setToolTipText("");
-					kast27Title.setText("               Medicijnen in Kast 27: ");
+					kast27Title.setText("               Medicijnen in Kast 27: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 27){
+			            		kast27Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast27Title.setEditable(false);
 					kast27Title.setForeground(Color.BLACK);
 					kast27Title.setBackground(Color.WHITE);
@@ -616,10 +752,18 @@ public class GUI {
 					Fkast28.setBounds(300, 300, 300, 300);
 					JScrollPane scrollpane28 = new JScrollPane();
 					Fkast28.getContentPane().add(scrollpane28);
-					JTextPane kast28Title = new JTextPane();
-					kast28Title.setFont(new Font("Arial", Font.BOLD, 14));
+					JTextArea kast28Title = new JTextArea();
+					kast28Title.setFont(new Font("Arial", Font.PLAIN, 14));
 					kast28Title.setToolTipText("");
-					kast28Title.setText("               Medicijnen in Kast 28: ");
+					kast28Title.setText("               Medicijnen in Kast 28: \n");
+					int i = 0;
+			        if (Voorraadbeheer.medlist.size() != 0) {
+			            for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+			            	if(Voorraadbeheer.medlist.get(i).kastID == 28){
+			            		kast28Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+			            	}
+			            }
+			        }
 					kast28Title.setEditable(false);
 					kast28Title.setForeground(Color.BLACK);
 					kast28Title.setBackground(Color.WHITE);
