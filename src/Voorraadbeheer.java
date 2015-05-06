@@ -12,9 +12,13 @@
  * Zie commentaar bij methodes voor details.
  */
 
-import java.awt.EventQueue;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.text.ParseException;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
+import java.util.Scanner;
 
 public class Voorraadbeheer {
 
@@ -106,6 +110,50 @@ public class Voorraadbeheer {
 				i=j;
 		}
 		return i;
+	}
+	
+	public static void importMedicijnen() throws FileNotFoundException{
+		String filename = "medicijnen.txt";
+
+        // Prepare to read from the file, using a Scanner object
+        File file = new File(filename);
+        Scanner in = new Scanner(file);
+
+	        while (in.hasNextLine())
+	        {
+	            //1 Person per line
+	            String line = in.nextLine();
+
+	            // Make a Scanner object to break up this line into parts
+	            Scanner lineBreaker = new Scanner(line);
+
+	            try{
+	            	String merknaam = lineBreaker.next();
+	            	String stofnaam = lineBreaker.next();
+	            	int aantal = lineBreaker.nextInt();
+	            	int gewensteAantal = lineBreaker.nextInt();
+	            	int minimaAantal = lineBreaker.nextInt();
+	            	String fabrikant = lineBreaker.next();
+	            	int prijs = lineBreaker.nextInt();
+	            	int kast = lineBreaker.nextInt();
+	            	String houdbaarheid = lineBreaker.next();
+	            	lineBreaker.close();
+	            	Voorraadbeheer.voegMedicijnToe(merknaam, stofnaam, aantal, gewensteAantal, minimaAantal, fabrikant, prijs, kast, houdbaarheid);
+	            	
+	            	
+	            }
+
+	            catch (InputMismatchException e){
+	                System.out.println("Onjuiste parametertype in medicijnen.txt");
+	            }
+
+	            catch (NoSuchElementException e){
+	                System.out.println("File not found2");
+
+	            }
+
+	        }
+	        in.close();
 	}
 
 }
