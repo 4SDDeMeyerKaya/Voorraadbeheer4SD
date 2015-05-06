@@ -1417,6 +1417,7 @@ public class GUI {
         		tableMed.getColumnModel().getColumn(7).setMinWidth(60);
         		tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
         		tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+        		
             }
         }
 	}
