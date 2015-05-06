@@ -101,7 +101,7 @@ public class GUI {
         public GUI() {
                
                 frame = new JFrame();
-                frame.setTitle("Asclepius -De Meyer, Kaya");
+                frame.setTitle("Asclepius - De Meyer, Kaya");
                 frame.getContentPane().setForeground(Color.BLACK);
                 frame.setIconImage(Toolkit.getDefaultToolkit().getImage("Farmacia1.png"));
                 frame.setResizable(false);
