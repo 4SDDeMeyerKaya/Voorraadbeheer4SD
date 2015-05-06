@@ -91,7 +91,7 @@ public class Voorraadbeheer {
 							//we voegen medicijn toe indien attributen het toestaan. Verdere controle in methodes.
 				if(medlist.get(i).alGewaarschuwd==false && medlist.get(i).besteld==false){
 				ietsTeBestellen=true;
-				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs, besIndex);
+				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(besIndex, medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs);
 				medlist.get(i).besteld=true;
 				medlist.get(i).alGewaarschuwd=true;
 				}

@@ -41,6 +41,7 @@ public class Splash {
 			Voorraadbeheer.voegBestellingToe();
 			Thread.sleep(50);
 			GUI.updateMedTabellen();
+			GUI.updateBesTabellen();
 			//GUI.updateKasten();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block

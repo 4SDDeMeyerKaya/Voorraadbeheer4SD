@@ -56,7 +56,7 @@ public class GUI {
  
         public JFrame frame;
         public static JTable tableMed;
-        private JTable tableBest;
+        public static JTable tableBest;
         private JTextArea textAreaTerminal;
         public static JPanel kast10;
         public static JPanel kast11;
@@ -1436,48 +1436,26 @@ public class GUI {
         }
         
         public static void updateBesTabellen(){
-            String[] colName = { "Bestellingsnummer", "Stofnaam", "Aantal", "GA",
-            "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
-    JTableHeader thM = tableMed.getTableHeader();
+            String[] colName = { "Bestellingsnummer", "Merknaam", "Aantal", "Prijs"};
+    JTableHeader thM = tableBest.getTableHeader();
             thM.setFont(new Font("Dialog", Font.BOLD, 12));
-            tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+            tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 
     Object[][] object = new Object[100][100];
-    int i = 0;
-    if (Voorraadbeheer.medlist.size() != 0) {
-        for (i=0;i<Voorraadbeheer.medlist.size();i++) {
-            object[i][0] = Voorraadbeheer.medlist.get(i).merknaam;
-            object[i][1] = Voorraadbeheer.medlist.get(i).stofnaam;
-            object[i][2] = Voorraadbeheer.medlist.get(i).aantal;
-            object[i][3] = Voorraadbeheer.medlist.get(i).gewensteAantal;
-            object[i][4] = Voorraadbeheer.medlist.get(i).minimumAantal;
-            object[i][5] = Voorraadbeheer.medlist.get(i).fabrikant;
-            object[i][6] = Voorraadbeheer.medlist.get(i).prijs;
-            object[i][7] = Voorraadbeheer.medlist.get(i).kastID;
-            object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
-           
-            tableMed.setFillsViewportHeight(true);
-                    tableMed.setCellSelectionEnabled(false);
-                    tableMed.setModel(new DefaultTableModel(object, colName));
-                   
-                    tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
-                    tableMed.getColumnModel().getColumn(0).setMinWidth(160);
-                    tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
-                    tableMed.getColumnModel().getColumn(1).setMinWidth(110);
-                    tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
-                    tableMed.getColumnModel().getColumn(2).setMinWidth(90);
-                    tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
-                    tableMed.getColumnModel().getColumn(3).setMinWidth(63);
-                    tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
-                    tableMed.getColumnModel().getColumn(4).setMinWidth(63);
-                    tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
-                    tableMed.getColumnModel().getColumn(5).setMinWidth(111);
-                    tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
-                    tableMed.getColumnModel().getColumn(6).setMinWidth(80);
-                    tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
-                    tableMed.getColumnModel().getColumn(7).setMinWidth(60);
-                    tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
-                    tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+    int k = 0;
+    if (Voorraadbeheer.beslist.size() != 0 && Voorraadbeheer.beslist.get(0).besmedlist.size()!=0) {
+        for (int i=0;i<Voorraadbeheer.beslist.size();i++) {
+        	for(int j=0;j<Voorraadbeheer.beslist.get(i).besmedlist.size();j++){
+        		object[k][0] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).bestelIndex;
+        		object[k][1] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).merknaam;
+        		object[k][2] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).aantal;
+        		object[k][3] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).prijs;
+        		k++;
+        	}
+            tableBest.setFillsViewportHeight(true);
+            tableBest.setCellSelectionEnabled(false);
+            tableBest.setModel(new DefaultTableModel(object, colName));
+
         }
     }
     }

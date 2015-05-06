@@ -16,7 +16,7 @@ public class BestelMedicijn {
 	int bestelIndex;
 	
 	
-	public BestelMedicijn(String merknaam, int aantal, int prijs, int bestelIndex)
+	public BestelMedicijn(int bestelIndex, String merknaam, int aantal, int prijs)
 	{
 		this.merknaam = merknaam;
 		this.aantal = aantal;
