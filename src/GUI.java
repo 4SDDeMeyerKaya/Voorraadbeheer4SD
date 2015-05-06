@@ -923,41 +923,41 @@ public class GUI {
 		    tabPane.addChangeListener(changeListener);
 		frame.getContentPane().add(tabPane);
 				
-				JPanel bestellingTab = new JPanel();
-				bestellingTab.setToolTipText("Controle van bestellingen");
-				bestellingTab.setBackground(Color.WHITE);
-				tabPane.addTab("BESTELLING", null, bestellingTab, null);
-				bestellingTab.setLayout(null);
+		JPanel bestellingTab = new JPanel();
+		bestellingTab.setToolTipText("Controle van bestellingen");
+		bestellingTab.setBackground(Color.WHITE);
+		tabPane.addTab("BESTELLING", null, bestellingTab, null);
+		bestellingTab.setLayout(null);
 				
-				JScrollPane scrollPaneBest = new JScrollPane();
-				scrollPaneBest.setBounds(0, 0, 866, 260);
-				bestellingTab.add(scrollPaneBest);
+		JScrollPane scrollPaneBest = new JScrollPane();
+		scrollPaneBest.setBounds(0, 0, 866, 260);
+		bestellingTab.add(scrollPaneBest);
 				
-				tableBest = new JTable(){
-					public boolean isCellEditable(int data, int columns){
-						return false;
-					}
-					/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
-						Component c = super.prepareRenderer(r, data, columns);
+		tableBest = new JTable(){
+			public boolean isCellEditable(int data, int columns){
+				return false;
+			}
+			/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+				Component c = super.prepareRenderer(r, data, columns);
+				
+				if (data % 2 == 0) //alternating colours among rows
+					c.setBackground(Color.WHITE);
+				
+				else c.setBackground(Color.LIGHT_GRAY);
+				
 						
-						if (data % 2 == 0) //alternating colours among rows
-							c.setBackground(Color.WHITE);
-						
-						else c.setBackground(Color.LIGHT_GRAY);
-						
-						
-						return c;
-					}*/
-					
-				};
-				tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
-				tableBest.setCellSelectionEnabled(true);
-				tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-				tableBest.setFillsViewportHeight(true);
-				JTableHeader thB = tableBest.getTableHeader();
-				tableBest.setModel(new DefaultTableModel(
-					new Object[][] {
-						{"merk1test", "1", "10000"},
+				return c;
+			}*/
+				
+		};
+		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
+		tableBest.setCellSelectionEnabled(true);
+		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+		tableBest.setFillsViewportHeight(true);
+		JTableHeader thB = tableBest.getTableHeader();
+		tableBest.setModel(new DefaultTableModel(
+				new Object[][] {
+					{"merk1test", "1", "10000"},
 						{null, null, null},
 						{null, null, null},
 						{null, null, null},
@@ -982,45 +982,45 @@ public class GUI {
 						"Merknaam", "Aantal (klik cel om aan te passen)", "Prijs"
 					}
 				));
-				tableBest.setForeground(Color.BLACK);
-				scrollPaneBest.setViewportView(tableBest);
+		tableBest.setForeground(Color.BLACK);
+		scrollPaneBest.setViewportView(tableBest);
 		
-				JPanel medicijnTab = new JPanel();
-				medicijnTab.setToolTipText("Controle van medicijnen");
-				medicijnTab.setBackground(Color.WHITE);
-				tabPane.addTab("MEDICIJN", null, medicijnTab, null);
-				tabPane.setBackgroundAt(1, Color.WHITE);
-				medicijnTab.setLayout(null);
+		JPanel medicijnTab = new JPanel();
+		medicijnTab.setToolTipText("Controle van medicijnen");
+		medicijnTab.setBackground(Color.WHITE);
+		tabPane.addTab("MEDICIJN", null, medicijnTab, null);
+		tabPane.setBackgroundAt(1, Color.WHITE);
+		medicijnTab.setLayout(null);
 				
-				JScrollPane scrollPaneMed = new JScrollPane();
-				scrollPaneMed.setBounds(0, 0, 866, 260);
-				medicijnTab.add(scrollPaneMed);
-				
+		JScrollPane scrollPaneMed = new JScrollPane();
+		scrollPaneMed.setBounds(0, 0, 866, 260);
+		medicijnTab.add(scrollPaneMed);
+		
 					
 
-					tableMed = new JTable(){
-						public boolean isCellEditable(int data, int columns){
-							return false;
-						}
-						public Component prepareRenderer(TableCellRenderer r, int data, int columns){
-							Component c = super.prepareRenderer(r, data, columns);
+		tableMed = new JTable(){
+			public boolean isCellEditable(int data, int columns){
+					return false;
+			}
+			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+				Component c = super.prepareRenderer(r, data, columns);
 							
-							if (data % 2 == 0) //alternating colours among rows
-								c.setBackground(Color.WHITE);
+				if (data % 2 == 0) //alternating colours among rows
+					c.setBackground(Color.WHITE);
 							
-							else c.setBackground(Color.LIGHT_GRAY);
+				else c.setBackground(Color.LIGHT_GRAY);
 							
-							return c;
-						}
+					return c;
+				}
 						
-					};
-					JTableHeader thM = tableMed.getTableHeader();
-					tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+			};
+			JTableHeader thM = tableMed.getTableHeader();
+			tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 					
 					
 					
 							
-							scrollPaneMed.setViewportView(tableMed);
+		scrollPaneMed.setViewportView(tableMed);
 		thB.setFont(new Font("Dialog", Font.BOLD, 12));
 
 		
