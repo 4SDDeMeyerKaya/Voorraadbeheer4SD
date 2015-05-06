@@ -149,7 +149,7 @@ public class GUI {
 					            }
 					        }		 
 												    
-					        if(geldig = true)
+					        if(geldig)
 							{
 								Log.print();
 								System.out.println("Medicijn verkocht met merknaam: " + medicijnnaamtemp);
@@ -157,10 +157,10 @@ public class GUI {
 								frameverkoop.setVisible(false);
 							   	frameverkoop.dispose();
 							}
-						   	else if(geldig = false)
+						   	else
 						   	{
 						   		Log.print();
-								System.out.println("Incorrecte medicijn ingegeven, probeer opnieuw.");
+								System.out.println("Onbestaand medicijn ingegeven, probeer opnieuw.");
 								frameverkoop.setVisible(false);
 							   	frameverkoop.dispose();
 							}
@@ -922,105 +922,111 @@ public class GUI {
 		    };
 		    tabPane.addChangeListener(changeListener);
 		frame.getContentPane().add(tabPane);
+				
+				JPanel bestellingTab = new JPanel();
+				bestellingTab.setToolTipText("Controle van bestellingen");
+				bestellingTab.setBackground(Color.WHITE);
+				tabPane.addTab("BESTELLING", null, bestellingTab, null);
+				bestellingTab.setLayout(null);
+				
+				JScrollPane scrollPaneBest = new JScrollPane();
+				scrollPaneBest.setBounds(0, 0, 866, 260);
+				bestellingTab.add(scrollPaneBest);
+				
+				tableBest = new JTable(){
+					public boolean isCellEditable(int data, int columns){
+						return false;
+					}
+					/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+						Component c = super.prepareRenderer(r, data, columns);
+						
+						if (data % 2 == 0) //alternating colours among rows
+							c.setBackground(Color.WHITE);
+						
+						else c.setBackground(Color.LIGHT_GRAY);
+						
+						
+						return c;
+					}*/
+					
+				};
+				tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
+				tableBest.setCellSelectionEnabled(true);
+				tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
+				tableBest.setFillsViewportHeight(true);
+				JTableHeader thB = tableBest.getTableHeader();
+				tableBest.setModel(new DefaultTableModel(
+					new Object[][] {
+						{"merk1test", "1", "10000"},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+						{null, null, null},
+					},
+					new String[] {
+						"Merknaam", "Aantal (klik cel om aan te passen)", "Prijs"
+					}
+				));
+				tableBest.setForeground(Color.BLACK);
+				scrollPaneBest.setViewportView(tableBest);
 		
-		JPanel bestellingTab = new JPanel();
-		bestellingTab.setToolTipText("Controle van bestellingen");
-		bestellingTab.setBackground(Color.WHITE);
-		tabPane.addTab("BESTELLING", null, bestellingTab, null);
-		bestellingTab.setLayout(null);
-		
-		JScrollPane scrollPaneBest = new JScrollPane();
-		scrollPaneBest.setBounds(0, 0, 866, 260);
-		bestellingTab.add(scrollPaneBest);
-		
-		tableBest = new JTable(){
-			public boolean isCellEditable(int data, int columns){
-				return false;
-			}
-			/*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
-				Component c = super.prepareRenderer(r, data, columns);
+				JPanel medicijnTab = new JPanel();
+				medicijnTab.setToolTipText("Controle van medicijnen");
+				medicijnTab.setBackground(Color.WHITE);
+				tabPane.addTab("MEDICIJN", null, medicijnTab, null);
+				tabPane.setBackgroundAt(1, Color.WHITE);
+				medicijnTab.setLayout(null);
 				
-				if (data % 2 == 0) //alternating colours among rows
-					c.setBackground(Color.WHITE);
+				JScrollPane scrollPaneMed = new JScrollPane();
+				scrollPaneMed.setBounds(0, 0, 866, 260);
+				medicijnTab.add(scrollPaneMed);
 				
-				else c.setBackground(Color.LIGHT_GRAY);
-				
-				
-				return c;
-			}*/
-			
-		};
-		tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
-		tableBest.setCellSelectionEnabled(true);
-		tableBest.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
-		tableBest.setFillsViewportHeight(true);
-		JTableHeader thB = tableBest.getTableHeader();
+					
+
+					tableMed = new JTable(){
+						public boolean isCellEditable(int data, int columns){
+							return false;
+						}
+						public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+							Component c = super.prepareRenderer(r, data, columns);
+							
+							if (data % 2 == 0) //alternating colours among rows
+								c.setBackground(Color.WHITE);
+							
+							else c.setBackground(Color.LIGHT_GRAY);
+							
+							return c;
+						}
+						
+					};
+					JTableHeader thM = tableMed.getTableHeader();
+					tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
+					
+					
+					
+							
+							scrollPaneMed.setViewportView(tableMed);
 		thB.setFont(new Font("Dialog", Font.BOLD, 12));
-		tableBest.setModel(new DefaultTableModel(
-			new Object[][] {
-				{"merk1test", "1", "10000"},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-				{null, null, null},
-			},
-			new String[] {
-				"Merknaam", "Aantal (klik cel om aan te passen)", "Prijs"
-			}
-		));
-		tableBest.setForeground(Color.BLACK);
-		scrollPaneBest.setViewportView(tableBest);
-
-		JPanel medicijnTab = new JPanel();
-		medicijnTab.setToolTipText("Controle van medicijnen");
-		medicijnTab.setBackground(Color.WHITE);
-		tabPane.addTab("MEDICIJN", null, medicijnTab, null);
-		medicijnTab.setLayout(null);
-		
-		JScrollPane scrollPaneMed = new JScrollPane();
-		scrollPaneMed.setBounds(0, 0, 866, 260);
-		medicijnTab.add(scrollPaneMed);
-	
-		
-
-		tableMed = new JTable(){
-			public boolean isCellEditable(int data, int columns){
-				return false;
-			}
-			public Component prepareRenderer(TableCellRenderer r, int data, int columns){
-				Component c = super.prepareRenderer(r, data, columns);
-				
-				if (data % 2 == 0) //alternating colours among rows
-					c.setBackground(Color.WHITE);
-				
-				else c.setBackground(Color.LIGHT_GRAY);
-				
-				return c;
-			}
-			
-		};
 
 		
         String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
                 "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
-        JTableHeader thM = tableMed.getTableHeader();
 		thM.setFont(new Font("Dialog", Font.BOLD, 12));
-		tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
 
         Object[][] object = new Object[100][100];
         int i = 0;
@@ -1079,12 +1085,6 @@ public class GUI {
 				"Merknaam", "Stofnaam", "Aantal", "GA", "MA", "Fabrikant", "Prijs", "Kast ID", "Houdbaarheid"
 			}
 		));*/
-
-
-
-		
-		scrollPaneMed.setViewportView(tableMed);
-		tabPane.setBackgroundAt(1, Color.WHITE);
 		
 		
 		

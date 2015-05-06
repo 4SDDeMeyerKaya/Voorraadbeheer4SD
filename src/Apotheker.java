@@ -8,8 +8,6 @@ public class Apotheker {
 		for(int j=0;j<Voorraadbeheer.medlist.size();j++){
 			if(merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
 				Voorraadbeheer.medlist.get(j).aantal--;
-				Log.print();
-				System.out.println("1 "+ merknaam + " is verkocht.");
 			}
 			
 		}
