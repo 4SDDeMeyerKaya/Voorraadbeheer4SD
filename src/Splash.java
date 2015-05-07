@@ -9,8 +9,7 @@ public class Splash {
 		// TODO Auto-generated method stub		
 		try {
 			JSplash splash = new JSplash(Splash.class.getResource("pharmacy.jpg"), true, true, false, null, null, Color.RED, Color.BLACK);						
-			splash.splashOn();	
-				
+			splash.splashOn();				
 			//random text
 			splash.setProgress(0,"Initialising Window");
 			Thread.sleep(500);
