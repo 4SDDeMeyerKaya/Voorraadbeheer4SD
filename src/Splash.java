@@ -32,7 +32,7 @@ public class Splash {
 			Thread.sleep(500);
 			for(int i=0;i<9000;i++){
 				splash.setProgress(90,"Initialising Asclepius: "+i);
-				Thread.sleep(5);
+				Thread.sleep((long) 0.5);
 			}
 			splash.setProgress(90,"Initialising Asclepius: ITS OVER NYAN THOUSAND ");
 			Thread.sleep(400);
