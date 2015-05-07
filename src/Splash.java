@@ -30,12 +30,12 @@ public class Splash {
 			Thread.sleep(500);
 			splash.setProgress(80,"Initialising blue pill");
 			Thread.sleep(500);
-			for(int i=0;i<9000;i++){
+			for(int i=0;i<9000;i+=10){
 				splash.setProgress(90,"Initialising Asclepius: "+i);
-				Thread.sleep((long) 0.5);
+				Thread.sleep(2);
 			}
-			splash.setProgress(90,"Initialising Asclepius: ITS OVER NYAN THOUSAND ");
-			Thread.sleep(400);
+			splash.setProgress(90,"Initialising Asclepius: ITS OVER NINE THOUSAND ");
+			Thread.sleep(600);
 			splash.setProgress(100,"Asclepius. Initialised.");
 			Thread.sleep(1200);
 			splash.splashOff();			
