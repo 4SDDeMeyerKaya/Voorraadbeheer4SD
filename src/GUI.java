@@ -85,7 +85,7 @@ public class GUI {
                         public void run() {
                                 try {
                                         GUI window = new GUI();
-                                        window.frame.setVisible(true);                                                                 
+                                        window.frame.setVisible(true);                                                                
                                 } catch (Exception e) {
                                         e.printStackTrace();
                                 }
@@ -280,7 +280,7 @@ public class GUI {
                         }
                 });
                 kast10.setToolTipText("Kast 10");              
-        kast10.setBorder(new LineBorder(Color.GREEN));
+                kast10.setBorder(new LineBorder(new Color(0,0,0)));
                 kast10.setForeground(Color.BLACK);
                 kast10.setBackground(Color.WHITE);
                 kast10.setBounds(99, 60, 86, 86);
@@ -317,7 +317,7 @@ public class GUI {
                         }
                 });
                 kast11.setToolTipText("Kast 11");
-                kast11.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast11.setBorder(new LineBorder(new Color(0,0,0)));
                 kast11.setBackground(Color.WHITE);
                 kast11.setBounds(195, 60, 86, 86);
                 frame.getContentPane().add(kast11);
@@ -353,7 +353,7 @@ public class GUI {
                         }
                 });
                 kast12.setToolTipText("Kast 12");
-                kast12.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast12.setBorder(new LineBorder(new Color(0,0,0)));
                 kast12.setBackground(Color.WHITE);
                 kast12.setBounds(291, 60, 86, 86);
                 frame.getContentPane().add(kast12);
@@ -389,7 +389,7 @@ public class GUI {
                         }
                 });
                 kast20.setToolTipText("Kast 20");
-                kast20.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast20.setBorder(new LineBorder(new Color(0,0,0)));
                 kast20.setBackground(Color.WHITE);
                 kast20.setBounds(488, 60, 86, 86);
                 frame.getContentPane().add(kast20);
@@ -425,7 +425,7 @@ public class GUI {
                         }
                 });
                 kast21.setToolTipText("Kast 21");
-                kast21.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast21.setBorder(new LineBorder(new Color(0,0,0)));
                 kast21.setBackground(Color.WHITE);
                 kast21.setBounds(584, 60, 86, 86);
                 frame.getContentPane().add(kast21);
@@ -461,7 +461,7 @@ public class GUI {
                         }
                 });
                 kast22.setToolTipText("Kast 22");
-                kast22.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast22.setBorder(new LineBorder(new Color(0,0,0)));
                 kast22.setBackground(Color.WHITE);
                 kast22.setBounds(680, 60, 86, 86);
                 frame.getContentPane().add(kast22);
@@ -497,7 +497,7 @@ public class GUI {
                         }
                 });
                 kast13.setToolTipText("Kast 13");
-                kast13.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast13.setBorder(new LineBorder(new Color(0,0,0)));
                 kast13.setBackground(Color.WHITE);
                 kast13.setBounds(99, 156, 86, 86);
                 frame.getContentPane().add(kast13);
@@ -533,7 +533,7 @@ public class GUI {
                         }
                 });
                 kast14.setToolTipText("Kast 14");
-                kast14.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast14.setBorder(new LineBorder(new Color(0,0,0)));
                 kast14.setBackground(Color.WHITE);
                 kast14.setBounds(195, 156, 86, 86);
                 frame.getContentPane().add(kast14);
@@ -569,7 +569,7 @@ public class GUI {
                         }
                 });
                 kast15.setToolTipText("Kast 15");
-                kast15.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast15.setBorder(new LineBorder(new Color(0,0,0)));
                 kast15.setBackground(Color.WHITE);
                 kast15.setBounds(291, 156, 86, 86);
                 frame.getContentPane().add(kast15);
@@ -605,7 +605,7 @@ public class GUI {
                         }
                 });
                 kast23.setToolTipText("Kast 23");
-                kast23.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast23.setBorder(new LineBorder(new Color(0,0,0)));
                 kast23.setBackground(Color.WHITE);
                 kast23.setBounds(488, 156, 86, 86);
                 frame.getContentPane().add(kast23);
@@ -641,7 +641,7 @@ public class GUI {
                         }
                 });
                 kast24.setToolTipText("Kast 24");
-                kast24.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast24.setBorder(new LineBorder(new Color(0,0,0)));
                 kast24.setBackground(Color.WHITE);
                 kast24.setBounds(584, 156, 86, 86);
                 frame.getContentPane().add(kast24);
@@ -677,7 +677,7 @@ public class GUI {
                         }
                 });
                 kast25.setToolTipText("Kast 25");
-                kast25.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast25.setBorder(new LineBorder(new Color(0,0,0)));
                 kast25.setBackground(Color.WHITE);
                 kast25.setBounds(680, 156, 86, 86);
                 frame.getContentPane().add(kast25);
@@ -713,7 +713,7 @@ public class GUI {
                         }
                 });
                 kast16.setToolTipText("Kast 16");
-                kast16.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast16.setBorder(new LineBorder(new Color(0,0,0)));
                 kast16.setBackground(Color.WHITE);
                 kast16.setBounds(99, 252, 86, 86);
                 frame.getContentPane().add(kast16);
@@ -749,7 +749,7 @@ public class GUI {
                         }
                 });
                 kast17.setToolTipText("Kast 17");
-                kast17.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast17.setBorder(new LineBorder(new Color(0,0,0)));
                 kast17.setBackground(Color.WHITE);
                 kast17.setBounds(195, 252, 86, 86);
                 frame.getContentPane().add(kast17);
@@ -785,7 +785,7 @@ public class GUI {
                         }
                 });
                 kast18.setToolTipText("Kast 18");
-                kast18.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast18.setBorder(new LineBorder(new Color(0,0,0)));
                 kast18.setBackground(Color.WHITE);
                 kast18.setBounds(291, 252, 86, 86);
                 frame.getContentPane().add(kast18);
@@ -821,7 +821,7 @@ public class GUI {
                         }
                 });
                 kast26.setToolTipText("Kast 26");
-                kast26.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast26.setBorder(new LineBorder(new Color(0,0,0)));
                 kast26.setBackground(Color.WHITE);
                 kast26.setBounds(488, 252, 86, 86);
                 frame.getContentPane().add(kast26);
@@ -857,7 +857,7 @@ public class GUI {
                         }
                 });
                 kast27.setToolTipText("Kast 27");
-                kast27.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast27.setBorder(new LineBorder(new Color(0,0,0)));
                 kast27.setBackground(Color.WHITE);
                 kast27.setBounds(584, 252, 86, 86);
                 frame.getContentPane().add(kast27);
@@ -893,7 +893,7 @@ public class GUI {
                         }
                 });
                 kast28.setToolTipText("Kast 28");
-                kast28.setBorder(new LineBorder(new Color(0, 0, 0)));
+                kast28.setBorder(new LineBorder(new Color(0,0,0)));
                 kast28.setBackground(Color.WHITE);
                 kast28.setBounds(680, 252, 86, 86);
                 frame.getContentPane().add(kast28);
@@ -946,7 +946,7 @@ public class GUI {
                         if(index == 0)
                         {
                                 button.setVisible(false);
-                                BestellingControle.setVisible(true);           
+                                BestellingControle.setVisible(true);          
                                        
                         }
                         else if(index == 1)
@@ -995,8 +995,7 @@ public class GUI {
                 scrollPaneBest.setViewportView(tableBest);
                
                 
-                
-                
+               
                 JPanel medicijnTab = new JPanel();
                 medicijnTab.setToolTipText("Controle van medicijnen");
                 medicijnTab.setBackground(Color.WHITE);
@@ -1167,7 +1166,7 @@ public class GUI {
                         p.add(l4);
                     final JTextField textField4 = new JTextField(10);
                     l4.setLabelFor(textField4);
-                    p.add(textField4);                             
+                    p.add(textField4);                            
                    
                     //Fabrikant
                         JLabel l5 = new JLabel(labels[5], JLabel.TRAILING);
@@ -1195,7 +1194,7 @@ public class GUI {
                         p.add(l8);
                     final JTextField textField8 = new JTextField(10);
                     l8.setLabelFor(textField8);
-                    p.add(textField8);                 
+                    p.add(textField8);                
                        
                    
                     //button
@@ -1212,7 +1211,7 @@ public class GUI {
  
                                          String merknaamtemp = textField0.getText();
                                            
-                                            //Stofnaam                 
+                                            //Stofnaam                
                                             String stofnaamtemp = textField1.getText();
                                            
                                                 //Aantal
@@ -1434,8 +1433,8 @@ public class GUI {
             }
         }
         }
-        
-        public static void updateBesTabellen(){
+		
+		        public static void updateBesTabellen(){
             String[] colName = { "Bestellingsnummer","Status", "Merknaam", "Aantal", "Prijs"};
     JTableHeader thM = tableBest.getTableHeader();
             thM.setFont(new Font("Dialog", Font.BOLD, 12));
@@ -1462,18 +1461,142 @@ public class GUI {
     }
        
         public static void updateKasten(){
-                int j = 0;
+               
+                //eerst allemaal op groen zetten
+                kast10.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast11.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast12.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast13.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast14.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast15.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast16.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast17.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast18.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast20.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast21.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast22.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast23.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast24.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast25.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast26.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast27.setBorder(new LineBorder(new Color(204, 255, 204)));
+                kast28.setBorder(new LineBorder(new Color(204, 255, 204)));
+               
+                //de correcte kasten op oranje zetten                          
                 if (Voorraadbeheer.medlist.size() != 0) {
-                        for (j=0;j<Voorraadbeheer.medlist.size();j++) {
-                                if(Voorraadbeheer.medlist.get(j).controleerOpAantal() == 0)
-                                {
-                                        kast10.setBorder(new LineBorder(Color.GREEN));
-                                }
-                                else
-                                {
-                                        kast10.setBorder(new LineBorder(Color.ORANGE));
-                                }
-                        }
+                for (int i=0;i<Voorraadbeheer.medlist.size();i++) {
+                          //kast10
+                      if(Voorraadbeheer.medlist.get(i).kastID == 10){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast10.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast11
+                      if(Voorraadbeheer.medlist.get(i).kastID == 11){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast11.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast12
+                      if(Voorraadbeheer.medlist.get(i).kastID == 12){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast12.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast13
+                      if(Voorraadbeheer.medlist.get(i).kastID == 13){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast13.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast14
+                      if(Voorraadbeheer.medlist.get(i).kastID == 14){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast14.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast15
+                      if(Voorraadbeheer.medlist.get(i).kastID == 15){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast15.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast16
+                      if(Voorraadbeheer.medlist.get(i).kastID == 16){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast16.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast17
+                      if(Voorraadbeheer.medlist.get(i).kastID == 17){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast17.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast18
+                      if(Voorraadbeheer.medlist.get(i).kastID == 18){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast18.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                     
+                    //kast20
+                      if(Voorraadbeheer.medlist.get(i).kastID == 20){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast20.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast21
+                      if(Voorraadbeheer.medlist.get(i).kastID == 21){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast21.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast22
+                      if(Voorraadbeheer.medlist.get(i).kastID == 22){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast22.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast23
+                      if(Voorraadbeheer.medlist.get(i).kastID == 23){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast23.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast24
+                      if(Voorraadbeheer.medlist.get(i).kastID == 24){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast24.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast25
+                      if(Voorraadbeheer.medlist.get(i).kastID == 25){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast25.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast26
+                      if(Voorraadbeheer.medlist.get(i).kastID == 26){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast26.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast27
+                      if(Voorraadbeheer.medlist.get(i).kastID == 27){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast27.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
+                    //kast28
+                      if(Voorraadbeheer.medlist.get(i).kastID == 28){
+                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                                  kast28.setBorder(new LineBorder(new Color(255, 153, 51)));
+                          }                              
+                       }
                 }
+                }
+                       
+               
         }
 }
