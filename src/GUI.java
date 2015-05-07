@@ -379,38 +379,6 @@ public class GUI {
                 textAreaTerminal.setEditable(false);
                 textAreaTerminal.setForeground(Color.WHITE);
                 textAreaTerminal.setBackground(Color.BLACK);
-               
-                JPanel kast10 = new JPanel();
-                kast10.addMouseListener(new MouseAdapter() {
-                        @Override
-                        public void mousePressed(MouseEvent e) {
-                                if(SwingUtilities.isRightMouseButton(e)){
-                                        final JFrame Fkast10 = new JFrame("Inhoud Kast 10");
-                                        Fkast10.setVisible(true);
-                                        Fkast10.setBounds(300, 300, 300, 300);
-                                        JScrollPane scrollpane10 = new JScrollPane();
-                                        Fkast10.getContentPane().add(scrollpane10);
-                                        JTextArea kast10Title = new JTextArea();
-                                        kast10Title.setFont(new Font("Arial", Font.PLAIN, 14));
-                                        kast10Title.setToolTipText("");
-                                        kast10Title.setText("               Medicijnen in Kast 10: \n");
-                                int i = 0;
-                                if (Voorraadbeheer.medlist.size() != 0) {
-                                    for (i=0;i<Voorraadbeheer.medlist.size();i++) {
-                                        if(Voorraadbeheer.medlist.get(i).kastID == 10){
-                                                kast10Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
-                                        }
-                                    }
-                                }            
-                                kast10Title.setEditable(false);
-                                        kast10Title.setForeground(Color.BLACK);
-                                        kast10Title.setBackground(Color.WHITE);
-                                        kast10Title.setBounds(0, 0, 300, 30);
-                                        Fkast10.getContentPane().add(kast10Title);
-                                       
-                            }
-                        }
-                });
                 
                 JPanel ind10o = new JPanel();
                 ind10o.setBackground(new Color(144, 238, 144));
@@ -509,12 +477,52 @@ public class GUI {
                 ind28.setBackground(new Color(144, 238, 144));
                 
                 
+                JPanel kast10 = new JPanel();
+                kast10.addMouseListener(new MouseAdapter() {
+                        @Override
+                        public void mousePressed(MouseEvent e) {
+                                if(SwingUtilities.isRightMouseButton(e)){
+                                        final JFrame Fkast10 = new JFrame("Inhoud Kast 10");
+                                        Fkast10.setVisible(true);
+                                        Fkast10.setBounds(300, 300, 300, 300);
+                                        JScrollPane scrollpane10 = new JScrollPane();
+                                        Fkast10.getContentPane().add(scrollpane10);
+                                        JTextArea kast10Title = new JTextArea();
+                                        kast10Title.setFont(new Font("Arial", Font.PLAIN, 14));
+                                        kast10Title.setToolTipText("");
+                                        kast10Title.setText("               Medicijnen in Kast 10: \n");
+                                int i = 0;
+                                if (Voorraadbeheer.medlist.size() != 0) {
+                                    for (i=0;i<Voorraadbeheer.medlist.size();i++) {
+                                        if(Voorraadbeheer.medlist.get(i).kastID == 10){
+                                                kast10Title.append(Voorraadbeheer.medlist.get(i).merknaam + "\n");
+                                        }
+                                    }
+                                }            
+                                kast10Title.setEditable(false);
+                                        kast10Title.setForeground(Color.BLACK);
+                                        kast10Title.setBackground(Color.WHITE);
+                                        kast10Title.setBounds(0, 0, 300, 30);
+                                        Fkast10.getContentPane().add(kast10Title);
+                                       
+                            }
+                        }
+                });
+                
+                
+               
+                kast10.setLayout(null);
                 kast10.setToolTipText("Kast 10");              
                 kast10.setBorder(new LineBorder(new Color(0,0,0)));
                 kast10.setForeground(Color.BLACK);
                 kast10.setBackground(Color.WHITE);
                 kast10.setBounds(99, 60, 86, 86);
                 frame.getContentPane().add(kast10);
+                
+                JLabel lab10 = new JLabel("Kast 10");
+                lab10.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab10.setBounds(47, 73, 46, 14);
+                kast10.add(lab10);
                
                 JPanel kast11 = new JPanel();
                 kast11.addMouseListener(new MouseAdapter() {
@@ -546,11 +554,18 @@ public class GUI {
                             }
                         }
                 });
+                
+                kast11.setLayout(null);
                 kast11.setToolTipText("Kast 11");
                 kast11.setBorder(new LineBorder(new Color(0,0,0)));
                 kast11.setBackground(Color.WHITE);
                 kast11.setBounds(195, 60, 86, 86);
                 frame.getContentPane().add(kast11);
+                
+                JLabel lab11 = new JLabel("Kast 11");
+                lab11.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab11.setBounds(47, 73, 46, 14);
+                kast11.add(lab11);
                
                 JPanel kast12 = new JPanel();
                 kast12.addMouseListener(new MouseAdapter() {
@@ -582,11 +597,18 @@ public class GUI {
                             }
                         }
                 });
+                
+                kast12.setLayout(null);
                 kast12.setToolTipText("Kast 12");
                 kast12.setBorder(new LineBorder(new Color(0,0,0)));
                 kast12.setBackground(Color.WHITE);
                 kast12.setBounds(291, 60, 86, 86);
                 frame.getContentPane().add(kast12);
+                
+                JLabel lab12 = new JLabel("Kast 12");
+                lab12.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab12.setBounds(47, 73, 46, 14);
+                kast12.add(lab12);
                
                 JPanel kast20 = new JPanel();
                 kast20.addMouseListener(new MouseAdapter() {
@@ -618,11 +640,18 @@ public class GUI {
                             }
                         }
                 });
+                
+                kast20.setLayout(null);
                 kast20.setToolTipText("Kast 20");
                 kast20.setBorder(new LineBorder(new Color(0,0,0)));
                 kast20.setBackground(Color.WHITE);
                 kast20.setBounds(488, 60, 86, 86);
                 frame.getContentPane().add(kast20);
+                
+                JLabel lab20 = new JLabel("Kast 20");
+                lab20.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab20.setBounds(47, 73, 46, 14);
+                kast20.add(lab20);
                
                 JPanel kast21 = new JPanel();
                 kast21.addMouseListener(new MouseAdapter() {
@@ -654,11 +683,18 @@ public class GUI {
                             }
                         }
                 });
+                
+                kast21.setLayout(null);
                 kast21.setToolTipText("Kast 21");
                 kast21.setBorder(new LineBorder(new Color(0,0,0)));
                 kast21.setBackground(Color.WHITE);
                 kast21.setBounds(584, 60, 86, 86);
                 frame.getContentPane().add(kast21);
+                
+                JLabel lab21 = new JLabel("Kast 21");
+                lab21.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab21.setBounds(47, 73, 46, 14);
+                kast21.add(lab21);
                
                 JPanel kast22 = new JPanel();
                 kast22.addMouseListener(new MouseAdapter() {
@@ -690,11 +726,17 @@ public class GUI {
                             }
                         }
                 });
+                kast22.setLayout(null);
                 kast22.setToolTipText("Kast 22");
                 kast22.setBorder(new LineBorder(new Color(0,0,0)));
                 kast22.setBackground(Color.WHITE);
                 kast22.setBounds(680, 60, 86, 86);
                 frame.getContentPane().add(kast22);
+                
+                JLabel lab22 = new JLabel("Kast 22");
+                lab22.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab22.setBounds(47, 73, 46, 14);
+                kast22.add(lab22);
                
                 JPanel kast13 = new JPanel();
                 kast13.addMouseListener(new MouseAdapter() {
@@ -726,11 +768,17 @@ public class GUI {
                             }
                         }
                 });
+                kast13.setLayout(null);
                 kast13.setToolTipText("Kast 13");
                 kast13.setBorder(new LineBorder(new Color(0,0,0)));
                 kast13.setBackground(Color.WHITE);
                 kast13.setBounds(99, 156, 86, 86);
                 frame.getContentPane().add(kast13);
+                
+                JLabel lab13 = new JLabel("Kast 13");
+                lab13.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab13.setBounds(47, 73, 46, 14);
+                kast13.add(lab13);
                
                 JPanel kast14 = new JPanel();
                 kast14.addMouseListener(new MouseAdapter() {
@@ -762,11 +810,17 @@ public class GUI {
                             }
                         }
                 });
+                kast14.setLayout(null);
                 kast14.setToolTipText("Kast 14");
                 kast14.setBorder(new LineBorder(new Color(0,0,0)));
                 kast14.setBackground(Color.WHITE);
                 kast14.setBounds(195, 156, 86, 86);
                 frame.getContentPane().add(kast14);
+                
+                JLabel lab14 = new JLabel("Kast 14");
+                lab14.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab14.setBounds(47, 73, 46, 14);
+                kast14.add(lab14);
                
                 JPanel kast15 = new JPanel();
                 kast15.addMouseListener(new MouseAdapter() {
@@ -798,11 +852,17 @@ public class GUI {
                             }
                         }
                 });
+                kast15.setLayout(null);
                 kast15.setToolTipText("Kast 15");
                 kast15.setBorder(new LineBorder(new Color(0,0,0)));
                 kast15.setBackground(Color.WHITE);
                 kast15.setBounds(291, 156, 86, 86);
                 frame.getContentPane().add(kast15);
+                
+                JLabel lab15 = new JLabel("Kast 15");
+                lab15.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab15.setBounds(47, 73, 46, 14);
+                kast15.add(lab15);
                
                 JPanel kast23 = new JPanel();
                 kast23.addMouseListener(new MouseAdapter() {
@@ -834,11 +894,17 @@ public class GUI {
                             }
                         }
                 });
+                kast23.setLayout(null);
                 kast23.setToolTipText("Kast 23");
                 kast23.setBorder(new LineBorder(new Color(0,0,0)));
                 kast23.setBackground(Color.WHITE);
                 kast23.setBounds(488, 156, 86, 86);
                 frame.getContentPane().add(kast23);
+                
+                JLabel lab23 = new JLabel("Kast 23");
+                lab23.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab23.setBounds(47, 73, 46, 14);
+                kast23.add(lab23);
                
                 JPanel kast24 = new JPanel();
                 kast24.addMouseListener(new MouseAdapter() {
@@ -870,11 +936,17 @@ public class GUI {
                             }
                         }
                 });
+                kast24.setLayout(null);
                 kast24.setToolTipText("Kast 24");
                 kast24.setBorder(new LineBorder(new Color(0,0,0)));
                 kast24.setBackground(Color.WHITE);
                 kast24.setBounds(584, 156, 86, 86);
                 frame.getContentPane().add(kast24);
+                
+                JLabel lab24 = new JLabel("Kast 24");
+                lab24.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab24.setBounds(47, 73, 46, 14);
+                kast24.add(lab24);
                
                 JPanel kast25 = new JPanel();
                 kast25.addMouseListener(new MouseAdapter() {
@@ -906,11 +978,17 @@ public class GUI {
                             }
                         }
                 });
+                kast25.setLayout(null);
                 kast25.setToolTipText("Kast 25");
                 kast25.setBorder(new LineBorder(new Color(0,0,0)));
                 kast25.setBackground(Color.WHITE);
                 kast25.setBounds(680, 156, 86, 86);
                 frame.getContentPane().add(kast25);
+                
+                JLabel lab25 = new JLabel("Kast 25");
+                lab25.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab25.setBounds(47, 73, 46, 14);
+                kast25.add(lab25);
                
                 JPanel kast16 = new JPanel();
                 kast16.addMouseListener(new MouseAdapter() {
@@ -942,11 +1020,17 @@ public class GUI {
                             }
                         }
                 });
+                kast16.setLayout(null);
                 kast16.setToolTipText("Kast 16");
                 kast16.setBorder(new LineBorder(new Color(0,0,0)));
                 kast16.setBackground(Color.WHITE);
                 kast16.setBounds(99, 252, 86, 86);
                 frame.getContentPane().add(kast16);
+                
+                JLabel lab16 = new JLabel("Kast 16");
+                lab16.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab16.setBounds(47, 73, 46, 14);
+                kast16.add(lab16);
                
                 JPanel kast17 = new JPanel();
                 kast17.addMouseListener(new MouseAdapter() {
@@ -978,11 +1062,17 @@ public class GUI {
                             }
                         }
                 });
+                kast17.setLayout(null);
                 kast17.setToolTipText("Kast 17");
                 kast17.setBorder(new LineBorder(new Color(0,0,0)));
                 kast17.setBackground(Color.WHITE);
                 kast17.setBounds(195, 252, 86, 86);
                 frame.getContentPane().add(kast17);
+                
+                JLabel lab17 = new JLabel("Kast 17");
+                lab17.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab17.setBounds(47, 73, 46, 14);
+                kast17.add(lab17);
                
                 JPanel kast18 = new JPanel();
                 kast18.addMouseListener(new MouseAdapter() {
@@ -1014,11 +1104,17 @@ public class GUI {
                             }
                         }
                 });
+                kast18.setLayout(null);
                 kast18.setToolTipText("Kast 18");
                 kast18.setBorder(new LineBorder(new Color(0,0,0)));
                 kast18.setBackground(Color.WHITE);
                 kast18.setBounds(291, 252, 86, 86);
                 frame.getContentPane().add(kast18);
+                
+                JLabel lab18 = new JLabel("Kast 18");
+                lab18.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab18.setBounds(47, 73, 46, 14);
+                kast18.add(lab18);
                
                 JPanel kast26 = new JPanel();
                 kast26.addMouseListener(new MouseAdapter() {
@@ -1050,11 +1146,17 @@ public class GUI {
                             }
                         }
                 });
+                kast26.setLayout(null);
                 kast26.setToolTipText("Kast 26");
                 kast26.setBorder(new LineBorder(new Color(0,0,0)));
                 kast26.setBackground(Color.WHITE);
                 kast26.setBounds(488, 252, 86, 86);
                 frame.getContentPane().add(kast26);
+                
+                JLabel lab26 = new JLabel("Kast 26");
+                lab26.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab26.setBounds(47, 73, 46, 14);
+                kast26.add(lab26);
                
                 JPanel kast27 = new JPanel();
                 kast27.addMouseListener(new MouseAdapter() {
@@ -1086,11 +1188,17 @@ public class GUI {
                             }
                         }
                 });
+                kast27.setLayout(null);
                 kast27.setToolTipText("Kast 27");
                 kast27.setBorder(new LineBorder(new Color(0,0,0)));
                 kast27.setBackground(Color.WHITE);
                 kast27.setBounds(584, 252, 86, 86);
                 frame.getContentPane().add(kast27);
+                
+                JLabel lab27 = new JLabel("Kast 27");
+                lab27.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab27.setBounds(47, 73, 46, 14);
+                kast27.add(lab27);
                
                 JPanel kast28 = new JPanel();
                 kast28.addMouseListener(new MouseAdapter() {
@@ -1122,11 +1230,17 @@ public class GUI {
                             }
                         }
                 });
+                kast28.setLayout(null);
                 kast28.setToolTipText("Kast 28");
                 kast28.setBorder(new LineBorder(new Color(0,0,0)));
                 kast28.setBackground(Color.WHITE);
                 kast28.setBounds(680, 252, 86, 86);
                 frame.getContentPane().add(kast28);
+                
+                JLabel lab28 = new JLabel("Kast 28");
+                lab28.setFont(new Font("Arial", Font.PLAIN, 11));
+                lab28.setBounds(47, 73, 46, 14);
+                kast28.add(lab28);
                
                 JPanel kast1 = new JPanel();
                 kast1.setToolTipText("Kast 1");
@@ -1443,40 +1557,41 @@ public class GUI {
                                  @Override
                             public void actionPerformed(ActionEvent arg0) {
  
-                                         String merknaamtemp = textField0.getText();
+                                         	//merknaam
+                                	 		String merknaamtemp = textField0.getText();
                                            
                                             //Stofnaam                
                                             String stofnaamtemp = textField1.getText();
                                            
                                                 //Aantal
-                                            int tempaantal = 0;
+                                            int tempaantal = -1;
                                                 try{
                                                 int aantaltemp = Integer.parseInt(textField2.getText());
                                                 tempaantal=aantaltemp;
                                             }catch(NumberFormatException ex){
                                                 Log.print();
-                                                System.err.println("Geen geldig aantal opgegeven.");
+                                                System.err.println("Ongeldig aantal opgegeven.");
                                             }
                                            
                                             //Gewenst Aantal
-                                                int tempgewaantal=0;
+                                                int tempgewaantal= -1;
                                                 try{
                                                 int gewaantaltemp = Integer.parseInt(textField3.getText());
                                                 tempgewaantal=gewaantaltemp;
                                             }catch(NumberFormatException ex){
                                                 Log.print();
-                                                System.err.println("Geen geldig gewenst aantal opgegeven.");
+                                                System.err.println("Ongeldig gewenst aantal opgegeven.");
                                             }
                                            
                                             //Minimum aantal
                                                 //Aantal
-                                                int tempminaantal=0;
+                                                int tempminaantal= -1;
                                                 try{
                                                 int minaantaltemp = Integer.parseInt(textField4.getText());
                                                 tempminaantal=minaantaltemp;
                                             }catch(NumberFormatException ex){
                                                 Log.print();
-                                                System.err.println("Geen geldig minimum aantal opgegeven.");
+                                                System.err.println("Ongeldig minimum aantal opgegeven.");
                                             }
                                                            
                                            
@@ -1484,23 +1599,23 @@ public class GUI {
                                                 String fabrikanttemp = textField5.getText();
                                            
                                             //Prijs
-                                                int tempprijs=0;
+                                                int tempprijs= -1 ;
                                                 try{
                                                     int prijstemp = Integer.parseInt(textField6.getText());
                                                     tempprijs=prijstemp;
                                             }catch(NumberFormatException ex){
                                                 Log.print();
-                                                System.err.println("Geen geldige prijs opgegeven.");
+                                                System.err.println("Ongeldige prijs opgegeven.");
                                             }
                                            
                                             //KastID
-                                                int tempkastid=0;
+                                                int tempkastid= -1;
                                                 try{
                                                     int kastidtemp = Integer.parseInt(textField7.getText());
                                                     tempkastid=kastidtemp;
                                             }catch(NumberFormatException ex){
                                                 Log.print();
-                                                System.err.println("Geen geldig kast ID opgegeven.");
+                                                System.err.println("Ongeldig kast ID opgegeven.");
                                             }
                                            
                                             //Houdbaarheid
@@ -1512,72 +1627,60 @@ public class GUI {
                                                         houdbaarheidsDatumtemp = sdf.parse(houdbaarheidtemp);
                                                 } catch (ParseException e) {
                                                         Log.print();
-                                                        System.err.println("Geen geldige datum opgegeven");                                                    
+                                                        System.err.println("Ongeldige datum opgegeven");                                                    
                                                 }
                                                
-                                                if(tempaantal != 0 && tempgewaantal != 0 && tempminaantal != 0 && tempprijs != 0 && tempkastid != 0 && huidigdate.before(houdbaarheidsDatumtemp))
+                                                if(tempaantal != 0 && tempgewaantal != 0 && tempminaantal != 0 && tempprijs != 0 && tempkastid > 9 && tempkastid < 29 && tempkastid != 19 && huidigdate.before(houdbaarheidsDatumtemp))
                                                 {
                                                         Log.print();
                                                         System.out.println("Medicijn ingegeven met merknaam: " + merknaamtemp);
                                                         Voorraadbeheer.voegMedicijnToe(merknaamtemp, stofnaamtemp, tempaantal, tempgewaantal, tempminaantal, fabrikanttemp, tempprijs, tempkastid, houdbaarheidtemp);
                                                         frame2.setVisible(false);
-                                        frame2.dispose();
+                                                        frame2.dispose();
                                                 }
-                                                else if(tempaantal == 0)
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Geen geldig aantal ingegeven");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                                else if(tempgewaantal == 0)
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Geen geldig gewenst aantal ingegeven");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                                else if(tempminaantal == 0)
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Geen geldig minimum aantal ingegeven");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                                else if(tempprijs == 0)
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Geen geldige prijs ingegeven");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                                else if( tempkastid < 10 || tempkastid > 28 || tempkastid == 19)
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Incorrect kast ID ingegeven.");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                                else if(huidigdate.after(houdbaarheidsDatumtemp))
-                                                {
-                                                        Log.print();
-                                                        System.out.println("Het medicijn is niet meer houdbaar.");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
-                                                }
-                                               
                                                 else
                                                 {
-                                                        Log.print();
-                                                        System.out.println("Incorrecte parameters ingegeven, probeer opnieuw.");
-                                                        frame2.setVisible(false);
-                                        frame2.dispose();
+                                                	if(tempaantal == 0)
+                                                    {
+                                                            Log.print();
+                                                            System.out.println("Aantal mag niet 0 zijn.");                                                            
+                                                    }
+                                                	
+                                                	 if(tempgewaantal == 0)
+                                                     {
+                                                             Log.print();
+                                                             System.out.println("Gewenst aantal mag niet 0 zijn.");
+                                                     }
+                                                	 
+                                                	 if(tempminaantal == 0)
+                                                     {
+                                                             Log.print();
+                                                             System.out.println("Minimumaantal mag niet 0 zijn.");
+                                                     }
+                                                	 
+                                                	 if(tempprijs == 0)
+                                                     {
+                                                             Log.print();
+                                                             System.out.println("Prijs mag niet 0 zijn.");
+                                                     }
+                                                	 
+                                                	 if( tempkastid != -1 && tempkastid < 10 || tempkastid > 28 || tempkastid == 19)
+                                                     {
+                                                             Log.print();
+                                                             System.out.println("Opgegeven kast bestaat niet.");
+                                                     }
+                                                	 
+                                                	 if(huidigdate.after(houdbaarheidsDatumtemp))
+                                                     {
+                                                             Log.print();
+                                                             System.out.println("Het medicijn is niet meer houdbaar.");
+                                                     }
+                                                	 
+                                                	 Log.print();
+                                                	 System.out.println("Het medicijn is niet toegevoegd, controleer parameters.");
                                                 }
-                                                                               
-                                               
-                                               
-                                               
- 
+                                                              
+                        
                             }
                         });            
                        

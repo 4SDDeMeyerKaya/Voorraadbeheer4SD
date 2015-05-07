@@ -9,3 +9,5 @@ Openmedicijnentxt8 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
 a a 30 60 31 a 30 12 16-12-2016
 b b 30 60 31 a 30 12 16-12-2016
 idk idk 6 10 10 idk 1 10 10-05-2017
+Aspirine idk 12 10 5 aspirine 100 20 22-05-2017
+med1 stof1 1 2 2 fab1 1 22 22-05-2016
