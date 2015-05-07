@@ -8,7 +8,7 @@ public class Splash {
 	public static void main(String[] args) throws FileNotFoundException {
 		// TODO Auto-generated method stub		
 		try {
-			JSplash splash = new JSplash(Main.class.getResource("pharmacy.jpg"), true, true, false, null, null, Color.RED, Color.BLACK);						
+			JSplash splash = new JSplash(Splash.class.getResource("pharmacy.jpg"), true, true, false, null, null, Color.RED, Color.BLACK);						
 			splash.splashOn();	
 				
 			//random text
