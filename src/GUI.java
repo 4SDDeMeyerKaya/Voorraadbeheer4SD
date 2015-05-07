@@ -380,98 +380,92 @@ public class GUI {
                 textAreaTerminal.setForeground(Color.WHITE);
                 textAreaTerminal.setBackground(Color.BLACK);
                 
-                JPanel ind10o = new JPanel();
-                ind10o.setBackground(new Color(144, 238, 144));
-                ind10o.setBounds(99, 146, 86, 5);
-                ind10o.setVisible(false);
-                frame.getContentPane().add(ind10o);
-                
-                JPanel ind10 = new JPanel();
+                ind10 = new JPanel();
                 ind10.setBackground(new Color(144, 238, 144));
                 ind10.setBounds(99, 146, 86, 5);
                 frame.getContentPane().add(ind10);
                 
-                JPanel ind11 = new JPanel();
+                ind11 = new JPanel();
                 ind11.setBackground(new Color(144, 238, 144));
                 ind11.setBounds(195, 146, 86, 5);
                 frame.getContentPane().add(ind11);
                 
-                JPanel ind12 = new JPanel();
+                ind12 = new JPanel();
                 ind12.setBounds(291, 146, 86, 5);
                 frame.getContentPane().add(ind12);
                 ind12.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind13 = new JPanel();
+                ind13 = new JPanel();
                 ind13.setBounds(99, 242, 86, 5);
                 frame.getContentPane().add(ind13);
                 ind13.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind14 = new JPanel();
+                ind14 = new JPanel();
                 ind14.setBounds(195, 242, 86, 5);
                 frame.getContentPane().add(ind14);
                 ind14.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind15 = new JPanel();
+                ind15 = new JPanel();
                 ind15.setBounds(291, 242, 86, 5);
                 frame.getContentPane().add(ind15);
                 ind15.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind16 = new JPanel();
+                ind16 = new JPanel();
                 ind16.setBounds(99, 338, 86, 5);
                 frame.getContentPane().add(ind16);
                 ind16.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind17 = new JPanel();
+                ind17 = new JPanel();
                 ind17.setBounds(195, 338, 86, 5);
                 frame.getContentPane().add(ind17);
                 ind17.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind18 = new JPanel();
+                ind18 = new JPanel();
                 ind18.setBounds(291, 338, 86, 5);
                 frame.getContentPane().add(ind18);
                 ind18.setBackground(new Color(144, 238, 144));
 
-                JPanel ind20 = new JPanel();
+                ind20 = new JPanel();
                 ind20.setBounds(488, 146, 86, 5);
                 frame.getContentPane().add(ind20);
                 ind20.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind21 = new JPanel();
+                ind21 = new JPanel();
                 ind21.setBounds(584, 146, 86, 5);
                 frame.getContentPane().add(ind21);
                 ind21.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind22 = new JPanel();
+                ind22 = new JPanel();
                 ind22.setBounds(680, 146, 86, 5);
                 frame.getContentPane().add(ind22);
                 ind22.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind23 = new JPanel();
+                ind23 = new JPanel();
                 ind23.setBounds(488, 242, 86, 5);
                 frame.getContentPane().add(ind23);
                 ind23.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind24 = new JPanel();
+                ind24 = new JPanel();
                 ind24.setBounds(584, 242, 86, 5);
                 frame.getContentPane().add(ind24);
                 ind24.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind25 = new JPanel();
+                ind25 = new JPanel();
                 ind25.setBounds(680, 242, 86, 5);
                 frame.getContentPane().add(ind25);
                 ind25.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind26 = new JPanel();
+                ind26 = new JPanel();
                 ind26.setBounds(488, 338, 86, 5);
                 frame.getContentPane().add(ind26);
                 ind26.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind27 = new JPanel();
+                ind27 = new JPanel();
                 ind27.setBounds(584, 338, 86, 5);
                 frame.getContentPane().add(ind27);
                 ind27.setBackground(new Color(144, 238, 144));
                 
-                JPanel ind28 = new JPanel();
+                ind28 = new JPanel();
                 ind28.setBounds(680, 338, 86, 5);
                 frame.getContentPane().add(ind28);
                 ind28.setBackground(new Color(144, 238, 144));
@@ -1728,7 +1722,7 @@ public class GUI {
                 String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
                 "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
         JTableHeader thM = tableMed.getTableHeader();
-                thM.setFont(new Font("Dialog", Font.BOLD, 12));
+                thM.setFont(new Font("Arial", Font.BOLD, 12));
                 tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
  
         Object[][] object = new Object[100][100];
@@ -1773,7 +1767,7 @@ public class GUI {
         public static void updateBesTabellen(){
             String[] colName = { "Bestellingsnummer","Status", "Merknaam", "Aantal", "Prijs"};
             JTableHeader thM = tableBest.getTableHeader();
-            thM.setFont(new Font("Dialog", Font.BOLD, 12));
+            thM.setFont(new Font("Arial", Font.BOLD, 12));
             tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 
             Object[][] object = new Object[100][100];
@@ -1795,8 +1789,145 @@ public class GUI {
             }
         }
        
-        public static void updateKasten(){
+        public static void updateKasten(){        	
         	
-        	//ind10o.setVisible(true);
+        	//alles op groen zetten om te beginnen
+        	ind10.setBackground(new Color(144, 238, 144));
+        	ind11.setBackground(new Color(144, 238, 144));
+        	ind12.setBackground(new Color(144, 238, 144));
+        	ind13.setBackground(new Color(144, 238, 144));
+        	ind14.setBackground(new Color(144, 238, 144));
+        	ind15.setBackground(new Color(144, 238, 144));
+        	ind16.setBackground(new Color(144, 238, 144));
+        	ind17.setBackground(new Color(144, 238, 144));
+        	ind18.setBackground(new Color(144, 238, 144));
+        	ind20.setBackground(new Color(144, 238, 144));
+        	ind21.setBackground(new Color(144, 238, 144));
+        	ind22.setBackground(new Color(144, 238, 144));
+        	ind23.setBackground(new Color(144, 238, 144));
+        	ind24.setBackground(new Color(144, 238, 144));
+        	ind25.setBackground(new Color(144, 238, 144));
+        	ind26.setBackground(new Color(144, 238, 144));
+        	ind27.setBackground(new Color(144, 238, 144));
+        	ind28.setBackground(new Color(144, 238, 144));
+        	
+        	//de correcte kasten op oranje zetten                          
+            if (Voorraadbeheer.medlist.size() != 0) {
+            for (int i=0;i<Voorraadbeheer.medlist.size();i++) {
+                      //kast10
+                  if(Voorraadbeheer.medlist.get(i).kastID == 10){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind10.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast11
+                  if(Voorraadbeheer.medlist.get(i).kastID == 11){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind11.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast12
+                  if(Voorraadbeheer.medlist.get(i).kastID == 12){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind12.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast13
+                  if(Voorraadbeheer.medlist.get(i).kastID == 13){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind13.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast14
+                  if(Voorraadbeheer.medlist.get(i).kastID == 14){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind14.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast15
+                  if(Voorraadbeheer.medlist.get(i).kastID == 15){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind15.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast16
+                  if(Voorraadbeheer.medlist.get(i).kastID == 16){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind16.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast17
+                  if(Voorraadbeheer.medlist.get(i).kastID == 17){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind17.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast18
+                  if(Voorraadbeheer.medlist.get(i).kastID == 18){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind18.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                 
+                //kast20
+                  if(Voorraadbeheer.medlist.get(i).kastID == 20){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind20.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast21
+                  if(Voorraadbeheer.medlist.get(i).kastID == 21){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind21.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast22
+                  if(Voorraadbeheer.medlist.get(i).kastID == 22){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind22.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast23
+                  if(Voorraadbeheer.medlist.get(i).kastID == 23){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind23.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast24
+                  if(Voorraadbeheer.medlist.get(i).kastID == 24){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind24.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast25
+                  if(Voorraadbeheer.medlist.get(i).kastID == 25){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind25.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast26
+                  if(Voorraadbeheer.medlist.get(i).kastID == 26){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind26.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast27
+                  if(Voorraadbeheer.medlist.get(i).kastID == 27){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind27.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+                //kast28
+                  if(Voorraadbeheer.medlist.get(i).kastID == 28){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+                    	  ind28.setBackground(new Color(255, 153, 51));
+                      }                              
+                   }
+            }
+            }
+        	
+        	
+        	
+        	
         }
 }
