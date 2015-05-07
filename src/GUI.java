@@ -1471,7 +1471,7 @@ public class GUI {
                         // wat er gebeurd als de knop wordt ingedrukt  
                        
                        
-                        final JFrame frame2 = new JFrame("Medicijn toevoegen.");
+                        final JFrame frame2 = new JFrame("Medicijn toevoegen");
                         frame2.setVisible(true);
                         frame2.setSize(300,310);
                         String[] labels = {"Merknaam: ", "Stofnaam: ", "Aantal: ", "Gewenste Aantal: ", "Minimum Aantal: ", "Fabrikant: ", "Prijs(€): ", "Kast ID: ", "Houdbaarheid: "};
