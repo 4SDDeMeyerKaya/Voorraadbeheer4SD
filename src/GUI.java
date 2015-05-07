@@ -58,6 +58,7 @@ public class GUI {
         public static JTable tableMed;
         public static JTable tableBest;
         private JTextArea textAreaTerminal;
+        public static int kU;
         public static JPanel kast10;
         public static JPanel kast11;
         public static JPanel kast12;
@@ -1519,56 +1520,54 @@ public class GUI {
                 object[i][8] = Voorraadbeheer.medlist.get(i).houdbaarheid;
                
                 tableMed.setFillsViewportHeight(true);
-                        tableMed.setCellSelectionEnabled(false);
-                        tableMed.setModel(new DefaultTableModel(object, colName));
-                       
-                        tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
-                        tableMed.getColumnModel().getColumn(0).setMinWidth(160);
-                        tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
-                        tableMed.getColumnModel().getColumn(1).setMinWidth(110);
-                        tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
-                        tableMed.getColumnModel().getColumn(2).setMinWidth(90);
-                        tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
-                        tableMed.getColumnModel().getColumn(3).setMinWidth(63);
-                        tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
-                        tableMed.getColumnModel().getColumn(4).setMinWidth(63);
-                        tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
-                        tableMed.getColumnModel().getColumn(5).setMinWidth(111);
-                        tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
-                        tableMed.getColumnModel().getColumn(6).setMinWidth(80);
-                        tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
-                        tableMed.getColumnModel().getColumn(7).setMinWidth(60);
-                        tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
-                        tableMed.getColumnModel().getColumn(8).setMinWidth(111);
-            }
-        }
+                tableMed.setCellSelectionEnabled(false);
+                tableMed.setModel(new DefaultTableModel(object, colName));
+                tableMed.getColumnModel().getColumn(0).setPreferredWidth(160);
+                tableMed.getColumnModel().getColumn(0).setMinWidth(160);
+				tableMed.getColumnModel().getColumn(1).setPreferredWidth(110);
+				tableMed.getColumnModel().getColumn(1).setMinWidth(110);
+				tableMed.getColumnModel().getColumn(2).setPreferredWidth(90);
+				tableMed.getColumnModel().getColumn(2).setMinWidth(90);
+				tableMed.getColumnModel().getColumn(3).setPreferredWidth(63);
+				tableMed.getColumnModel().getColumn(3).setMinWidth(63);
+				tableMed.getColumnModel().getColumn(4).setPreferredWidth(63);
+				tableMed.getColumnModel().getColumn(4).setMinWidth(63);
+				tableMed.getColumnModel().getColumn(5).setPreferredWidth(111);
+				tableMed.getColumnModel().getColumn(5).setMinWidth(111);
+				tableMed.getColumnModel().getColumn(6).setPreferredWidth(80);
+				tableMed.getColumnModel().getColumn(6).setMinWidth(80);
+				tableMed.getColumnModel().getColumn(7).setPreferredWidth(60);
+				tableMed.getColumnModel().getColumn(7).setMinWidth(60);
+				tableMed.getColumnModel().getColumn(8).setPreferredWidth(120);
+				tableMed.getColumnModel().getColumn(8).setMinWidth(111);
+            	}
+        	}
         }
 		
-		        public static void updateBesTabellen(){
+        public static void updateBesTabellen(){
             String[] colName = { "Bestellingsnummer","Status", "Merknaam", "Aantal", "Prijs"};
-    JTableHeader thM = tableBest.getTableHeader();
+            JTableHeader thM = tableBest.getTableHeader();
             thM.setFont(new Font("Dialog", Font.BOLD, 12));
             tableBest.setFont(new Font("Arial", Font.PLAIN, 12));
 
-    Object[][] object = new Object[100][100];
-    int k = 0;
-    if (Voorraadbeheer.beslist.size() != 0 && Voorraadbeheer.beslist.get(0).besmedlist.size()!=0) {
-        for (int i=0;i<Voorraadbeheer.beslist.size();i++) {
-        	for(int j=0;j<Voorraadbeheer.beslist.get(i).besmedlist.size();j++){
-        		object[k][0] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).bestelIndex;
-        		object[k][1] = Voorraadbeheer.beslist.get(i).getStatus();
-        		object[k][2] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).merknaam;
-        		object[k][3] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).aantal;
-        		object[k][4] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).prijs;
-        		k++;
-        	}
-            tableBest.setFillsViewportHeight(true);
-            tableBest.setCellSelectionEnabled(false);
-            tableBest.setModel(new DefaultTableModel(object, colName));
+            Object[][] object = new Object[100][100];
+            if (Voorraadbeheer.beslist.size() != 0 && Voorraadbeheer.beslist.get(0).besmedlist.size()!=0) {
+            	for (int i=0;i<Voorraadbeheer.beslist.size();i++) {
+            		for(int j=0;j<Voorraadbeheer.beslist.get(i).besmedlist.size();j++){
+            			object[kU][0] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).bestelIndex;
+            			object[kU][1] = Voorraadbeheer.beslist.get(i).getStatus();
+            			object[kU][2] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).merknaam;
+            			object[kU][3] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).aantal;
+            			object[kU][4] = Voorraadbeheer.beslist.get(i).besmedlist.get(j).prijs;
+            			kU++;
+            		}
+            		tableBest.setFillsViewportHeight(true);
+            		tableBest.setCellSelectionEnabled(false);
+            		tableBest.setModel(new DefaultTableModel(object, colName));
             
+            	}
+            }
         }
-    }
-    }
        
         public static void updateKasten(){
                

@@ -1,22 +1,19 @@
 import java.awt.Color;
 import java.awt.Component;
 
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableCellRenderer;
+import javax.swing.table.TableCellRenderer;
 
-public class CustomRenderer extends DefaultTableCellRenderer 
+public class CustomRenderer 
 {
-private static final long serialVersionUID = 6703872492730589499L;
 
-    public Component getTableCellRendererComponent(JTable table, Object value, boolean isSelected, boolean hasFocus, int row, int column)
-    {
-        Component cellComponent = super.getTableCellRendererComponent(table, value, isSelected, hasFocus, row, column);
-        int tVal= (int) table.getValueAt(row, 0);
-        if(tVal%2== 0){
-            cellComponent.setBackground(Color.LIGHT_GRAY);
-        } else{
-            cellComponent.setBackground(Color.WHITE);
+    public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+        Component c = GUI.tableBest.prepareRenderer(r, data, columns);
+                               
+        if (data % 2 == 0) //alternating colours among rows
+                c.setBackground(Color.WHITE);
+                               
+        else c.setBackground(Color.LIGHT_GRAY);
+                               
+                return c;
         }
-        return cellComponent;
-    }
 }
