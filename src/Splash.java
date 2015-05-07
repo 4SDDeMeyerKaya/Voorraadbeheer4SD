@@ -34,7 +34,7 @@ public class Splash {
 				splash.setProgress(90,"Initialising Asclepius: "+i);
 				Thread.sleep(2);
 			}
-			splash.setProgress(90,"Initialising Asclepius: ITS OVER NINE THOUSAND ");
+			splash.setProgress(90,"Initialising Asclepius: IT'S OVER NINE THOUSAND ");
 			Thread.sleep(600);
 			splash.setProgress(100,"Asclepius. Initialised.");
 			Thread.sleep(1200);
