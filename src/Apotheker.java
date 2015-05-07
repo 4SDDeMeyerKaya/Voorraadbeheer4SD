@@ -1,3 +1,5 @@
+import java.text.ParseException;
+
 public class Apotheker {
        
         public Apotheker(){
@@ -33,7 +35,7 @@ public class Apotheker {
          * We controleren op merknaam voor overeenkomstige medicijnen.
          * We zetten ineens ook de boolean isAangekomen van die bestelling op true.
          */
-        public void setAangekomen(int beslistIndex){
+        public void setAangekomen(int beslistIndex) throws ParseException{
                 Voorraadbeheer.beslist.get(beslistIndex).setAangekomen(true);
                 Log.print();
                 System.out.println("Bestelling met beslistIndex " + beslistIndex+ "is aangekomen.");

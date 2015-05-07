@@ -3,6 +3,7 @@
  * hogerop door Voorraadbeheer onderhouden.
  * Op deze manier vermijden we een te complexe structuur binnenin de verschillende klassen.
  */
+import java.text.ParseException;
 import java.util.ArrayList;
 
 public class Bestelling {
@@ -34,15 +35,15 @@ public class Bestelling {
 	}
 	
 	public String getStatus(){
-		if (isBesteld()==false){
+		if (isBesteld()==false && isAangekomen()==false){
 			return "Nog niet besteld";
 		}
 		else{
-			if(isAangekomen()==false){
+			if(isBesteld()==true){
 				return "Besteld";
 			}
 			else
-				return "Reeds aangekomen";
+				return "Aangekomen";
 		}
 	}
 	
@@ -58,17 +59,26 @@ public class Bestelling {
 		return isAangekomen;
 	}
 
-	public void setAangekomen(boolean isAangekomen) {
+	public void setAangekomen(boolean isAangekomen) throws ParseException {
 		this.isAangekomen = isAangekomen;
+		this.isBesteld=false;
 		if (isAangekomen==true){
 			for(int i=0; i<besmedlist.size();i++){
 				for(int j=0; j<Voorraadbeheer.medlist.size();j++){
-					if(besmedlist.get(i).merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).geefMerknaam())){
+					if(besmedlist.get(i).merknaam.equalsIgnoreCase(Voorraadbeheer.medlist.get(j).merknaam)){
+						if(Voorraadbeheer.medlist.get(j).gewensteAantal==besmedlist.get(i).aantal){
+							Voorraadbeheer.medlist.get(j).houdbaarheid="08-05-2016";
+						}
+						Voorraadbeheer.medlist.get(j).aantal+=besmedlist.get(i).aantal;						
 						Voorraadbeheer.medlist.get(j).alGewaarschuwd=false;
 						Voorraadbeheer.medlist.get(j).besteld=false;
+						Log.print();
+                        System.out.println(Voorraadbeheer.medlist.get(j).merknaam+" is bijgevuld. +("+besmedlist.get(i).aantal+")" );
+						
 					}
 				}
 			}
+			
 		}
 	}
 }

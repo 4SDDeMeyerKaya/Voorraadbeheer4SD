@@ -310,10 +310,41 @@ public class GUI {
                 	  }    
                 	  
                 	  boolean geldig = false;    
-                	  if (selectedStatus.equalsIgnoreCase("Besteld")){
+                	  if (selectedStatus.equalsIgnoreCase("Besteld") && Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
+                		  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
+                			  Voorraadbeheer.beslist.get(bestNummer).setBesteld(true);
+                    		  Log.print();
+                    		  System.out.println("Bestelling met bestelnummer "+bestNummer+" is bevestigd.");
+                    		  geldig=true;
+                    	  }else{
+                    		  Log.print();
+                    		  System.out.println("Deze bestelling is reeds besteld/aangekomen.");
+                    	  }
                 		  
                 	  }
-                                   
+                		 
+                	  if (selectedStatus.equalsIgnoreCase("Aangekomen") && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false ){
+                		  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==true && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
+                			  Voorraadbeheer.beslist.get(bestNummer).setBesteld(false);
+                    		  try {
+								Voorraadbeheer.beslist.get(bestNummer).setAangekomen(true);
+							} catch (ParseException e) {
+							}
+                    		  Log.print();
+                    		  System.out.println("Bestelling met bestelnummer "+bestNummer+" is aangekomen.");
+                    		  geldig=true; 
+                		  }else{
+                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
+                				  Log.print();
+                				  System.out.println("Deze bestelling is nog niet besteld.");
+                			  }
+                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==true){
+                				  Log.print();
+                				  System.out.println("Deze bestelling is reeds aangekomen");
+                			  
+                		  }
+                		  
+                	  }            
                 	  if(geldig){ 	                      
                 		  wijzigBestFrame.setVisible(false);                          
                 		  wijzigBestFrame.dispose();                          
@@ -325,7 +356,7 @@ public class GUI {
                 		  wijzigBestFrame.dispose();                         
                 	  } 
                   }
-                  
+                   } 
                 });            
 
                         SpringUtilities.makeCompactGrid(p,
@@ -1287,7 +1318,7 @@ public class GUI {
                 JPanel bestellingTab = new JPanel();
                 bestellingTab.setToolTipText("Controle van bestellingen");
                 bestellingTab.setBackground(Color.WHITE);
-                tabPane.addTab("BESTELLING", null, bestellingTab, null);
+                tabPane.addTab("BESTELLINGEN", null, bestellingTab, null);
                 bestellingTab.setLayout(null);
                                
                 JScrollPane scrollPaneBest = new JScrollPane();
@@ -1324,7 +1355,7 @@ public class GUI {
                 JPanel medicijnTab = new JPanel();
                 medicijnTab.setToolTipText("Controle van medicijnen");
                 medicijnTab.setBackground(Color.WHITE);
-                tabPane.addTab("MEDICIJN", null, medicijnTab, null);
+                tabPane.addTab("MEDICIJNEN", null, medicijnTab, null);
                 tabPane.setBackgroundAt(1, Color.WHITE);
                 medicijnTab.setLayout(null);
                                
@@ -1686,7 +1717,6 @@ public class GUI {
                 } catch (ParseException e) {
                        
                 } catch (OrderException e) {
-                        e.printStackTrace();
                 }
                
         }
