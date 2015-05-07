@@ -36,13 +36,13 @@ public class Splash {
 			Thread.sleep(800);
 			splash.splashOff();			
 			GUI window = new GUI();
-			window.frame.setVisible(true);	
+			GUI.frame.setVisible(true);	
 			Voorraadbeheer.importMedicijnen();		
 			Voorraadbeheer.voegBestellingToe();
 			Thread.sleep(50);
 			GUI.updateMedTabellen();
 			GUI.updateBesTabellen();
-			//GUI.updateKasten();
+			GUI.updateKasten();
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
