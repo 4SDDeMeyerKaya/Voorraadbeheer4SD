@@ -1392,7 +1392,7 @@ public class GUI {
  
                
         String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
-                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+                "MA", "Fabrikant", "Prijs (€)", "Kast ID" ,"Houdbaarheid"};
                 thM.setFont(new Font("Dialog", Font.BOLD, 12));
  
         Object[][] object = new Object[100][100];
@@ -1474,7 +1474,7 @@ public class GUI {
                         final JFrame frame2 = new JFrame("Medicijn toevoegen.");
                         frame2.setVisible(true);
                         frame2.setSize(300,310);
-                        String[] labels = {"Merknaam: ", "Stofnaam: ", "Aantal: ", "Gewenste Aantal: ", "Minimum Aantal: ", "Fabrikant: ", "Prijs: ", "Kast ID: ", "Houdbaarheid: "};
+                        String[] labels = {"Merknaam: ", "Stofnaam: ", "Aantal: ", "Gewenste Aantal: ", "Minimum Aantal: ", "Fabrikant: ", "Prijs(€): ", "Kast ID: ", "Houdbaarheid: "};
  
                         //Create and populate the panel.
                         JPanel p = new JPanel(new SpringLayout());
@@ -1733,7 +1733,7 @@ public class GUI {
        
         public static void updateMedTabellen(){
                 String[] colName = { "Merknaam", "Stofnaam", "Aantal", "GA",
-                "MA", "Fabrikant", "Prijs", "Kast ID" ,"Houdbaarheid"};
+                "MA", "Fabrikant", "Prijs(€)", "Kast ID" ,"Houdbaarheid"};
         JTableHeader thM = tableMed.getTableHeader();
                 thM.setFont(new Font("Arial", Font.BOLD, 12));
                 tableMed.setFont(new Font("Arial", Font.PLAIN, 12));
