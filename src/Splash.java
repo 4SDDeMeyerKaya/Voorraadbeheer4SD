@@ -26,11 +26,11 @@ public class Splash {
 			Thread.sleep(500);
 			splash.setProgress(60,"Initialising initialisation");
 			Thread.sleep(500);
-			splash.setProgress(70,"Initialising magic");
+			splash.setProgress(70,"Initialising the matrix");
 			Thread.sleep(500);
-			splash.setProgress(80,"Initialising the matrix");
+			splash.setProgress(80,"Initialising red pill");
 			Thread.sleep(500);
-			splash.setProgress(90,"Initialising main window");
+			splash.setProgress(90,"Initialising blue pill");
 			Thread.sleep(500);
 			splash.setProgress(100,"COMPLETE");
 			Thread.sleep(800);

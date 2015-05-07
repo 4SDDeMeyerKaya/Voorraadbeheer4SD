@@ -1,21 +1,23 @@
 import java.awt.EventQueue;
- 
+
 import javax.swing.JFrame;
- 
+
 import java.awt.Color;
 import java.awt.Component;
 import java.awt.Font;
- 
+
 import javax.swing.JTextPane;
 import javax.swing.JPanel;
 import javax.swing.border.LineBorder;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
- 
+
 import java.awt.SystemColor;
- 
+
+import javax.swing.JDialog;
 import javax.swing.JEditorPane;
 import javax.swing.JLabel;
+import javax.swing.JLayeredPane;
 import javax.swing.JTabbedPane;
 import javax.swing.JTextArea;
 import javax.swing.JScrollPane;
@@ -28,7 +30,7 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.JTableHeader;
 import javax.swing.table.TableCellRenderer;
 import javax.swing.ListSelectionModel;
- 
+
 import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -40,14 +42,14 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Timer;
 import java.util.TimerTask;
- 
+
 import javax.swing.JButton;
- 
+
 import com.thehowtotutorial.splashscreen.JSplash;
- 
+
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
- 
+
 import javax.swing.AbstractAction;
 import javax.swing.Action;
  
@@ -59,6 +61,8 @@ public class GUI {
         public static JTable tableBest;
         private JTextArea textAreaTerminal;
         public static int kU;
+        public static JPanel kast1;
+        public static JPanel kast2;
         public static JPanel kast10;
         public static JPanel kast11;
         public static JPanel kast12;
@@ -77,6 +81,7 @@ public class GUI {
         public static JPanel kast26;
         public static JPanel kast27;
         public static JPanel kast28;
+        public static JPanel ind10o;
         public static JPanel ind10;
         public static JPanel ind11;
         public static JPanel ind12;
@@ -298,6 +303,12 @@ public class GUI {
                             }
                         }
                 });
+                
+                JPanel ind10o = new JPanel();
+                ind10o.setBackground(new Color(144, 238, 144));
+                ind10o.setBounds(99, 146, 86, 5);
+                ind10o.setVisible(false);
+                frame.getContentPane().add(ind10o);
                 
                 JPanel ind10 = new JPanel();
                 ind10.setBackground(new Color(144, 238, 144));
@@ -1569,125 +1580,138 @@ public class GUI {
             }
         }
        
-        public static void updateKasten(){            
-                
-                
-               
-                //de correcte kasten op oranje zetten                          
-                if (Voorraadbeheer.medlist.size() != 0) {
-                for (int i=0;i<Voorraadbeheer.medlist.size();i++) {
-                          //kast10
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 10){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind10.setBackground(Color.orange);
-//                          }                              
-//                       }
-//                    //kast11
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 11){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  //ind11.setBackground(new Color(255, 153, 51));   
-//                          }                              
-//                       }
-//                    //kast12
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 12){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  //ind12.setBackground(new Color(255, 153, 51));  
-//                          }                              
-//                       }
-//                    //kast13
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 13){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind13.setBackground(new Color(255, 153, 51));   
-//                          }                              
-//                       }
-//                    //kast14
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 14){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind14.setBackground(new Color(255, 153, 51)); 
-//                          }                              
-//                       }
-//                    //kast15
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 15){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind15.setBackground(new Color(255, 153, 51)); 
-//                          }                              
-//                       }
-//                    //kast16
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 16){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind16.setBackground(new Color(255, 153, 51));  
-//                          }                              
-//                       }
-//                    //kast17
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 17){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind17.setBackground(new Color(255, 153, 51));   
-//                          }                              
-//                       }
-//                    //kast18
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 18){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind18.setBackground(new Color(255, 153, 51));  
-//                          }                              
-//                       }
-//                     
-//                    //kast20
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 20){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind20.setBackground(new Color(255, 153, 51));
-//                          }                              
-//                       }
-//                    //kast21
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 21){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind21.setBackground(new Color(255, 153, 51));
-//                          }                              
-//                       }
-//                    //kast22
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 22){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind22.setBackground(new Color(255, 153, 51));
-//                          }                              
-//                       }
-//                    //kast23
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 23){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind23.setBackground(new Color(255, 153, 51));   
-//                          }                              
-//                       }
-//                    //kast24
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 24){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind24.setBackground(new Color(255, 153, 51));
-//                          }                              
-//                       }
-//                    //kast25
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 25){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind25.setBackground(new Color(255, 153, 51)); 
-//                          }                              
-//                       }
-//                    //kast26
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 26){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind26.setBackground(new Color(255, 153, 51));  
-//                          }                              
-//                       }
-//                    //kast27
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 27){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind27.setBackground(new Color(255, 153, 51));  
-//                          }                              
-//                       }
-//                    //kast28
-//                      if(Voorraadbeheer.medlist.get(i).kastID == 28){
-//                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
-//                        	  ind28.setBackground(new Color(255, 153, 51));   
-//                          }                              
-//                       }
-                }
-                }
-                       
-               
+        public static void updateKasten(){
+        	
+        	//ind10o.setVisible(true);
         }
+//        	
+//        	       	
+//          	
+//            ind10o.setBackground(new Color(255, 153, 51));
+//            ind10o.setBounds(99, 146, 86, 5);
+//            ind10.add(ind10o);
+//            ind10.moveToFront(ind10o);
+//        	       
+//                
+//               
+//                //de correcte kasten op oranje zetten                          
+//                //if (Voorraadbeheer.medlist.size() != 0) {
+////                for (int i=0;i<Voorraadbeheer.medlist.size();i++) {
+////                        //kast10
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 10){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	 ind10.setBackground(new Color(255, 153, 51));
+////                             ind10.repaint();                     	  
+//                        	  
+//                         // }                              
+//                      // }
+////                    //kast11
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 11){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  //ind11.setBackground(new Color(255, 153, 51));   
+////                          }                              
+////                       }
+////                    //kast12
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 12){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  //ind12.setBackground(new Color(255, 153, 51));  
+////                          }                              
+////                       }
+////                    //kast13
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 13){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind13.setBackground(new Color(255, 153, 51));   
+////                          }                              
+////                       }
+////                    //kast14
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 14){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind14.setBackground(new Color(255, 153, 51)); 
+////                          }                              
+////                       }
+////                    //kast15
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 15){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind15.setBackground(new Color(255, 153, 51)); 
+////                          }                              
+////                       }
+////                    //kast16
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 16){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind16.setBackground(new Color(255, 153, 51));  
+////                          }                              
+////                       }
+////                    //kast17
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 17){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind17.setBackground(new Color(255, 153, 51));   
+////                          }                              
+////                       }
+////                    //kast18
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 18){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind18.setBackground(new Color(255, 153, 51));  
+////                          }                              
+////                       }
+////                     
+////                    //kast20
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 20){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind20.setBackground(new Color(255, 153, 51));
+////                          }                              
+////                       }
+////                    //kast21
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 21){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind21.setBackground(new Color(255, 153, 51));
+////                          }                              
+////                       }
+////                    //kast22
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 22){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind22.setBackground(new Color(255, 153, 51));
+////                          }                              
+////                       }
+////                    //kast23
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 23){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind23.setBackground(new Color(255, 153, 51));   
+////                          }                              
+////                       }
+////                    //kast24
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 24){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind24.setBackground(new Color(255, 153, 51));
+////                          }                              
+////                       }
+////                    //kast25
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 25){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind25.setBackground(new Color(255, 153, 51)); 
+////                          }                              
+////                       }
+////                    //kast26
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 26){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind26.setBackground(new Color(255, 153, 51));  
+////                          }                              
+////                       }
+////                    //kast27
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 27){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind27.setBackground(new Color(255, 153, 51));  
+////                          }                              
+////                       }
+////                    //kast28
+////                      if(Voorraadbeheer.medlist.get(i).kastID == 28){
+////                          if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
+////                        	  ind28.setBackground(new Color(255, 153, 51));   
+////                          }                              
+////                       }
+//               // }
+//                //}
+//
+//                       
+//               
+//        }
 }

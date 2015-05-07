@@ -8,4 +8,4 @@ Openmedicijnentxt7 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
 Openmedicijnentxt8 stofnaam 30 60 31 fabrikant 12 12 06-06-2015
 a a 30 60 31 a 30 12 16-12-2016
 b b 30 60 31 a 30 12 16-12-2016
-idk idk 8 10 10 idk 1 10 10-05-2017
+idk idk 6 10 10 idk 1 10 10-05-2017

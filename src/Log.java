@@ -18,9 +18,8 @@ public class Log {
 		System.out.print(" ["+df.format(d1)+"] ");
 		GUI.updateMedTabellen(); //Aangezien Log.print() toch overal wordt aangeroepen, hoeven we deze methode niet overal apart in te stoppen.
 		GUI.updateBesTabellen();
-		//GUI.updateKasten(); //Kleur van de randen van de kasten updaten.
+		GUI.updateKasten(); //Kleur van de randen van de kasten updaten.
 		Voorraadbeheer.writeToTXT();
-		//GUI.updateKasten(); //Kleur van de randen van de kasten updaten.
 		
 	}
 }
