@@ -248,6 +248,9 @@ public class GUI {
                 verkoopButton.setBounds(466, 400, 200, 23);
                 frame.getContentPane().add(verkoopButton);
                 
+             
+///////////////////////////////Button: Wijzig Bestelstatus//////////////////////////////////// 
+                
                 final JButton wijzigBest = new JButton("Wijzig bestelstatus");
                 wijzigBest.setBounds(466, 400, 200, 23);
                 frame.getContentPane().add(wijzigBest);
@@ -274,7 +277,7 @@ public class GUI {
                         //Aantal
                         JLabel l2 = new JLabel("Status: ", JLabel.TRAILING);
                         p.add(l2);
-                        String[] statussen = new String[] {"besteld", "aangekomen"};
+                        String[] statussen = new String[] {"Besteld", "Aangekomen"};
 
                         final JComboBox<String> status = new JComboBox<>(statussen);
 
@@ -291,68 +294,48 @@ public class GUI {
                         l1.setLabelFor(bevestig);
                         p.add(bevestig);
                         bevestig.addActionListener(new ActionListener(){
-                            @Override
-                            public void actionPerformed(ActionEvent arg0) {
+                 
+                        	
+                   @Override          
+                   public void actionPerformed(ActionEvent arg0) {
+                	  //get the selected item:
+                	  String selectedStatus = (String) status.getSelectedItem();                      
+                	  int bestNummer=0;    
+                	  
+                	  try{
+                		  bestNummer = Integer.parseInt(textField0.getText());                   
+                	  }catch(NumberFormatException ex){                      
+                		  Log.print();                          
+                		  System.err.println("Geen geldig bestellingsnummer opgegeven.");                          
+                	  }    
+                	  
+                	  boolean geldig = false;    
+                	  if (selectedStatus.equalsIgnoreCase("Besteld")){
+                		  
+                	  }
+                                   
+                	  if(geldig){ 	                      
+                		  wijzigBestFrame.setVisible(false);                          
+                		  wijzigBestFrame.dispose();                          
+                	  }                      
+                	  else{                      
+                		  Log.print();                          
+                		  System.out.println("Geen geldig bestellingsnummer opgegeven.");                          
+                		  wijzigBestFrame.setVisible(false);                          
+                		  wijzigBestFrame.dispose();                         
+                	  } 
+                  }
+                  
+                });            
 
-                            		//get the selected item:
-                            	String selectedstatus = (String) status.getSelectedItem();
-                            		int tempnummer=0;
-                                    
-                                           try{
-                                               int nummertemp = Integer.parseInt(textField0.getText());
-                                               tempnummer=nummertemp;
-                                       }catch(NumberFormatException ex){
-                                           Log.print();
-                                           System.err.println("Geen geldig bestellingsnummer opgegeven.");
-                                       }                                        
-                                  
-                                    
-                                    boolean geldig = false;
-                                    
-//                                    int i = 0;
-//                                   if (Voorraadbeheer.beslist.size() != 0) {
-//                                       for (i=0;i<Voorraadbeheer.beslist.size();i++) {
-//                                           if(Voorraadbeheer.beslist.get(i).bestelIndex.equals(tempnummer)){
-//                                                   geldig = true;
-//                                           }
-//                                          
-//                                       }
-//                                   }                
-                                                                                      
-                                   if(geldig)
-                                           {
-                                                   	
-                                	   				wijzigBestFrame.setVisible(false);
-                                	   				wijzigBestFrame.dispose();
-                                           }
-                                           else
-                                           {
-                                                   Log.print();
-                                                   System.out.println("Incorrecte bestellingsnummer ingegeven, probeer opnieuw.");
-                                                   wijzigBestFrame.setVisible(false);
-                                                   wijzigBestFrame.dispose();
-                                           }
-                                  
-                                                  
-                       }
-                   });            
-                  
-
-                   //Lay out the panel.
-                   SpringUtilities.makeCompactGrid(p,
-                                                   3, 2, //rows, cols
-                                                   6, 6,        //initX, initY
-                                                   6, 6);       //xPad, yPad
-              
-              
-              
-              
-                  
-                  
-           }
+                        SpringUtilities.makeCompactGrid(p,
+                                                   3, 2, 		
+                                                   6, 6,       
+                                                   6, 6);            
+                	}
    });
                 
-                
+//\\\\\\//////////////////////////Button: Wijzig Bestelstatus////////////////////////////////////          
                                 
                 clrLogButton.setForeground(Color.WHITE);
                 clrLogButton.setBackground(Color.BLACK);
@@ -1790,7 +1773,7 @@ public class GUI {
             }
         }
        
-        public static void updateKasten() throws ParseException{        	
+        public static void updateKasten() {        	
         	
         	//alles op groen zetten om te beginnen
         	ind10.setBackground(new Color(144, 238, 144));
@@ -1817,110 +1800,110 @@ public class GUI {
             for (int i=0;i<Voorraadbeheer.medlist.size();i++) {
                       //kast10
                   if(Voorraadbeheer.medlist.get(i).kastID == 10){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind10.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast11
                   if(Voorraadbeheer.medlist.get(i).kastID == 11){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind11.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast12
                   if(Voorraadbeheer.medlist.get(i).kastID == 12){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind12.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast13
                   if(Voorraadbeheer.medlist.get(i).kastID == 13){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind13.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast14
                   if(Voorraadbeheer.medlist.get(i).kastID == 14){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind14.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast15
                   if(Voorraadbeheer.medlist.get(i).kastID == 15){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind15.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast16
                   if(Voorraadbeheer.medlist.get(i).kastID == 16){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind16.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast17
                   if(Voorraadbeheer.medlist.get(i).kastID == 17){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind17.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast18
                   if(Voorraadbeheer.medlist.get(i).kastID == 18){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind18.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                  
                 //kast20
                   if(Voorraadbeheer.medlist.get(i).kastID == 20){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind20.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast21
                   if(Voorraadbeheer.medlist.get(i).kastID == 21){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind21.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast22
                   if(Voorraadbeheer.medlist.get(i).kastID == 22){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind22.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast23
                   if(Voorraadbeheer.medlist.get(i).kastID == 23){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind23.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast24
                   if(Voorraadbeheer.medlist.get(i).kastID == 24){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind24.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast25
                   if(Voorraadbeheer.medlist.get(i).kastID == 25){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind25.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast26
                   if(Voorraadbeheer.medlist.get(i).kastID == 26){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind26.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast27
                   if(Voorraadbeheer.medlist.get(i).kastID == 27){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0 ){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal ){
                     	  ind27.setBackground(new Color(255, 153, 51));
                       }                              
                    }
                 //kast28
                   if(Voorraadbeheer.medlist.get(i).kastID == 28){
-                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal && Voorraadbeheer.medlist.get(i).controleerOpHoudbaarheid() != 0){
+                      if(Voorraadbeheer.medlist.get(i).aantal < Voorraadbeheer.medlist.get(i).minimumAantal){
                     	  ind28.setBackground(new Color(255, 153, 51));
                       }                              
                    }

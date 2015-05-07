@@ -1,5 +1,6 @@
 import java.awt.Color;
 import java.io.FileNotFoundException;
+import java.text.ParseException;
 
 import com.thehowtotutorial.splashscreen.*;
 
@@ -23,15 +24,19 @@ public class Splash {
 			Thread.sleep(500);
 			splash.setProgress(50,"Initialising text file");
 			Thread.sleep(500);
-			splash.setProgress(60,"Initialising the matrix");
+			splash.setProgress(60,"Initialising The Matrix");
 			Thread.sleep(500);
 			splash.setProgress(70,"Initialising red pill");
 			Thread.sleep(500);
 			splash.setProgress(80,"Initialising blue pill");
 			Thread.sleep(500);
-			splash.setProgress(90,"Initialising Asclepius");
-			Thread.sleep(500);
-			splash.setProgress(100,"COMPLETE");
+			for(int i=0;i<9000;i++){
+				splash.setProgress(90,"Initialising Asclepius: "+i);
+				Thread.sleep(5);
+			}
+			splash.setProgress(90,"Initialising Asclepius: ITS OVER NYAN THOUSAND ");
+			Thread.sleep(400);
+			splash.setProgress(100,"Asclepius. Initialised.");
 			Thread.sleep(1200);
 			splash.splashOff();			
 			GUI window = new GUI();
