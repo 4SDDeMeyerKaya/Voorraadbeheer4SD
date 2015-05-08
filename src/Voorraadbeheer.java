@@ -91,7 +91,7 @@ public class Voorraadbeheer {
 							//we voegen medicijn toe indien attributen het toestaan. Verdere controle in methodes.
 				if(medlist.get(i).alGewaarschuwd==false && medlist.get(i).besteld==false){
 				ietsTeBestellen=true;
-				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(besIndex, medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs, besIndex);
+				Voorraadbeheer.beslist.get(besIndex).voegMedicijnToe(besIndex, medlist.get(i).geefMerknaam(), controle, medlist.get(i).prijs);
 				medlist.get(i).besteld=true;
 				medlist.get(i).alGewaarschuwd=true;
 				}
@@ -106,16 +106,13 @@ public class Voorraadbeheer {
 
 	public static int controleerOpOpenBestelling() {
 		int i=1337;
-		int k =0;
 		for(int j=0; j<Voorraadbeheer.beslist.size();j++){
-			k=j+1;
 			if (Voorraadbeheer.beslist.get(j).isBesteld()!=true && Voorraadbeheer.beslist.get(j).isBesteld()!=true)
 				i=j;
 		}
-		if(i==1337){
-			Voorraadbeheer.voegBestellingToe();
-			i=k;
-			
+		for(int j=0; j<Voorraadbeheer.beslist.size();j++){
+			if (Voorraadbeheer.beslist.get(j).isBesteld()!=true && Voorraadbeheer.beslist.get(j).isBesteld()!=true)
+				i=j;
 		}
 		return i;
 	}

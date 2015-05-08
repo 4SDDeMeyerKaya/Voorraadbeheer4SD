@@ -18,9 +18,9 @@ public class Bestelling {
     }
 	
 	//voegMedicijnToe voegt een nieuw object van BestelMedicijn toe aan de lijst.
-	public void voegMedicijnToe(int bestelIndex, String merknaam, int aantal, int prijs, int besIndex){
-		boolean isAanwezig=false;
-		for(int i=0; i<besmedlist.size();i++){
+	public void voegMedicijnToe(int bestelIndex, String merknaam, int aantal, int prijs){
+		/*boolean isAanwezig=false;
+		for(int i=0; i<Voorraadbeheer.beslist.get(bestelIndex).besmedlist.size();i++){
 			if (besmedlist.get(i).geefMerknaam().equalsIgnoreCase(merknaam)){
 				Log.print();
 				System.out.println(merknaam + " is reeds besteld.");
@@ -28,10 +28,13 @@ public class Bestelling {
 				}	
 		}
 		if(isAanwezig==false){
-			Voorraadbeheer.beslist.get(besIndex).besmedlist.add(new BestelMedicijn(bestelIndex, merknaam, aantal, prijs));
+			Voorraadbeheer.beslist.get(bestelIndex).besmedlist.add(new BestelMedicijn(bestelIndex, merknaam, aantal, prijs));
 			Log.print();
 			System.out.println(merknaam + " is besteld. (Aantal: "+aantal+")");
-			}
+			}*/
+		Voorraadbeheer.beslist.get(bestelIndex).besmedlist.add(new BestelMedicijn(bestelIndex, merknaam, aantal, prijs));
+		Log.print();
+		System.out.println(merknaam + " is besteld. (Aantal: "+aantal+")");
 	}
 	
 	public String getStatus(){

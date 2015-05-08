@@ -13,14 +13,19 @@ public class BestelMedicijn {
 	String merknaam;
 	int aantal;
 	int prijs;
-	int bestelIndex;
+	public int bestelIndex;
 	
 	
 	public BestelMedicijn(int bestelIndex, String merknaam, int aantal, int prijs)
 	{
+		this.bestelIndex=bestelIndex;
 		this.merknaam = merknaam;
 		this.aantal = aantal;
 		this.prijs = prijs;
+	}
+	
+	public int geefIndex(){
+		return bestelIndex;
 	}
 	
 	public String geefMerknaam(){

@@ -326,28 +326,31 @@ public class GUI {
                 		  
                 	  }
                 		 
-                	  if (selectedStatus.equalsIgnoreCase("Aangekomen") && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false ){
-                		  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==true && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
-                			  Voorraadbeheer.beslist.get(bestNummer).setBesteld(false);
+                	  if (selectedStatus.equalsIgnoreCase("Aangekomen") && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false && Voorraadbeheer.beslist.get(bestNummer).isBesteld()==true ){
+
                     		  try {
 								Voorraadbeheer.beslist.get(bestNummer).setAangekomen(true);
-							} catch (ParseException e) {
-							}
-                    		  Log.print();
-                    		  System.out.println("Bestelling met bestelnummer "+bestNummer+" is aangekomen.");
-                    		  geldig=true; 
-                		  }else{
-                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
-                				  Log.print();
-                				  System.out.println("Deze bestelling is nog niet besteld.");
-                			  }
-                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==true){
-                				  Log.print();
-                				  System.out.println("Deze bestelling is reeds aangekomen");
-                			  
-                		  }
-                		  
-                	  }            
+								 Log.print();
+	                    		  System.out.println("Bestelling met bestelnummer "+bestNummer+" is aangekomen.");
+	                    		  geldig=true; 
+                    		  }catch (ParseException e) {}
+	                		  }else{
+	                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==false){
+	                				  Log.print();
+	                				  System.out.println("Deze bestelling is nog niet besteld.");
+	                				  geldig=true; 
+	                			  }
+	                			  if(Voorraadbeheer.beslist.get(bestNummer).isBesteld()==false && Voorraadbeheer.beslist.get(bestNummer).isAangekomen()==true){
+	                				  Log.print();
+	                				  System.out.println("Deze bestelling is reeds aangekomen");
+	                				  geldig=true; 
+	                			  
+	                		  }
+	                		  
+	                	  } 
+								
+                    		  
+                    		            
                 	  if(geldig){ 	                      
 //                		  wijzigBestFrame.setVisible(false);                          
 //                		  wijzigBestFrame.dispose();                          
@@ -359,7 +362,7 @@ public class GUI {
 //                		  wijzigBestFrame.dispose();                         
                 	  } 
                   }
-                   } 
+                    
                 });            
 
                         SpringUtilities.makeCompactGrid(p,
