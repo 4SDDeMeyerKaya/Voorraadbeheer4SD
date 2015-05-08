@@ -110,10 +110,7 @@ public class Voorraadbeheer {
 			if (Voorraadbeheer.beslist.get(j).isBesteld()!=true && Voorraadbeheer.beslist.get(j).isBesteld()!=true)
 				i=j;
 		}
-		for(int j=0; j<Voorraadbeheer.beslist.size();j++){
-			if (Voorraadbeheer.beslist.get(j).isBesteld()!=true && Voorraadbeheer.beslist.get(j).isBesteld()!=true)
-				i=j;
-		}
+
 		return i;
 	}
 	
