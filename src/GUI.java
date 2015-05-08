@@ -1375,7 +1375,7 @@ public class GUI {
                                 if (data % 2 == 0) //alternating colours among rows
                                         c.setBackground(Color.WHITE);
                                                        
-                                else c.setBackground(SystemColor.controlHighlight);
+                                else c.setBackground(SystemColor.control);
                                                        
                                         return c;
                                 }
