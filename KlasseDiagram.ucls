@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <class-diagram version="1.1.8" icons="true" always-add-relationships="false" generalizations="true" realizations="true" 
   associations="true" dependencies="false" nesting-relationships="true">  
-  <class id="1" language="java" name="Log" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/Log.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="105" x="181" y="71"/>    
+  <class id="1" language="java" name="Apotheker" project="Voorraadbeheer4SD" 
+    file="/Voorraadbeheer4SD/src/Apotheker.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="342" y="98"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="2" language="java" name="Medicijn" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/Medicijn.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="494" width="297" x="811" y="335"/>    
+  <class id="2" language="java" name="Bestelling" project="Voorraadbeheer4SD" 
+    file="/Voorraadbeheer4SD/src/Bestelling.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="356" y="304"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="3" language="java" name="OrderException" project="Voorraadbeheer4SD" 
-    file="/Voorraadbeheer4SD/src/OrderException.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="151" x="491" y="71"/>    
+  <class id="3" language="java" name="BestelMedicijn" project="Voorraadbeheer4SD" 
+    file="/Voorraadbeheer4SD/src/BestelMedicijn.java" binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="927" y="457"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -30,25 +30,25 @@
   </class>  
   <class id="4" language="java" name="GUI" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/GUI.java" 
     binary="false" corner="BOTTOM_RIGHT">    
-    <position height="170" width="125" x="326" y="71"/>    
+    <position height="-1" width="-1" x="105" y="272"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="5" language="java" name="Bestelling" project="Voorraadbeheer4SD" 
-    file="/Voorraadbeheer4SD/src/Bestelling.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="206" width="218" x="553" y="335"/>    
+  <class id="5" language="java" name="Log" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/Log.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="298" y="-51"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="6" language="java" name="Besteloverzicht" project="Voorraadbeheer4SD" 
-    file="/Voorraadbeheer4SD/src/Besteloverzicht.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="181" x="1093" y="71"/>    
+  <class id="6" language="java" name="Medicijn" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/Medicijn.java" 
+    binary="false" corner="BOTTOM_RIGHT">    
+    <position height="-1" width="-1" x="1165" y="407"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -57,62 +57,51 @@
   </class>  
   <class id="7" language="java" name="Voorraadbeheer" project="Voorraadbeheer4SD" 
     file="/Voorraadbeheer4SD/src/Voorraadbeheer.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="224" width="371" x="682" y="71"/>    
+    <position height="-1" width="-1" x="721" y="97"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
       <operations public="true" package="true" protected="true" private="true" static="true"/>    
     </display>  
   </class>  
-  <class id="8" language="java" name="Apotheker" project="Voorraadbeheer4SD" 
-    file="/Voorraadbeheer4SD/src/Apotheker.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="116" width="160" x="1314" y="71"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="9" language="java" name="Kast" project="Voorraadbeheer4SD" file="/Voorraadbeheer4SD/src/Kast.java" 
-    binary="false" corner="BOTTOM_RIGHT">    
-    <position height="98" width="146" x="1514" y="71"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <class id="10" language="java" name="BestelMedicijn" project="Voorraadbeheer4SD" 
-    file="/Voorraadbeheer4SD/src/BestelMedicijn.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="662" y="724"/>    
-    <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
-      sort-features="false" accessors="true" visibility="true">      
-      <attributes public="true" package="true" protected="true" private="true" static="true"/>      
-      <operations public="true" package="true" protected="true" private="true" static="true"/>    
-    </display>  
-  </class>  
-  <association id="11">    
+  <association id="8">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="12" name="beslist"/>      
-      <multiplicity id="13" minimum="0" maximum="2147483647"/>    
+      <attribute id="9" name="ap">        
+        <position height="18" width="22" x="442" y="78"/>      
+      </attribute>      
+      <multiplicity id="10" minimum="0" maximum="1"/>    
     </end>    
-    <end type="TARGET" refId="5" navigable="true"/>    
+    <end type="TARGET" refId="1" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
-  <association id="14">    
+  <association id="11">    
     <end type="SOURCE" refId="7" navigable="false">      
-      <attribute id="15" name="medlist"/>      
-      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+      <attribute id="12" name="beslist">        
+        <position height="18" width="41" x="473" y="194"/>      
+      </attribute>      
+      <multiplicity id="13" minimum="0" maximum="2147483647"/>    
     </end>    
     <end type="TARGET" refId="2" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
+  <association id="14">    
+    <end type="SOURCE" refId="7" navigable="false">      
+      <attribute id="15" name="medlist">        
+        <position height="18" width="43" x="946" y="239"/>      
+      </attribute>      
+      <multiplicity id="16" minimum="0" maximum="2147483647"/>    
+    </end>    
+    <end type="TARGET" refId="6" navigable="true"/>    
+    <display labels="true" multiplicity="true"/>  
+  </association>  
   <association id="17">    
-    <end type="SOURCE" refId="5" navigable="false">      
-      <attribute id="18" name="besmedlist"/>      
+    <end type="SOURCE" refId="2" navigable="false">      
+      <attribute id="18" name="besmedlist">        
+        <position height="18" width="61" x="645" y="362"/>      
+      </attribute>      
       <multiplicity id="19" minimum="0" maximum="2147483647"/>    
     </end>    
-    <end type="TARGET" refId="10" navigable="true"/>    
+    <end type="TARGET" refId="3" navigable="true"/>    
     <display labels="true" multiplicity="true"/>  
   </association>  
   <classifier-display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
