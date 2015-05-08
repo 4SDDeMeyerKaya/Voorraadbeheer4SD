@@ -1332,17 +1332,17 @@ public class GUI {
                         public boolean isCellEditable(int data, int columns){
                                 return false;
                         }
-                        /*public Component prepareRenderer(TableCellRenderer r, int data, int columns){
+                        public Component prepareRenderer(TableCellRenderer r, int data, int columns){
                                 Component c = super.prepareRenderer(r, data, columns);
                                
                                 if (data % 2 == 0) //alternating colours among rows
                                         c.setBackground(Color.WHITE);
                                
-                                else c.setBackground(Color.LIGHT_GRAY);
+                                else c.setBackground(SystemColor.control);
                                
                                                
                                 return c;
-                        }*/
+                        }
                                
                 };
                 tableBest.setFont(new Font("Arial", Font.PLAIN, 12));

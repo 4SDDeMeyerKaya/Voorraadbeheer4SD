@@ -1,5 +1,5 @@
-TEMGESIC Buprenorfine 10 90 50 Schering-Plough 53 10 08-05-2016
-TRANSTEC Buprenorfine 10 90 50 Grünenthal 42 11 18-03-2017
+TEMGESIC Buprenorfine 90 90 50 Schering-Plough 53 10 08-05-2016
+TRANSTEC Buprenorfine 90 90 50 Grünenthal 42 11 18-03-2017
 DUROGESIC Buprenorfine 90 90 50 Janssen-Cilag 41 12 08-05-2016
 FENTANYL-SANDOZ Fentanyl 90 90 50 Sandoz 57 13 31-05-2015
 MATRIFEN Fentanyl 90 90 50 Nycomed 100 14 01-06-2015
