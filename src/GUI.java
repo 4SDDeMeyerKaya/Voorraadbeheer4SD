@@ -204,7 +204,7 @@ public class GUI {
                                                  int i = 0;
                                                 if (Voorraadbeheer.medlist.size() != 0) {
                                                     for (i=0;i<Voorraadbeheer.medlist.size();i++) {
-                                                        if(Voorraadbeheer.medlist.get(i).merknaam.equals(medicijnnaamtemp)){
+                                                        if(Voorraadbeheer.medlist.get(i).merknaam.equalsIgnoreCase(medicijnnaamtemp)){
                                                                 geldig = true;
                                                         }
                                                        
