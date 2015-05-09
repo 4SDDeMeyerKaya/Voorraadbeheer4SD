@@ -21,7 +21,7 @@
   </class>  
   <class id="3" language="java" name="BestelMedicijn" project="Voorraadbeheer4SD" 
     file="/Voorraadbeheer4SD/src/BestelMedicijn.java" binary="false" corner="BOTTOM_RIGHT">    
-    <position height="-1" width="-1" x="927" y="457"/>    
+    <position height="-1" width="-1" x="336" y="630"/>    
     <display autosize="true" stereotype="true" package="true" initial-value="false" signature="true" 
       sort-features="false" accessors="true" visibility="true">      
       <attributes public="true" package="true" protected="true" private="true" static="true"/>      
@@ -97,7 +97,7 @@
   <association id="17">    
     <end type="SOURCE" refId="2" navigable="false">      
       <attribute id="18" name="besmedlist">        
-        <position height="18" width="61" x="645" y="362"/>      
+        <position height="18" width="61" x="54" y="535"/>      
       </attribute>      
       <multiplicity id="19" minimum="0" maximum="2147483647"/>    
     </end>    

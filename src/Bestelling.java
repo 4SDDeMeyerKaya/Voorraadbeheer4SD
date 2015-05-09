@@ -36,7 +36,7 @@ public class Bestelling {
 	
 	public String getStatus(){
 		if (isBesteld()==false && isAangekomen()==false){
-			return "Nog niet besteld";
+			return "Nog niet bevestigd";
 		}
 		else{
 			if(isBesteld()==true){

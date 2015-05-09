@@ -298,6 +298,9 @@ public class GUI {
                         	
                    @Override          
                    public void actionPerformed(ActionEvent arg0) {
+                	   
+                	  wijzigBestFrame.setVisible(false);                          
+             		  wijzigBestFrame.dispose();
                 	  //get the selected item:
                 	  String selectedStatus = (String) status.getSelectedItem();                      
                 	  int bestNummer=0;    
@@ -346,14 +349,14 @@ public class GUI {
                 		  
                 	  }            
                 	  if(geldig){ 	                      
-                		  wijzigBestFrame.setVisible(false);                          
-                		  wijzigBestFrame.dispose();                          
+//                		  wijzigBestFrame.setVisible(false);                          
+//                		  wijzigBestFrame.dispose();                          
                 	  }                      
                 	  else{                      
                 		  Log.print();                          
                 		  System.out.println("Geen geldig bestellingsnummer opgegeven.");                          
-                		  wijzigBestFrame.setVisible(false);                          
-                		  wijzigBestFrame.dispose();                         
+//                		  wijzigBestFrame.setVisible(false);                          
+//                		  wijzigBestFrame.dispose();                         
                 	  } 
                   }
                    } 
